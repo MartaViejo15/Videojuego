@@ -3,7 +3,7 @@ package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class PantallaPrincipalController {
     @FXML
     private Label welcomeText;
 
