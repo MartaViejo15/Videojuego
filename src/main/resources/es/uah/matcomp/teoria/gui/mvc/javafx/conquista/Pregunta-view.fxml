@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox alignment="CENTER" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PreguntaController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="560.0" spacing="10.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="54.0" prefWidth="279.0" text="PREGUNTA">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Label>
+            <Label text="RESPONDE BIEN A ESTA PREGUNTA">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="PARA CONSEGUIR UNA UNIDAD NUEVA">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="35.0" prefWidth="600.0">
+               <children>
+                  <Separator prefHeight="10.0" prefWidth="400.0" />
+               </children>
+            </VBox>
+            <Label fx:id="pregunta" prefHeight="39.0" prefWidth="226.0" text="¿Sabrías responder a esta pregunta?">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="480.0">
+               <children>
+                  <TextField fx:id="res" prefHeight="39.0" prefWidth="400.0" />
+               </children>
+            </HBox>
+            <VBox alignment="BOTTOM_RIGHT" prefHeight="59.0" prefWidth="560.0">
+               <children>
+                  <Button mnemonicParsing="false" text="Aceptar" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>

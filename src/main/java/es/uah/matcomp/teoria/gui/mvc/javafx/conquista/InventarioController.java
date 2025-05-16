@@ -51,4 +51,8 @@ public class InventarioController {
             esp1.setSelected(false);
         }
     }
+
+    protected void setstage(Stage stage) {
+        this.stage = stage;
+    }
 }
