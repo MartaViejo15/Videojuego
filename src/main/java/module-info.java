@@ -8,4 +8,6 @@ module es.uah.matcomp.teoria.gui.mvc.javafx.conquista {
 
     opens es.uah.matcomp.teoria.gui.mvc.javafx.conquista to javafx.fxml;
     exports es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
+    exports es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas;
+    opens es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas to javafx.fxml;
 }
