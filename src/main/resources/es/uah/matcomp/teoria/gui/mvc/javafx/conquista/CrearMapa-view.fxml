@@ -78,7 +78,7 @@
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <Slider fx:id="tiempo" max="600.0" min="30.0" prefHeight="42.0" prefWidth="226.0" />
+                        <Slider fx:id="tiempo" max="600.0" min="120.0" prefHeight="42.0" prefWidth="226.0" />
                      </children>
                   </HBox>
                   <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="123.0" style="-fx-background-color: #82d5f3; -fx-border-color: Black;" text="Guardar">
