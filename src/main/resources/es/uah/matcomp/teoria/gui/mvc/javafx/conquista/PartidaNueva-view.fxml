@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="600.0" prefWidth="1050.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PartidaNuevaController">
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="1050.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PartidaNuevaController" style="-fx-background-color: #c9e9ef">
    <children>
       <Label alignment="CENTER" prefHeight="69.0" prefWidth="316.0" text="PARTIDA NUEVA" textAlignment="CENTER">
          <font>
@@ -36,7 +36,7 @@
                            </font></CheckBox>
                      </children>
                   </HBox>
-                  <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="27.0" prefHeight="70.0" prefWidth="250.0" spacing="10.0" style="-fx-border-color: Black;">
+                  <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="27.0" prefHeight="70.0" prefWidth="250.0" spacing="10.0" style="-fx-border-color: Black; -fx-background-color: #e2c540">
                      <children>
                         <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
                         <VBox prefHeight="70.0" prefWidth="125.0">
