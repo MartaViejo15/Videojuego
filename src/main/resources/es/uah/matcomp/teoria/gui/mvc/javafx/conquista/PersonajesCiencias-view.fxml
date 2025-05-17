@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PersonajesCienciasController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="1050.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="100.0" prefWidth="1050.0" text="PERSONAJES CIENCIAS" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="100.0" prefWidth="1050.0" text="ELIGE DOS DE ESTOS PERSONAJES">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></Label>
+            <HBox prefHeight="200.0" prefWidth="1050.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="350.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="350.0">
+                           <children>
+                              <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="QUÍMICO">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </CheckBox>
+                           </children></HBox>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children></VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="350.0">
+                     <children>
+                        <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="132.0" text="BIÓLOGO" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children></VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="350.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <CheckBox contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="121.0" text="INGENIERO">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font></CheckBox>
+                           </children>
+                        </HBox>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children></VBox>
+               </children></HBox>
+            <HBox prefHeight="200.0" prefWidth="1050.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="525.0">
+                     <children>
+                        <HBox alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="525.0">
+                           <children>
+                              <CheckBox alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="41.0" prefWidth="137.0" text="MATEMÁTICO">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="525.0" />
+                     </children></VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="525.0">
+                     <children>
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="525.0">
+                           <children>
+                              <CheckBox alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="41.0" prefWidth="121.0" text="MÉDICO" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <HBox alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="525.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="73.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="OK" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children></VBox>
+               </children></HBox>
+         </children></VBox>
+   </children>
+</AnchorPane>

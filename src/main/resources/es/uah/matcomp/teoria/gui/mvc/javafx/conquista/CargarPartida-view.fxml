@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.CargarPartidaController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="1050.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="120.0" prefWidth="1050.0">
+               <children>
+                  <Label text="CARGAR PARTIDA">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font></Label>
+               </children></HBox>
+            <HBox alignment="CENTER" prefHeight="120.0" prefWidth="200.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="900.0">
+                     <children>
+                        <ImageView fitHeight="120.0" fitWidth="150.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label prefHeight="60.0" prefWidth="650.0" text="Partida 1">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <CheckBox alignment="BOTTOM_RIGHT" layoutX="810.0" layoutY="10.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="120.0" prefWidth="100.0" text="Delete">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </CheckBox>
+                     </children></HBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="120.0" prefWidth="1050.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="900.0">
+                     <children>
+                        <ImageView fitHeight="120.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label prefHeight="60.0" prefWidth="650.0" text="Partida 2">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <CheckBox alignment="BOTTOM_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="120.0" prefWidth="100.0" text="Delete">
+                           <font>
+                              <Font size="15.0" />
+                           </font></CheckBox>
+                     </children></HBox>
+               </children></HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="120.0" prefWidth="1050.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="900.0">
+                     <children>
+                        <ImageView fitHeight="120.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label prefHeight="60.0" prefWidth="650.0" text="Partida 3">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <CheckBox alignment="BOTTOM_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="111.0" prefWidth="100.0" text="Delete">
+                           <font>
+                              <Font size="15.0" />
+                           </font></CheckBox>
+                     </children></HBox>
+               </children></HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="250.0" prefHeight="120.0" prefWidth="1050.0">
+               <children>
+                  <VBox prefHeight="120.0" prefWidth="78.0" />
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="901.0">
+                     <children>
+                        <ImageView fitHeight="120.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label prefHeight="60.0" prefWidth="648.0" text="Partida 4">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <CheckBox alignment="BOTTOM_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="92.0" prefWidth="107.0" text="Delete">
+                           <font>
+                              <Font size="15.0" />
+                           </font></CheckBox>
+                     </children></HBox>
+                  <VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="74.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="OK" />
+                     </children>
+                  </VBox>
+               </children></HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
