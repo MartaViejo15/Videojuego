@@ -1,16 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PantallaPrincipalController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<AnchorPane prefHeight="600.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PantallaPrincipalController">
+   <VBox alignment="CENTER" layoutX="70.0" layoutY="195.0" prefHeight="251.0" prefWidth="211.0">
+      <children>
+         <Label text="¡Ciencias vs Letras!">
+            <font>
+               <Font size="22.0" />
+            </font>
+         </Label>
+         <Label prefHeight="136.0" prefWidth="148.0" text="La batalla más esperada durante siglos ha llegado, pero... ¿quién ganará y se quedará con los territorios ancestrales?" textAlignment="CENTER" wrapText="true">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
+      </children></VBox>
+   <HBox layoutX="359.0" layoutY="200.0" prefWidth="350.0" spacing="50.0">
+      <children>
+         <ImageView fitHeight="200.0" fitWidth="150.0" preserveRatio="true" />
+         <ImageView fitHeight="200.0" fitWidth="150.0" preserveRatio="true" />
+      </children>
+   </HBox>
+   <VBox alignment="CENTER" layoutX="356.0" layoutY="14.0" prefHeight="117.0" prefWidth="355.0">
+      <children>
+         <Label alignment="CENTER" prefHeight="70.0" prefWidth="253.0" text="CONQUISTA">
+            <font>
+               <Font name="System Bold" size="40.0" />
+            </font>
+         </Label>
+      </children>
+   </VBox>
+   <VBox layoutX="832.0" layoutY="206.0" prefHeight="200.0" prefWidth="127.0" spacing="15.0">
+      <children>
+         <Button text="Partida nueva">
+            <font>
+               <Font size="15.0" />
+            </font></Button>
+         <Button text="Cargar partida">
+            <font>
+               <Font size="15.0" />
+            </font></Button>
+         <Button text="Ayuda">
+            <font>
+               <Font size="15.0" />
+            </font></Button>
+         <Button text="Créditos">
+            <font>
+               <Font size="15.0" />
+            </font></Button>
+         <Button text="Salir">
+            <font>
+               <Font size="15.0" />
+            </font></Button>
+      </children>
+   </VBox>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+</AnchorPane>

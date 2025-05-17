@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.SalirController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #daf7a6">
+         <children>
+            <Label alignment="CENTER" prefHeight="108.0" prefWidth="600.0" text="SALIR">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="149.0" prefWidth="600.0" text="¿Estás seguro de que deseas salir?">
+               <font>
+                  <Font size="23.0" />
+               </font></Label>
+            <HBox alignment="CENTER" spacing="40">
+               <Button fx:id="botonSi" prefHeight="43.0" prefWidth="68.0" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Sí">
+                  <font>
+                     <Font size="20.0" />
+                  </font></Button>
+               <Button fx:id="botonNo" prefHeight="43.0" prefWidth="68.0" style="-fx-background-color: #c70039; -fx-text-fill: white;" text="No">
+                  <font>
+                     <Font size="20.0" />
+                  </font></Button>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
