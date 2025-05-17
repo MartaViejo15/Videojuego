@@ -1,5 +1,7 @@
 package es.uah.matcomp.teoria.gui.mvc.javafx.conquista.inventario;
 
+import javafx.beans.property.IntegerProperty;
+
 public abstract class Inventario {
     private String nombre;
     private int HP;

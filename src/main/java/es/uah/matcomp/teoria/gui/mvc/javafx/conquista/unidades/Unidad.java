@@ -125,7 +125,13 @@ public abstract class Unidad {
     protected void setElementoEspecifico1(ElementoEspecifico especifico) {
         elementoEspecifico1 = especifico;
     }
+    public ElementoEspecifico getElementoEspecifico1() {
+        return elementoEspecifico1;
+    }
     protected void setElementoEspecifico2(ElementoEspecifico especifico) {
         elementoEspecifico2 = especifico;
+    }
+    public ElementoEspecifico getElementoEspecifico2() {
+        return elementoEspecifico2;
     }
 }

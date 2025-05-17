@@ -53,20 +53,6 @@ public class Lista<v> {
         }
         return false;
     }
-    public Elemento<v> buscar(v elemento) {
-        Elemento<v> aux = primero;
-        if (aux == null) {
-            return null;
-        }if (aux.dato.equals(elemento)) {
-            return aux;
-        }while(aux.siguiente != null) {
-            if (aux.siguiente.dato.equals(elemento)) {
-                return aux;
-            }
-            aux = aux.siguiente;
-        }
-        return null;
-    }
 
     public int getNumElementos() {
         return N_elementos;

@@ -15,7 +15,7 @@
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </Label>
-                  <Label text="NOMBRE UNIDAD">
+                  <Label fx:id="Nombre" text="NOMBRE UNIDAD">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -69,7 +69,7 @@
                   </ScrollPane>
                </children>
             </VBox>
-            <Button mnemonicParsing="false" text="Aceptar" />
+            <Button mnemonicParsing="false" onAction="#aceptarClicked" text="Aceptar" />
          </children>
       </VBox>
    </children>

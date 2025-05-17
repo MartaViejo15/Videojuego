@@ -32,8 +32,21 @@ public class UnidadProperty {
         unidad.getHP().set(unidad.getHP().get() - daño);
         return daño;
     }
+    public Elemento<Inventario> buscar(Inventario inventario){
+        Elemento<Inventario> aux = Inventario.getPrimero();
+        if(aux == null){
+            return null;
+        }if(aux.getDato().getNombre().equals(inventario.getNombre())){
+            return aux;
+        }while(aux.getSiguiente() != null){
+            if(aux.getSiguiente().getDato().getNombre().equals(inventario.getNombre())){
+                return aux.getSiguiente();
+            }
+            aux = aux.getSiguiente();
+        }return null;
+    }
     public boolean UsarInventario(Inventario item) {
-        Elemento<Inventario> it = Inventario.buscar(item);
+        Elemento<Inventario> it = this.buscar(item);
         if(it != null){
             HP.set(HP.get() + item.getHP());
             Ataque.set(Ataque.get() + item.getAtaque());
@@ -42,15 +55,18 @@ public class UnidadProperty {
             Rango_Movimiento.set(Rango_Movimiento.get() + item.getRango_movimiento());
             it.getDato().usar();
             if(it.getDato().getN_elementos() <= 0){
-                Inventario.delete(item);
+                this.Inventario.delete(item);
             }
             return true;
         }
         return false;
     }
     public void cogerInventario(Inventario item){
-        if(!Inventario.add(item)){
-            Inventario.buscar(item).getDato().añadir();
+        Elemento<Inventario> it = this.buscar(item);
+        if(it == null){
+            this.Inventario.add(item);
+        }else{
+            it.getDato().añadir();
         }
     }
 
@@ -93,5 +109,8 @@ public class UnidadProperty {
     }
     public IntegerProperty getRango_Ataque() {
         return Rango_Ataque;
+    }
+    public Lista<Inventario> getInventario() {
+        return Inventario;
     }
 }
