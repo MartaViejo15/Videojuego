@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="600.0" prefWidth="1050.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PartidaNuevaController" style="-fx-background-color: #c9e9ef">
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="1050.0" spacing="20.0" style="-fx-background-color: #c9e9ef" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PartidaNuevaController">
    <children>
       <Label alignment="CENTER" prefHeight="69.0" prefWidth="316.0" text="PARTIDA NUEVA" textAlignment="CENTER">
          <font>
@@ -13,16 +13,16 @@
          </font></Label>
       <HBox alignment="CENTER" prefHeight="400.0" prefWidth="950.0" spacing="70.0">
          <children>
-            <VBox prefHeight="400.0" prefWidth="250.0" spacing="20.0">
+            <VBox prefHeight="400.0" prefWidth="380.0" spacing="20.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="250.0" text="Seleccionar Mapa" textAlignment="CENTER">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="396.0" text="Seleccionar Mapa" textAlignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <HBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="250.0" spacing="10.0" style="-fx-border-color: Black;">
+                  <HBox alignment="BOTTOM_CENTER" prefHeight="70.0" prefWidth="250.0" spacing="10.0" style="-fx-border-color: Black;">
                      <children>
                         <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
-                        <VBox prefHeight="70.0" prefWidth="125.0" spacing="10.0">
+                        <VBox prefHeight="70.0" prefWidth="270.0" spacing="10.0">
                            <children>
                               <Label prefHeight="35.0" prefWidth="108.0" text="TABLERO 1">
                                  <font>
@@ -30,16 +30,16 @@
                                  </font></Label>
                               <Label text="Info" />
                            </children></VBox>
-                        <CheckBox fx:id="t1" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#selecMap1" prefHeight="20.0" prefWidth="21.0" textAlignment="CENTER">
+                        <CheckBox fx:id="t1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#selecMap1" prefHeight="50.0" prefWidth="36.0" textAlignment="CENTER">
                            <font>
                               <Font size="15.0" />
                            </font></CheckBox>
                      </children>
                   </HBox>
-                  <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="27.0" prefHeight="70.0" prefWidth="250.0" spacing="10.0" style="-fx-border-color: Black; -fx-background-color: #e2c540">
+                  <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="27.0" prefHeight="70.0" prefWidth="250.0" spacing="10.0" style="-fx-border-color: Black; -fx-background-color: #e2c540">
                      <children>
                         <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
-                        <VBox prefHeight="70.0" prefWidth="125.0">
+                        <VBox prefHeight="70.0" prefWidth="270.0">
                            <children>
                               <Label prefHeight="35.0" prefWidth="87.0" text="TABLERO 2">
                                  <font>
@@ -48,16 +48,16 @@
                               <Label text="Info" />
                            </children>
                         </VBox>
-                        <CheckBox fx:id="t2" mnemonicParsing="false" onAction="#selecMap2">
+                        <CheckBox fx:id="t2" mnemonicParsing="false" onAction="#selecMap2" prefHeight="50.0" prefWidth="36.0">
                            <font>
                               <Font size="15.0" />
                            </font></CheckBox>
                      </children>
                   </HBox>
-                  <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="87.0" prefHeight="70.0" prefWidth="250.0" spacing="10.0" style="-fx-border-color: Black;">
+                  <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="87.0" prefHeight="70.0" prefWidth="250.0" spacing="10.0" style="-fx-border-color: Black;">
                      <children>
                         <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
-                        <VBox prefHeight="70.0" prefWidth="125.0">
+                        <VBox prefHeight="71.0" prefWidth="270.0">
                            <children>
                               <Label prefHeight="35.0" text="TABLERO 3">
                                  <font>
@@ -66,16 +66,16 @@
                               <Label text="Info" />
                            </children>
                         </VBox>
-                        <CheckBox fx:id="t3" mnemonicParsing="false" onAction="#selecMap3">
+                        <CheckBox fx:id="t3" mnemonicParsing="false" onAction="#selecMap3" prefHeight="50.0" prefWidth="36.0">
                            <font>
                               <Font size="15.0" />
                            </font></CheckBox>
                      </children>
                   </HBox>
-                  <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="147.0" prefHeight="60.0" prefWidth="250.0" spacing="10.0" style="-fx-border-color: Black;">
+                  <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="147.0" prefHeight="60.0" prefWidth="250.0" spacing="10.0" style="-fx-border-color: Black;">
                      <children>
                         <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
-                        <VBox prefHeight="70.0" prefWidth="125.0">
+                        <VBox prefHeight="70.0" prefWidth="270.0">
                            <children>
                               <Label prefHeight="35.0" text="TABLERO 4">
                                  <font>
@@ -87,7 +87,7 @@
                                  </font></Label>
                            </children>
                         </VBox>
-                        <CheckBox fx:id="t4" mnemonicParsing="false" onAction="#selecMap4">
+                        <CheckBox fx:id="t4" mnemonicParsing="false" onAction="#selecMap4" prefHeight="50.0" prefWidth="36.0">
                            <font>
                               <Font size="15.0" />
                            </font></CheckBox>
@@ -96,9 +96,9 @@
                </children>
             </VBox>
             <Separator orientation="VERTICAL" prefHeight="200.0" />
-            <VBox prefHeight="400.0" prefWidth="250.0" spacing="20.0">
+            <VBox prefHeight="400.0" prefWidth="380.0" spacing="20.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="40.0" prefWidth="250.0" text="Seleccionar La Facción" textAlignment="CENTER">
+                  <Label alignment="CENTER" prefHeight="40.0" prefWidth="417.0" text="Seleccionar La Facción" textAlignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
@@ -108,29 +108,29 @@
                            <children>
                               <CheckBox fx:id="ciencia" alignment="CENTER" mnemonicParsing="false" onAction="#selecFaccion1" prefHeight="70.0" prefWidth="21.0">
                                  <font>
-                                    <Font size="15.0" />
+                                    <Font size="17.0" />
                                  </font></CheckBox>
-                              <Label alignment="CENTER" prefHeight="70.0" prefWidth="109.0" text="CIENCIAS" textAlignment="CENTER">
+                              <Label alignment="CENTER" prefHeight="70.0" prefWidth="250.0" text="CIENCIAS" textAlignment="CENTER">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="24.0" />
                                  </font></Label>
                               <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@Imagen/Ciencias.jpg" />
                                  </image></ImageView>
                            </children></HBox>
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="252.0" text="Elige las Ciencias y lucha en nombre de" textAlignment="CENTER">
+                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="386.0" text="Elige las Ciencias y lucha en nombre de" textAlignment="CENTER">
                            <font>
-                              <Font size="11.0" />
+                              <Font size="13.0" />
                            </font></Label>
-                        <Label alignment="CENTER" layoutX="10.0" layoutY="100.0" prefHeight="17.0" prefWidth="266.0" text="personajes históricos como Einstein,">
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="100.0" prefHeight="22.0" prefWidth="399.0" text="personajes históricos como Einstein,">
                            <font>
-                              <Font size="11.0" />
+                              <Font size="13.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="10.0" layoutY="108.0" prefHeight="17.0" prefWidth="266.0" text="Darwin, Von Neumann o Pedro Cavadas.">
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="108.0" prefHeight="18.0" prefWidth="429.0" text="Darwin, Von Neumann o Pedro Cavadas.">
                            <font>
-                              <Font size="11.0" />
+                              <Font size="13.0" />
                            </font>
                         </Label>
                      </children>
@@ -139,13 +139,13 @@
                      <children>
                         <HBox alignment="CENTER" prefHeight="70.0" prefWidth="250.0">
                            <children>
-                              <CheckBox fx:id="letra" mnemonicParsing="false" onAction="#selecFaccion2" prefHeight="74.0" prefWidth="21.0">
+                              <CheckBox fx:id="letra" mnemonicParsing="false" onAction="#selecFaccion2" prefHeight="70.0" prefWidth="19.0">
                                  <font>
-                                    <Font size="15.0" />
+                                    <Font size="17.0" />
                                  </font></CheckBox>
-                              <Label alignment="CENTER" prefHeight="70.0" prefWidth="109.0" text="LETRAS">
+                              <Label alignment="CENTER" prefHeight="70.0" prefWidth="250.0" text="LETRAS">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="24.0" />
                                  </font></Label>
                               <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -153,18 +153,18 @@
                                  </image></ImageView>
                            </children>
                         </HBox>
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="272.0" text="Elige las Letras y lucha en nombre de">
+                        <Label alignment="CENTER" prefHeight="23.0" prefWidth="377.0" text="Elige las Letras y lucha en nombre de">
                            <font>
-                              <Font size="11.0" />
+                              <Font size="13.0" />
                            </font></Label>
-                        <Label alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="17.0" prefWidth="272.0" text="personajes históricos como Lorca,">
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="24.0" prefWidth="377.0" text="personajes históricos como Lorca,">
                            <font>
-                              <Font size="11.0" />
+                              <Font size="13.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="10.0" layoutY="108.0" prefHeight="17.0" prefWidth="272.0" text="Montessori, Antonio de Nebrija o Heródoto.">
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="108.0" prefHeight="17.0" prefWidth="432.0" text="Montessori, Antonio de Nebrija o Heródoto.">
                            <font>
-                              <Font size="11.0" />
+                              <Font size="13.0" />
                            </font>
                         </Label>
                      </children>
