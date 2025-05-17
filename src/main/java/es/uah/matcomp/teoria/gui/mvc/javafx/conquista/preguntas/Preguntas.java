@@ -1,10 +1,12 @@
 package es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas;
 
+import java.util.Objects;
+
 public class Preguntas {
     private Lista<Pregunta> preguntas;
-    private int id;
+    private String id;
 
-    public Preguntas(int id) {
+    public Preguntas(String id) {
         this.preguntas = new Lista<>();
         this.id = id;
     }
@@ -13,9 +15,9 @@ public class Preguntas {
         return preguntas;
     }
     public void cargarPreguntas() {
-        if(id==1){
+        if(Objects.equals(id, "c1")){
             generarPreguntasQuimico();
-        } else if (id==2) {
+        } else if (Objects.equals(id, "c2")) {
             generarPreguntasBiologo();
         }
     }

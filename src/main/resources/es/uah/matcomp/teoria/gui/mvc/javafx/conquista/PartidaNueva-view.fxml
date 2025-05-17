@@ -114,7 +114,10 @@
                                  <font>
                                     <Font size="18.0" />
                                  </font></Label>
-                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Imagen/Ciencias.jpg" />
+                                 </image></ImageView>
                            </children></HBox>
                         <Label alignment="CENTER" prefHeight="17.0" prefWidth="252.0" text="Elige las Ciencias y lucha en nombre de" textAlignment="CENTER">
                            <font>
@@ -144,7 +147,10 @@
                                  <font>
                                     <Font size="18.0" />
                                  </font></Label>
-                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Imagen/Letras.jpg" />
+                                 </image></ImageView>
                            </children>
                         </HBox>
                         <Label alignment="CENTER" prefHeight="17.0" prefWidth="272.0" text="Elige las Letras y lucha en nombre de">
