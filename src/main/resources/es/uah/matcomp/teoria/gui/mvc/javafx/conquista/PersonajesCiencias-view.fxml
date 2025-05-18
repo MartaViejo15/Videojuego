@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PersonajesCienciasController">
    <children>
-      <VBox prefHeight="600.0" prefWidth="1050.0">
+      <VBox prefHeight="600.0" prefWidth="1050.0" spacing="10.0">
          <children>
             <Label alignment="CENTER" prefHeight="100.0" prefWidth="1050.0" text="PERSONAJES CIENCIAS" textAlignment="CENTER">
                <font>
@@ -17,9 +17,9 @@
                <font>
                   <Font name="System Bold" size="20.0" />
                </font></Label>
-            <HBox prefHeight="200.0" prefWidth="1050.0">
+            <HBox prefHeight="200.0" prefWidth="1050.0" spacing="10.0">
                <children>
-                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="350.0">
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="350.0" style="-fx-border-color: black;">
                      <children>
                         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="350.0">
                            <children>
@@ -29,9 +29,12 @@
                                  </font>
                               </CheckBox>
                            </children></HBox>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Imagen/quimico.png" />
+                           </image></ImageView>
                      </children></VBox>
-                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="350.0">
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="350.0" style="-fx-border-color: black;">
                      <children>
                         <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="200.0">
                            <children>
@@ -42,9 +45,12 @@
                               </CheckBox>
                            </children>
                         </HBox>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Imagen/biólogo.png" />
+                           </image></ImageView>
                      </children></VBox>
-                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="350.0">
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="350.0" style="-fx-border-color: black;">
                      <children>
                         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
                            <children>
@@ -54,12 +60,15 @@
                                  </font></CheckBox>
                            </children>
                         </HBox>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Imagen/informático.png" />
+                           </image></ImageView>
                      </children></VBox>
                </children></HBox>
-            <HBox prefHeight="200.0" prefWidth="1050.0">
+            <HBox prefHeight="200.0" prefWidth="1050.0" spacing="10.0">
                <children>
-                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="525.0">
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="525.0" style="-fx-border-color: black;">
                      <children>
                         <HBox alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="525.0">
                            <children>
@@ -70,10 +79,13 @@
                               </CheckBox>
                            </children>
                         </HBox>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Imagen/mate.png" />
+                           </image></ImageView>
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="525.0" />
                      </children></VBox>
-                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="525.0">
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="525.0" style="-fx-border-color: black;">
                      <children>
                         <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="525.0">
                            <children>
@@ -84,7 +96,10 @@
                               </CheckBox>
                            </children>
                         </HBox>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Imagen/médico.png" />
+                           </image></ImageView>
                         <HBox alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="525.0">
                            <children>
                               <VBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="73.0">
