@@ -8,4 +8,11 @@ public class Pregunta {
         this.pregunta = pregunta;
         this.respuestas = respuestas;
     }
+
+    public String getPregunta() {
+        return pregunta;
+    }
+    public Lista<String> getRespuestas() {
+        return respuestas;
+    }
 }

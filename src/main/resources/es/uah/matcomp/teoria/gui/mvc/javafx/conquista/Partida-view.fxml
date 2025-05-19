@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PartidaView">
+<AnchorPane prefHeight="600.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PartidaController">
    <children>
       <HBox prefHeight="600.0" prefWidth="1050.0">
          <children>
@@ -22,12 +22,12 @@
             <VBox prefHeight="600.0" prefWidth="525.0">
                <children>
                   <Label alignment="CENTER" prefHeight="44.0" prefWidth="100.0" style="-fx-border-color: BLACK;" text="Temporizador" />
-                  <Label alignment="CENTER" prefHeight="75.0" prefWidth="525.0" text="TU TURNO / TURNO DEL CONTRINCANTE">
+                  <Label fx:id="turnos" alignment="CENTER" prefHeight="75.0" prefWidth="525.0" text="TU TURNO / TURNO DEL CONTRINCANTE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="75.0" prefWidth="525.0" text="INFORMACIÓN RELEVANTE">
+                  <Label fx:id="informacion" alignment="CENTER" prefHeight="75.0" prefWidth="525.0" text="INFORMACIÓN RELEVANTE">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -48,26 +48,26 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="VER ESTADOS">
+                        <Button mnemonicParsing="false" onAction="#onClickVerEstados" prefHeight="50.0" prefWidth="125.0" text="VER ESTADOS">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="INVENTARIO">
+                        <Button mnemonicParsing="false" onAction="#onClickInventario" prefHeight="50.0" prefWidth="125.0" text="INVENTARIO">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Button>
                      </children>
                   </HBox>
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="525.0" text="TE QUEDAN X PUNTOS">
+                  <Label fx:id="puntos" alignment="CENTER" prefHeight="17.0" prefWidth="525.0" text="TE QUEDAN X PUNTOS">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
                   <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="AYUDA">
+                        <Button mnemonicParsing="false" onAction="#onClickAyuda" prefHeight="50.0" prefWidth="125.0" text="AYUDA">
                            <font>
                               <Font size="15.0" />
                            </font>

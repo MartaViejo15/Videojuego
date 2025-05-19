@@ -59,6 +59,7 @@ public class InventarioController implements Initializable {
         } if (!esp1.isSelected() && !esp2.isSelected()) {
             unidad.getBase().usarElementoEspecifico(null);
         }
+        unidad.rollback();
     }
     @FXML
     protected void esp2Clicked() {
@@ -68,6 +69,7 @@ public class InventarioController implements Initializable {
         } if (!esp2.isSelected() && !esp1.isSelected()) {
             unidad.getBase().usarElementoEspecifico(null);
         }
+        unidad.rollback();
     }
     @FXML
     protected void aceptarClicked() {

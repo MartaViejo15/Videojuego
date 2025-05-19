@@ -81,12 +81,12 @@
                         <Slider fx:id="tiempo" max="600.0" min="120.0" prefHeight="42.0" prefWidth="226.0" />
                      </children>
                   </HBox>
-                  <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="123.0" style="-fx-background-color: #82d5f3; -fx-border-color: Black;" text="Guardar">
+                  <Button mnemonicParsing="false" onAction="#guadar" prefHeight="38.0" prefWidth="123.0" style="-fx-background-color: #82d5f3; -fx-border-color: Black;" text="Guardar">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Button>
-                  <Button layoutX="163.0" layoutY="491.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="123.0" style="-fx-background-color: #82d5f3; -fx-border-color: Black;" text="Salir">
+                  <Button layoutX="163.0" layoutY="491.0" mnemonicParsing="false" onAction="#Salir" prefHeight="38.0" prefWidth="123.0" style="-fx-background-color: #82d5f3; -fx-border-color: Black;" text="Salir">
                      <font>
                         <Font size="17.0" />
                      </font>

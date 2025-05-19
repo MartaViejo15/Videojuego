@@ -3,6 +3,7 @@ package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Slider;
@@ -28,8 +29,27 @@ public class CrearMapaController {
     private Slider tiempo;
 
     private Stage stage;
+    private Stage anteriorStage;
+
+    @FXML
+    protected void guadar(){
+        stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PartidaNueva-view.fxml"));
+        PartidaNuevaController controller = fxmlLoader.getController();
+        controller.setMapa_nueva(this.stage);
+        controller.setStage(anteriorStage);
+        anteriorStage.show();
+    }
+    @FXML
+    protected void Salir() {
+        stage.close();
+        anteriorStage.show();
+    }
 
     protected void setstage(Stage stage) {
         this.stage = stage;
+    }
+    protected void setAnteriorStage(Stage anteriorStage) {
+        this.anteriorStage = anteriorStage;
     }
 }
