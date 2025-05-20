@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PantallaPrincipalController" style="-fx-background-color: #ffed95">
+<AnchorPane prefHeight="600.0" prefWidth="1050.0" style="-fx-background-color: #ffed95" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PantallaPrincipalController">
    <VBox alignment="CENTER" layoutX="70.0" layoutY="195.0" prefHeight="251.0" prefWidth="211.0">
       <children>
          <Label text="¡Ciencias vs Letras!">
@@ -35,23 +35,23 @@
    </VBox>
    <VBox layoutX="832.0" layoutY="206.0" prefHeight="200.0" prefWidth="127.0" spacing="15.0">
       <children>
-         <Button text="Partida nueva">
+         <Button text="Partida nueva" onAction="#partidaNueva">
             <font>
                <Font size="15.0" />
             </font></Button>
-         <Button text="Cargar partida">
+         <Button text="Cargar partida" onAction="#cargarPartida">
             <font>
                <Font size="15.0" />
             </font></Button>
-         <Button text="Ayuda">
+         <Button text="Ayuda" onAction="#ayuda">
             <font>
                <Font size="15.0" />
             </font></Button>
-         <Button text="Créditos">
+         <Button text="Créditos" onAction="#créditos">
             <font>
                <Font size="15.0" />
             </font></Button>
-         <Button text="Salir">
+         <Button text="Salir" onAction="#salir">
             <font>
                <Font size="15.0" />
             </font></Button>

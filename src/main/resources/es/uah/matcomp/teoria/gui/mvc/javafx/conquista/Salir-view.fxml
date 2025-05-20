@@ -17,11 +17,11 @@
                   <Font size="23.0" />
                </font></Label>
             <HBox alignment="CENTER" spacing="40">
-               <Button fx:id="botonSi" prefHeight="43.0" prefWidth="68.0" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Sí">
+               <Button fx:id="botonSi" prefHeight="43.0" prefWidth="68.0" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Sí" onAction="salirJuego">
                   <font>
                      <Font size="20.0" />
                   </font></Button>
-               <Button fx:id="botonNo" prefHeight="43.0" prefWidth="68.0" style="-fx-background-color: #c70039; -fx-text-fill: white;" text="No">
+               <Button fx:id="botonNo" prefHeight="43.0" prefWidth="68.0" style="-fx-background-color: #c70039; -fx-text-fill: white;" text="No" onAction="cerrarVentana">
                   <font>
                      <Font size="20.0" />
                   </font></Button>
