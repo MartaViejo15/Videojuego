@@ -5,6 +5,7 @@ module es.uah.matcomp.teoria.gui.mvc.javafx.conquista {
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
+    requires java.desktop;
 
     opens es.uah.matcomp.teoria.gui.mvc.javafx.conquista to javafx.fxml;
     exports es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
