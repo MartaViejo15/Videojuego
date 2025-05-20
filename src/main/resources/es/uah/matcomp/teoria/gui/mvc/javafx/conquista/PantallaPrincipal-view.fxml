@@ -6,9 +6,14 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="600.0" prefWidth="1050.0" style="-fx-background-color: #ffed95" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PantallaPrincipalController">
-   <ImageView fitHeight="617.0" fitWidth="1056.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
+   <ImageView fitHeight="613.0" fitWidth="1066.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@Imagen/PantallaPrincipalFondo.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="79.0" fitWidth="82.0" layoutX="968.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@Imagen/Conquista_logo.png" />
       </image>
    </ImageView>
    <VBox alignment="CENTER" layoutX="45.0" layoutY="157.0" prefHeight="286.0" prefWidth="246.0" spacing="10.0">
