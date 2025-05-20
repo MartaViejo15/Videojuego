@@ -26,19 +26,20 @@ public class PreguntaController implements Initializable {
     private TextField res;
 
     @FXML
-    protected void aceptar() {
+    protected boolean aceptar() {
         Elemento<String> respuesta = respuestas.getPrimero();
         if (respuesta.getDato().equalsIgnoreCase(res.getText())) {
-            //correcto
+            return true;
         }else {
             while(respuesta.getSiguiente()!=null){
                 if(respuesta.getSiguiente().getDato().equalsIgnoreCase(res.getText())){
-                    //correcto
+                    return true;
                 }
                 respuesta = respuesta.getSiguiente();
             }
         }
         stage.close();
+        return false;
     }
 
     @Override

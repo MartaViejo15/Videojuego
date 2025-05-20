@@ -2,6 +2,7 @@ package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Lista;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.Unidad;
+import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.UnidadProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,7 +15,7 @@ public class PartidaNuevaController {
     private Stage ciencias;
     private Stage letras;
     private Stage mapa_nueva;
-    private Lista<Unidad> unidades;
+    private Lista<UnidadProperty> unidades;
 
     @FXML
     private CheckBox t1;
@@ -103,7 +104,7 @@ public class PartidaNuevaController {
     @FXML
     protected void selecFaccion2(){
         ciencia.setSelected(false);
-        if(ciencia != null){
+        if(ciencias != null){
             if(ciencias.isShowing()){
                 unidades = new Lista<>();
                 ciencias.close();
@@ -139,23 +140,23 @@ public class PartidaNuevaController {
                 s.setTitle("Partida");
                 s.setScene(scene);
                 PartidaController controller = fxmlLoader.getController();
-                Faccion(controller);
+                mandarFaccion(controller);
                 controller.setMis_unidades(unidades);
-                Mapa(controller);
+                mandarMapa(controller);
                 s.show();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
-    private void Faccion(PartidaController controller){
+    private void mandarFaccion(PartidaController controller){
         if (letra.isSelected()) {
             controller.setFaccion("l");
         } else {
             controller.setFaccion("c");
         }
     }
-    private void Mapa(PartidaController controller){
+    private void mandarMapa(PartidaController controller){
         if (t1.isSelected()) {
             controller.setmapa(1);
         }else if (t4.isSelected()) {
@@ -174,7 +175,7 @@ public class PartidaNuevaController {
     protected void setMapa_nueva(Stage mapa_nueva) {
         this.mapa_nueva = mapa_nueva;
     }
-    protected void setUnidades(Lista<Unidad> unidades) {
+    protected void setUnidades(Lista<UnidadProperty> unidades) {
         this.unidades = unidades;
     }
 }
