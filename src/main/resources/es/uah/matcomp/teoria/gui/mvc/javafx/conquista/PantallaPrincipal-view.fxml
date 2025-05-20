@@ -6,17 +6,17 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="600.0" prefWidth="1050.0" style="-fx-background-color: #ffed95" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PantallaPrincipalController">
-   <ImageView fitHeight="600.0" fitWidth="1050.0" preserveRatio="true">
+   <ImageView fitHeight="617.0" fitWidth="1056.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@Imagen/PantallaPrincipalFondo.png" />
       </image>
    </ImageView>
    <VBox alignment="CENTER" layoutX="45.0" layoutY="157.0" prefHeight="286.0" prefWidth="246.0" spacing="10.0">
       <children>
-         <AnchorPane prefHeight="61.0" prefWidth="246.0">
+         <AnchorPane prefHeight="50.0" prefWidth="241.0">
             <children>
-               <AnchorPane layoutY="5.0" opacity="0.57" prefHeight="45.0" prefWidth="247.0" style="-fx-background-color: #721b1b;" />
-               <Text fx:id="tituloCienciasLetras" fill="white" stroke="WHITE" strokeWidth="1.5" text="¡Ciencias vs Letras!" textAlignment="CENTER" wrappingWidth="246.00000000000006">
+               <AnchorPane opacity="0.57" prefHeight="50.0" prefWidth="246.0" style="-fx-background-color: #721b1b;" />
+               <Text fx:id="tituloCienciasLetras" fill="white" layoutY="35.0" stroke="WHITE" strokeWidth="1.5" text="¡Ciencias vs Letras!" textAlignment="CENTER" wrappingWidth="246.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                   <font>
                      <Font size="27.0" />
                   </font>
@@ -26,7 +26,7 @@
          <AnchorPane prefHeight="200.0" prefWidth="200.0">
             <children>
                <AnchorPane opacity="0.57" prefHeight="169.0" prefWidth="246.0" style="-fx-background-color: #721b1b;" />
-               <Text fx:id="subtituloCienciasLetras" fill="WHITE" layoutX="6.0" layoutY="41.0" stroke="white" strokeWidth="0.7" text="La batalla más esperada durante siglos ha llegado, pero... ¿quién ganará y se quedará con los territorios ancestrales?" textAlignment="CENTER" wrappingWidth="234.99998474121094">
+               <Text fx:id="subtituloCienciasLetras" fill="WHITE" layoutY="35.0" stroke="white" strokeWidth="0.7" text="La batalla más esperada durante siglos ha llegado, pero... ¿quién ganará y se quedará con los territorios ancestrales?" textAlignment="CENTER" wrappingWidth="246.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                   <font>
                      <Font size="20.0" />
                   </font>
@@ -35,7 +35,7 @@
          </AnchorPane>
       </children>
    </VBox>
-   <VBox alignment="CENTER" layoutX="302.0" layoutY="241.0" prefHeight="117.0" prefWidth="445.0">
+   <VBox alignment="CENTER" layoutX="303.0" layoutY="241.0" prefHeight="117.0" prefWidth="445.0">
       <children>
          <Text fx:id="tituloConquista" fill="#823535" stroke="#ffffff" strokeWidth="2.0" text="CONQUISTA" textAlignment="CENTER">
             <font>
@@ -44,7 +44,7 @@
          </Text>
       </children>
    </VBox>
-   <VBox alignment="TOP_CENTER" layoutX="832.0" layoutY="206.0" prefHeight="200.0" prefWidth="127.0" spacing="15.0">
+   <VBox alignment="TOP_CENTER" layoutX="828.0" layoutY="189.0" prefHeight="200.0" prefWidth="127.0" spacing="15.0">
       <children>
          <Button onAction="#partidaNueva" style="-fx-background-color: #243673;" text="Partida nueva" textFill="WHITE">
             <font>
