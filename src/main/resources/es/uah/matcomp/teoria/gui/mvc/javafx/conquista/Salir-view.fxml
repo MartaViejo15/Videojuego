@@ -6,13 +6,13 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.SalirController">
    <children>
-      <VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #daf7a6">
+      <VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #243673">
          <children>
-            <Label alignment="CENTER" prefHeight="108.0" prefWidth="600.0" text="SALIR">
+            <Label alignment="CENTER" prefHeight="108.0" prefWidth="600.0" text="SALIR" textFill="white">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font></Label>
-            <Label alignment="CENTER" prefHeight="149.0" prefWidth="600.0" text="¿Estás seguro de que deseas salir?">
+            <Label alignment="CENTER" prefHeight="149.0" prefWidth="600.0" text="¿Estás seguro de que deseas salir?" textFill="white">
                <font>
                   <Font size="23.0" />
                </font></Label>
