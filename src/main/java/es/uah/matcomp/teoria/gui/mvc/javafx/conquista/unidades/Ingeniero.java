@@ -3,8 +3,8 @@ package es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades;
 public class Ingeniero extends Unidad {
     public Ingeniero(String nombre, boolean profe) {
         super("c3",nombre,150,30,18,8,3,profe);
-        this.setElementoEspecifico1(new ElementoEspecifico("Circuito Combinacional",0,0,0,0,0));
-        this.setElementoEspecifico2(new ElementoEspecifico("Java",0,0,0,0,0));
+        this.setElementoEspecifico1(new ElementoEspecifico("Circuito Combinacional",0,0,-5,2,0));
+        this.setElementoEspecifico2(new ElementoEspecifico("Java",-20,0,0,0,2));
     }
 
     public void evolucionar() {

@@ -3,8 +3,8 @@ package es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades;
 public class Historiador extends Unidad{
     public Historiador(String nombre, boolean profe) {
         super("l3",nombre,160,28,16,6,4,profe);
-        this.setElementoEspecifico1(new ElementoEspecifico("Línea temporal",0,0,0,0,0));
-        this.setElementoEspecifico2(new ElementoEspecifico("Jeroglífico",0,0,0,0,0));
+        this.setElementoEspecifico1(new ElementoEspecifico("Línea temporal",14,-7,0,0,0));
+        this.setElementoEspecifico2(new ElementoEspecifico("Jeroglífico",0,0,20,-2,0));
     }
 
     public void evolucionar() {

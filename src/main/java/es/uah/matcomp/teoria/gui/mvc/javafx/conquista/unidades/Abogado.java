@@ -3,8 +3,8 @@ package es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades;
 public class Abogado extends Unidad {
     public Abogado(String nombre, boolean profe) {
         super("l4",nombre,150,30,18,8,3,profe);
-        this.setElementoEspecifico1(new ElementoEspecifico("Leyes",0,0,0,0,0));
-        this.setElementoEspecifico2(new ElementoEspecifico("Contitución",0,0,0,0,0));
+        this.setElementoEspecifico1(new ElementoEspecifico("Leyes",0,0,0,2,-1));
+        this.setElementoEspecifico2(new ElementoEspecifico("Contitución",0,-10,0,0,2));
     }
 
     public void evolucionar() {

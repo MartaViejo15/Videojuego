@@ -3,8 +3,8 @@ package es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades;
 public class Quimico extends Unidad {
     public Quimico(String nombre, boolean profe) {
         super("c1",nombre,100,32,10,6,6,profe);
-        this.setElementoEspecifico1(new ElementoEspecifico("Pipeta",0,0,0,0,0));
-        this.setElementoEspecifico2(new ElementoEspecifico("Erlenmeyer",0,0,0,0,0));
+        this.setElementoEspecifico1(new ElementoEspecifico("Pipeta",0,-7,0,0,2));
+        this.setElementoEspecifico2(new ElementoEspecifico("Erlenmeyer",0,10,0,-2,0));
     }
 
     public void evolucionar() {

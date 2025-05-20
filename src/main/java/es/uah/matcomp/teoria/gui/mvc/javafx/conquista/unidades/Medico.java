@@ -3,8 +3,8 @@ package es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades;
 public class Medico extends Unidad{
     public Medico(String nombre, boolean profe) {
         super("c5",nombre,160,28,16,6,4,profe);
-        this.setElementoEspecifico1(new ElementoEspecifico("Bisturí",0,0,0,0,0));
-        this.setElementoEspecifico2(new ElementoEspecifico("Estetoscopio",0,0,0,0,0));
+        this.setElementoEspecifico1(new ElementoEspecifico("Bisturí",-20,8,0,0,0));
+        this.setElementoEspecifico2(new ElementoEspecifico("Estetoscopio",30,-2,0,0,0));
     }
 
     public void evolucionar() {
