@@ -7,31 +7,34 @@
 
 <VBox alignment="CENTER" prefHeight="600.0" prefWidth="1050.0" spacing="20.0" style="-fx-background-color: rgba(188,94,94)" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PartidaNuevaController">
    <children>
-      <Label alignment="CENTER" prefHeight="69.0" prefWidth="316.0" text="PARTIDA NUEVA" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" prefHeight="69.0" prefWidth="330.0" text="PARTIDA NUEVA" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="33.0" />
+            <Font name="System Bold" size="35.0" />
          </font>
       </Label>
       <HBox alignment="CENTER" prefHeight="400.0" prefWidth="950.0" spacing="70.0">
          <children>
             <VBox prefHeight="400.0" prefWidth="380.0" spacing="20.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="396.0" text="Seleccionar Mapa" textAlignment="CENTER" textFill="WHITE">
+                  <Label fx:id="Mapa" alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="396.0" text="Seleccionar Mapa" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="20.0" />
                      </font>
                   </Label>
-                  <HBox alignment="BOTTOM_CENTER" prefHeight="70.0" prefWidth="250.0" spacing="10.0" style="-fx-border-color: Black;">
+                  <HBox alignment="BOTTOM_CENTER" prefHeight="70.0" prefWidth="250.0" spacing="10.0" style="-fx-border-color: Black; -fx-background-color: #243673;">
                      <children>
                         <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
-                        <VBox prefHeight="70.0" prefWidth="270.0" spacing="10.0">
+                        <VBox prefHeight="70.0" prefWidth="270.0">
                            <children>
                               <Label prefHeight="35.0" prefWidth="108.0" text="TABLERO 1" textFill="WHITE">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Label text="Info" textFill="WHITE" />
+                              <Label prefHeight="20.0" prefWidth="58.0" text="Info" textFill="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
                            </children>
                         </VBox>
                         <CheckBox fx:id="t1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#selecMap1" prefHeight="50.0" prefWidth="36.0" textAlignment="CENTER" textFill="WHITE">
@@ -46,12 +49,15 @@
                         <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
                         <VBox prefHeight="70.0" prefWidth="270.0">
                            <children>
-                              <Label prefHeight="35.0" prefWidth="87.0" text="TABLERO 2" textFill="WHITE">
+                              <Label prefHeight="35.0" prefWidth="115.0" text="TABLERO 2" textFill="WHITE">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Label text="Info" textFill="WHITE" />
+                              <Label prefHeight="17.0" prefWidth="106.0" text="Info" textFill="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
                            </children>
                         </VBox>
                         <CheckBox fx:id="t2" mnemonicParsing="false" onAction="#selecMap2" prefHeight="50.0" prefWidth="36.0" textFill="WHITE">
@@ -61,17 +67,20 @@
                         </CheckBox>
                      </children>
                   </HBox>
-                  <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="87.0" prefHeight="70.0" prefWidth="250.0" spacing="10.0" style="-fx-border-color: Black;">
+                  <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="87.0" prefHeight="70.0" prefWidth="250.0" spacing="10.0" style="-fx-border-color: Black; -fx-background-color: #243673;">
                      <children>
                         <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
                         <VBox prefHeight="71.0" prefWidth="270.0">
                            <children>
-                              <Label prefHeight="35.0" text="TABLERO 3" textFill="WHITE">
+                              <Label prefHeight="35.0" prefWidth="120.0" text="TABLERO 3" textFill="WHITE">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Label text="Info" textFill="WHITE" />
+                              <Label prefHeight="3.0" prefWidth="95.0" text="Info" textFill="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
                            </children>
                         </VBox>
                         <CheckBox fx:id="t3" mnemonicParsing="false" onAction="#selecMap3" prefHeight="50.0" prefWidth="36.0" textFill="WHITE">
@@ -81,19 +90,19 @@
                         </CheckBox>
                      </children>
                   </HBox>
-                  <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="147.0" prefHeight="60.0" prefWidth="250.0" spacing="10.0" style="-fx-border-color: Black;">
+                  <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="147.0" prefHeight="60.0" prefWidth="250.0" spacing="10.0" style="-fx-border-color: Black; -fx-background-color: #243673;">
                      <children>
                         <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
                         <VBox prefHeight="70.0" prefWidth="270.0">
                            <children>
-                              <Label prefHeight="35.0" text="TABLERO 4" textFill="WHITE">
+                              <Label prefHeight="35.0" prefWidth="113.0" text="TABLERO 4" textFill="WHITE">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Label text="Crea tu propio tablero" textFill="WHITE">
+                              <Label prefHeight="20.0" prefWidth="196.0" text="Crea tu propio tablero" textFill="WHITE">
                                  <font>
-                                    <Font size="11.0" />
+                                    <Font size="15.0" />
                                  </font>
                               </Label>
                            </children>
@@ -110,23 +119,23 @@
             <Separator orientation="VERTICAL" prefHeight="200.0" />
             <VBox prefHeight="400.0" prefWidth="380.0" spacing="20.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="40.0" prefWidth="417.0" text="Seleccionar La Facción" textAlignment="CENTER" textFill="WHITE">
+                  <Label fx:id="Faccion" alignment="CENTER" prefHeight="40.0" prefWidth="417.0" text="Seleccionar La Facción" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="20.0" />
                      </font>
                   </Label>
-                  <VBox alignment="TOP_CENTER" prefHeight="160.0" prefWidth="250.0" spacing="5.0" style="-fx-border-color: Black;">
+                  <VBox alignment="TOP_CENTER" prefHeight="160.0" prefWidth="250.0" spacing="7.0" style="-fx-border-color: Black; -fx-background-color: #243673;">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="250.0">
+                        <HBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="250.0">
                            <children>
-                              <CheckBox fx:id="ciencia" alignment="CENTER" mnemonicParsing="false" onAction="#selecFaccion1" prefHeight="70.0" prefWidth="21.0" textFill="WHITE">
+                              <CheckBox fx:id="ciencia" alignment="CENTER" mnemonicParsing="false" onAction="#selecFaccion1" prefHeight="70.0" prefWidth="48.0" textFill="WHITE">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
                               </CheckBox>
-                              <Label alignment="CENTER" prefHeight="70.0" prefWidth="250.0" text="CIENCIAS" textAlignment="CENTER" textFill="WHITE">
+                              <Label alignment="CENTER" prefHeight="70.0" prefWidth="240.0" text="CIENCIAS" textAlignment="CENTER" textFill="WHITE">
                                  <font>
-                                    <Font size="24.0" />
+                                    <Font size="30.0" />
                                  </font>
                               </Label>
                               <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
@@ -136,12 +145,12 @@
                               </ImageView>
                            </children>
                         </HBox>
-                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="386.0" text="Elige las Ciencias y lucha en nombre de" textAlignment="CENTER" textFill="WHITE">
+                        <Label alignment="CENTER" prefHeight="11.0" prefWidth="377.0" text="Elige las Ciencias y lucha en nombre de" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="10.0" layoutY="100.0" prefHeight="22.0" prefWidth="399.0" text="personajes históricos como Einstein," textFill="WHITE">
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="100.0" prefHeight="3.0" prefWidth="377.0" text="personajes históricos como Einstein," textFill="WHITE">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -153,18 +162,18 @@
                         </Label>
                      </children>
                   </VBox>
-                  <VBox layoutX="10.0" layoutY="27.0" prefHeight="160.0" prefWidth="250.0" spacing="5.0" style="-fx-border-color: Black;">
+                  <VBox layoutX="10.0" layoutY="27.0" prefHeight="160.0" prefWidth="250.0" spacing="7.0" style="-fx-border-color: Black; -fx-background-color: #243673;">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="250.0">
+                        <HBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="250.0">
                            <children>
-                              <CheckBox fx:id="letra" mnemonicParsing="false" onAction="#selecFaccion2" prefHeight="70.0" prefWidth="19.0" textFill="WHITE">
+                              <CheckBox fx:id="letra" mnemonicParsing="false" onAction="#selecFaccion2" prefHeight="70.0" prefWidth="48.0" textFill="WHITE">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
                               </CheckBox>
-                              <Label alignment="CENTER" prefHeight="70.0" prefWidth="250.0" text="LETRAS" textFill="WHITE">
+                              <Label alignment="CENTER" prefHeight="70.0" prefWidth="240.0" text="LETRAS" textFill="WHITE">
                                  <font>
-                                    <Font size="24.0" />
+                                    <Font size="30.0" />
                                  </font>
                               </Label>
                               <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
@@ -174,12 +183,12 @@
                               </ImageView>
                            </children>
                         </HBox>
-                        <Label alignment="CENTER" prefHeight="23.0" prefWidth="377.0" text="Elige las Letras y lucha en nombre de" textFill="WHITE">
+                        <Label alignment="CENTER" prefHeight="5.0" prefWidth="377.0" text="Elige las Letras y lucha en nombre de" textFill="WHITE">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="24.0" prefWidth="377.0" text="personajes históricos como Lorca," textFill="WHITE">
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="11.0" prefWidth="377.0" text="personajes históricos como Lorca," textFill="WHITE">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -195,7 +204,7 @@
             </VBox>
          </children>
       </HBox>
-      <Button mnemonicParsing="false" onAction="#guardar" prefHeight="23.0" prefWidth="68.0" text="OK" textAlignment="CENTER" textFill="WHITE" style="-fx-background-color: #243673">
+      <Button mnemonicParsing="false" onAction="#guardar" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #243673; -fx-border-color: Black;" text="OK" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>

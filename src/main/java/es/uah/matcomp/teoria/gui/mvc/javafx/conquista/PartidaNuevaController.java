@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class PartidaNuevaController {
@@ -14,6 +15,7 @@ public class PartidaNuevaController {
     private Stage letras;
     private Stage mapa_nueva;
     private Lista<Unidad> unidades;
+
     @FXML
     private CheckBox t1;
     @FXML
@@ -26,6 +28,11 @@ public class PartidaNuevaController {
     private CheckBox ciencia;
     @FXML
     private CheckBox letra;
+
+    @FXML
+    private Label Mapa;
+    @FXML
+    private Label Faccion;
 
     @FXML
     protected void selecMap1(){
@@ -50,18 +57,22 @@ public class PartidaNuevaController {
         t1.setSelected(false);
         t2.setSelected(false);
         t3.setSelected(false);
-        Stage s = mapa_nueva;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("CrearMapa-view.fxml"));
-        try{
-            Scene scene = new Scene(fxmlLoader.load(), 1050, 600);
-            s.setTitle("CrearMapa");
-            s.setScene(scene);
-            CrearMapaController controller = fxmlLoader.getController();
-            controller.setstage(s);
-            controller.setAnteriorStage(stage);
-            s.show();
-        }catch(Exception e){
-            e.printStackTrace();
+        if(mapa_nueva == null){
+            mapa_nueva = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("CrearMapa-view.fxml"));
+            try{
+                Scene scene = new Scene(fxmlLoader.load(), 1050, 600);
+                mapa_nueva.setScene(scene);
+                mapa_nueva.setTitle("Crear Mapa");
+                CrearMapaController controller = fxmlLoader.getController();
+                controller.setstage(mapa_nueva);
+                controller.setAnteriorStage(stage);
+                mapa_nueva.show();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }else{
+            mapa_nueva.show();
         }
         this.stage.close();
     }
@@ -69,17 +80,20 @@ public class PartidaNuevaController {
     @FXML
     protected void selecFaccion1(){
         letra.setSelected(false);
-        if(letras.isShowing()){
-            unidades = new Lista<>();
-            letras.close();
+        if(letras != null){
+            if(letras.isShowing()){
+                unidades = new Lista<>();
+                letras.close();
+            }
         }
-        Stage s = ciencias;
+        Stage s = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PersonajesCiencias-view.fxml"));
         try{
             Scene scene = new Scene(fxmlLoader.load(), 1050, 600);
             s.setTitle("Elegir Personajes Ciencias");
             s.setScene(scene);
             PersonajesCienciasController controller = fxmlLoader.getController();
+            //controller.setStage(s);
             s.show();
             ciencias = s;
         }catch(Exception e){
@@ -89,17 +103,20 @@ public class PartidaNuevaController {
     @FXML
     protected void selecFaccion2(){
         ciencia.setSelected(false);
-        if(ciencias.isShowing()){
-            unidades = new Lista<>();
-            ciencias.close();
+        if(ciencia != null){
+            if(ciencias.isShowing()){
+                unidades = new Lista<>();
+                ciencias.close();
+            }
         }
-        Stage s = letras;
+        Stage s = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PersonajesLetras-view.fxml"));
         try{
             Scene scene = new Scene(fxmlLoader.load(), 1050, 600);
             s.setTitle("Elegir Personajes Letras");
             s.setScene(scene);
             PersonajesLetrasController controller = fxmlLoader.getController();
+            //controller.setStage(s);
             s.show();
             letras = s;
         }catch(Exception e){
@@ -109,26 +126,45 @@ public class PartidaNuevaController {
 
     @FXML
     protected void guardar(){
-        stage.close();
-        Stage s = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Partida-view.fxml"));
-        try{
-            Scene scene = new Scene(fxmlLoader.load(), 1050, 600);
-            s.setTitle("Partida");
-            s.setScene(scene);
-            PartidaController controller = fxmlLoader.getController();
-            if(letra.isSelected()){
-                controller.setFaccion("l");
-            }else{
-                controller.setFaccion("c");
+        if(!letra.isSelected() && !ciencia.isSelected()){
+            this.Faccion.setStyle("-fx-text-fill: red;");
+        } else if (!t1.isSelected() && !t2.isSelected() && !t3.isSelected() && !t4.isSelected()) {
+            this.Mapa.setStyle("-fx-text-fill: red;");
+        }else {
+            //stage.close();
+            Stage s = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Partida-view.fxml"));
+            try {
+                Scene scene = new Scene(fxmlLoader.load(), 1050, 600);
+                s.setTitle("Partida");
+                s.setScene(scene);
+                PartidaController controller = fxmlLoader.getController();
+                Faccion(controller);
+                controller.setMis_unidades(unidades);
+                Mapa(controller);
+                s.show();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            controller.setMis_unidades(unidades);
-            if(t4.isSelected()){
-                controller.setStage(mapa_nueva);
-            }
-            s.show();
-        }catch(Exception e){
-            e.printStackTrace();
+        }
+    }
+    private void Faccion(PartidaController controller){
+        if (letra.isSelected()) {
+            controller.setFaccion("l");
+        } else {
+            controller.setFaccion("c");
+        }
+    }
+    private void Mapa(PartidaController controller){
+        if (t1.isSelected()) {
+            controller.setmapa(1);
+        }else if (t4.isSelected()) {
+            controller.setStage(mapa_nueva);
+            controller.setmapa(4);
+        }else if (t3.isSelected()) {
+            controller.setmapa(3);
+        }else{
+            controller.setmapa(2);
         }
     }
 

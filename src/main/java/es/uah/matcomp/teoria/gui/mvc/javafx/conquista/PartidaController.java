@@ -2,7 +2,6 @@ package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.inventario.Inventario;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Lista;
-import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Pregunta;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.tablero.Tablero;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.Unidad;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.UnidadProperty;
@@ -10,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.util.Random;
@@ -21,6 +21,8 @@ public class PartidaController {
     private Label informacion;
     @FXML
     private Label puntos;
+    @FXML
+    private GridPane Mapa;
 
     private Stage stage;
 
@@ -32,6 +34,7 @@ public class PartidaController {
     private int punto;
     private int turno;
     private UnidadProperty seleccionado;
+    private int mapa;
 
     @FXML
     public void onClickAyuda(){
@@ -114,5 +117,8 @@ public class PartidaController {
     }
     protected void setStage(Stage stage){
         this.stage = stage;
+    }
+    protected void setmapa(int mapa){
+        this.mapa = mapa;
     }
 }

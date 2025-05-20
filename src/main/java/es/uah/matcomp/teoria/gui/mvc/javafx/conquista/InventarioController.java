@@ -1,6 +1,6 @@
 package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 
-import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.inventario.CantarDeMioCid;
+import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.inventario.LaCelestina;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.inventario.Inventario;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Elemento;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.UnidadProperty;
@@ -33,6 +33,14 @@ public class InventarioController implements Initializable {
     private CheckBox g5;
     @FXML
     private CheckBox g6;
+    @FXML
+    private CheckBox g7;
+    @FXML
+    private CheckBox g8;
+    @FXML
+    private CheckBox g9;
+    @FXML
+    private CheckBox g10;
 
     @FXML
     private Label gn1;
@@ -46,6 +54,14 @@ public class InventarioController implements Initializable {
     private Label gn5;
     @FXML
     private Label gn6;
+    @FXML
+    private Label gn7;
+    @FXML
+    private Label gn8;
+    @FXML
+    private Label gn9;
+    @FXML
+    private Label gn10;
 
     private Stage stage;
 
@@ -73,12 +89,21 @@ public class InventarioController implements Initializable {
     }
     @FXML
     protected void aceptarClicked() {
-        CantarDeMioCid();
+        LaCelestina();
+        /*Commit();
+        ReaccionQuimica();
+        Multiplicacion();
+        Teorema();
+        Babi();
+        Juicio();
+        TAC();
+        Dinosaurio();
+        RocaSedimentaria();*/
         stage.close();
     }
-    private void CantarDeMioCid() {
+    private void LaCelestina() {
         if(g1.isSelected()) {
-            unidad.UsarInventario(new CantarDeMioCid());
+            unidad.UsarInventario(new LaCelestina());
         }
     }
 
@@ -96,15 +121,25 @@ public class InventarioController implements Initializable {
         Nombre.setText(unidad.getBase().getNombre());
         esp1.setSelected(unidad.getBase().getElementoEspecifico1().uso());
         esp2.setSelected(unidad.getBase().getElementoEspecifico2().uso());
-        comprobarCantarDeMioCid();
+        comprobarLaCelestina();
+        /*comprobarCommit();
+        comprobarReaccionQuimica();
+        comprobarMultiplicacion();
+        comprobarTeorema();
+        comprobarBabi();
+        comprobarJuicio();
+        comprobarTAC();
+        comprobarDinosaurio();
+        comprobarRocaSedimentaria*/
+
     }
-    private void comprobarCantarDeMioCid() {
-        Elemento<Inventario> item1 = unidad.buscar(new CantarDeMioCid());
+    private void comprobarLaCelestina() {
+        Elemento<Inventario> item1 = unidad.buscar(new LaCelestina());
         if(item1 == null) {
             gn1.setVisible(false);
             g1.setVisible(false);
         }else{
-            gn1.setText("x " + unidad.buscar(new CantarDeMioCid()).getDato().getN_elementos());
+            gn1.setText("x " + unidad.buscar(new LaCelestina()).getDato().getN_elementos());
             gn1.setVisible(true);
             g1.setVisible(true);
         }

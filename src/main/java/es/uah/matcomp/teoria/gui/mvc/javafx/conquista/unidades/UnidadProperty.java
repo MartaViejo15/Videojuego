@@ -29,7 +29,8 @@ public class UnidadProperty {
         Random r = new Random();
         int random = r.nextInt(2);
         int daño = (random * Ataque.get()) - unidad.getDefensa().get();
-        unidad.getHP().set(unidad.getHP().get() - daño);
+        unidad.getBase().setHP(unidad.getBase().getHP() - daño);
+        unidad.getHP().set(unidad.getBase().getHP());
         return daño;
     }
     public Elemento<Inventario> buscar(Inventario inventario){

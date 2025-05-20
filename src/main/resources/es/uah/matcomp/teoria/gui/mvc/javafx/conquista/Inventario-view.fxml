@@ -4,18 +4,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox alignment="CENTER" prefHeight="400.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.InventarioController">
+<HBox alignment="CENTER" prefHeight="400.0" prefWidth="350.0" style="-fx-background-color: rgba(188,94,94);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.InventarioController">
    <children>
       <VBox alignment="TOP_RIGHT" prefHeight="400.0" prefWidth="300.0" spacing="10.0">
          <children>
             <VBox alignment="CENTER" prefHeight="100.0" prefWidth="320.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="INVENTARIO">
+                  <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="INVENTARIO" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="Nombre" text="NOMBRE UNIDAD">
+                  <Label fx:id="Nombre" text="NOMBRE UNIDAD" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -24,42 +24,50 @@
             </VBox>
             <VBox prefHeight="240.0" prefWidth="350.0" spacing="10.0">
                <children>
-                  <Label text="BASE :">
+                  <Label text="BASE :" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <CheckBox fx:id="esp1" mnemonicParsing="false" onAction="#esp1Clicked" text="Elemento especifico 1" />
-                  <CheckBox fx:id="esp2" mnemonicParsing="false" onAction="#esp2Clicked" text="Elemento especifico 2" />
-                  <Label text="GENERAL :">
+                  <CheckBox fx:id="esp1" mnemonicParsing="false" onAction="#esp1Clicked" text="Elemento especifico 1" textFill="WHITE" />
+                  <CheckBox fx:id="esp2" mnemonicParsing="false" onAction="#esp2Clicked" text="Elemento especifico 2" textFill="WHITE" />
+                  <Label text="GENERAL :" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <ScrollPane prefHeight="130.0" prefWidth="300.0">
+                  <ScrollPane prefHeight="130.0" prefWidth="300.0" style="-fx-background-color: rgba(188,94,94);">
                     <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(188,94,94);">
                            <children>
-                              <HBox prefHeight="130.0" prefWidth="300.0">
+                              <HBox prefHeight="130.0" prefWidth="300.0" style="-fx-background-color: rgba(188,94,94);">
                                  <children>
                                     <VBox prefHeight="130.0" prefWidth="180.0" spacing="10.0">
                                        <children>
-                                          <CheckBox fx:id="g1" mnemonicParsing="false" text="Cantar de Mio Cid" />
-                                          <CheckBox fx:id="g2" mnemonicParsing="false" text="Poison de ataque" />
-                                          <CheckBox fx:id="g3" mnemonicParsing="false" text="CheckBox" />
-                                          <CheckBox fx:id="g4" mnemonicParsing="false" text="CheckBox" />
-                                          <CheckBox fx:id="g5" mnemonicParsing="false" text="CheckBox" />
-                                          <CheckBox fx:id="g6" mnemonicParsing="false" text="CheckBox" />
+                                          <CheckBox fx:id="g1" mnemonicParsing="false" text="La Celestina" textFill="WHITE" />
+                                          <CheckBox fx:id="g2" mnemonicParsing="false" text="Commit" textFill="WHITE" />
+                                          <CheckBox fx:id="g3" mnemonicParsing="false" text="Reacción química" textFill="WHITE" />
+                                          <CheckBox fx:id="g4" mnemonicParsing="false" text="Multiplicación" textFill="WHITE" />
+                                          <CheckBox fx:id="g5" mnemonicParsing="false" text="Teorema" textFill="WHITE" />
+                                          <CheckBox fx:id="g6" mnemonicParsing="false" text="Babi" textFill="WHITE" />
+                                          <CheckBox fx:id="g7" layoutX="10.0" layoutY="147.0" mnemonicParsing="false" text="Juicio" textFill="WHITE" />
+                                          <CheckBox fx:id="g8" layoutX="10.0" layoutY="174.0" mnemonicParsing="false" text="TAC" textFill="WHITE" />
+                                          <CheckBox fx:id="g9" layoutX="10.0" layoutY="201.0" mnemonicParsing="false" text="Dinosaurio" textFill="WHITE" />
+                                          <CheckBox fx:id="g10" layoutX="10.0" layoutY="229.0" mnemonicParsing="false" text="Roca sedimentaria" textFill="WHITE" />
                                        </children>
                                     </VBox>
                                     <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="50.0" spacing="10.0">
                                        <children>
-                                          <Label fx:id="gn1" text="x#" />
-                                          <Label fx:id="gn2" layoutX="56.0" layoutY="10.0" text="x#" />
-                                          <Label fx:id="gn3" layoutX="56.0" layoutY="27.0" text="x#" />
-                                          <Label fx:id="gn4" layoutX="46.0" layoutY="65.0" text="x#" />
-                                          <Label fx:id="gn5" layoutX="46.0" layoutY="92.0" text="x#" />
-                                          <Label fx:id="gn6" layoutX="46.0" layoutY="92.0" text="x#" />
+                                          <Label fx:id="gn1" text="x#" textFill="WHITE" />
+                                          <Label fx:id="gn2" layoutX="56.0" layoutY="10.0" text="x#" textFill="WHITE" />
+                                          <Label fx:id="gn3" layoutX="56.0" layoutY="27.0" text="x#" textFill="WHITE" />
+                                          <Label fx:id="gn4" layoutX="46.0" layoutY="65.0" text="x#" textFill="WHITE" />
+                                          <Label fx:id="gn5" layoutX="46.0" layoutY="92.0" text="x#" textFill="WHITE" />
+                                          <Label fx:id="gn6" layoutX="46.0" layoutY="92.0" text="x#" textFill="WHITE" />
+                                          <Label fx:id="gn7" layoutX="46.0" layoutY="147.0" text="x#" textFill="WHITE" />
+                                          <Label fx:id="gn8" layoutX="46.0" layoutY="147.0" text="x#" textFill="WHITE" />
+                                          <Label fx:id="gn9" layoutX="46.0" layoutY="201.0" text="x#" textFill="WHITE" />
+                                          <Label fx:id="gn10" layoutX="46.0" layoutY="229.0" text="x#" textFill="WHITE" />
                                        </children>
                                     </VBox>
                                  </children>
@@ -69,7 +77,7 @@
                   </ScrollPane>
                </children>
             </VBox>
-            <Button mnemonicParsing="false" onAction="#aceptarClicked" text="Aceptar" />
+            <Button mnemonicParsing="false" onAction="#aceptarClicked" style="-fx-background-color: #243673; -fx-border-color: Black;" text="Aceptar" textFill="WHITE" />
          </children>
       </VBox>
    </children>

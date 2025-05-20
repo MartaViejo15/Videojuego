@@ -4,21 +4,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox alignment="CENTER" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PreguntaController">
+<HBox alignment="CENTER" prefWidth="600.0" style="-fx-background-color: rgba(188,94,94);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PreguntaController">
    <children>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="560.0" spacing="10.0">
          <children>
-            <Label alignment="CENTER" prefHeight="54.0" prefWidth="279.0" text="PREGUNTA">
+            <Label alignment="CENTER" prefHeight="54.0" prefWidth="279.0" text="PREGUNTA" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="40.0" />
                </font>
             </Label>
-            <Label text="RESPONDE BIEN A ESTA PREGUNTA">
+            <Label text="RESPONDE BIEN A ESTA PREGUNTA" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label text="PARA CONSEGUIR UNA UNIDAD NUEVA">
+            <Label text="PARA CONSEGUIR UNA UNIDAD NUEVA" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -28,7 +28,7 @@
                   <Separator prefHeight="10.0" prefWidth="400.0" />
                </children>
             </VBox>
-            <Label fx:id="pregunta" alignment="CENTER" prefHeight="39.0" prefWidth="580.0" text="¿Sabrías responder a esta pregunta?">
+            <Label fx:id="pregunta" alignment="CENTER" prefHeight="39.0" prefWidth="580.0" text="¿Sabrías responder a esta pregunta?" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
@@ -40,7 +40,7 @@
             </HBox>
             <VBox alignment="BOTTOM_RIGHT" prefHeight="59.0" prefWidth="560.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#aceptar" text="Aceptar" />
+                  <Button mnemonicParsing="false" onAction="#aceptar" style="-fx-background-color: #243673; -fx-border-color: black;" text="Aceptar" textFill="WHITE" />
                </children>
             </VBox>
          </children>
