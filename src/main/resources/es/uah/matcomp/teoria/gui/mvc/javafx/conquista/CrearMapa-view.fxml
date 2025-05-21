@@ -29,7 +29,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Slider fx:id="altura" max="30.0" min="2.0" prefHeight="42.0" prefWidth="210.0" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="altura" majorTickUnit="4.0" max="30.0" min="2.0" prefHeight="42.0" prefWidth="210.0" showTickLabels="true" showTickMarks="true" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="210.0" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
@@ -39,7 +39,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Slider fx:id="longitud" max="30.0" min="2.0" prefHeight="42.0" prefWidth="210.0" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="longitud" majorTickUnit="4.0" max="30.0" min="2.0" prefHeight="42.0" prefWidth="210.0" showTickLabels="true" showTickMarks="true" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
@@ -58,7 +58,7 @@
                               </Label>
                            </children>
                         </VBox>
-                        <Slider fx:id="dif_mov" min="1.0" prefHeight="49.0" prefWidth="232.0" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="dif_mov" majorTickUnit="5.0" max="25.0" min="1.0" prefHeight="49.0" prefWidth="232.0" showTickLabels="true" showTickMarks="true" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="275.0" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
@@ -78,7 +78,7 @@
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <Slider fx:id="tiempo" max="300.0" min="120.0" prefHeight="42.0" prefWidth="226.0" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="tiempo" majorTickUnit="30.0" max="300.0" min="120.0" prefHeight="42.0" prefWidth="226.0" showTickLabels="true" showTickMarks="true" />
                      </children>
                   </HBox>
                   <Button mnemonicParsing="false" onAction="#guadar" prefHeight="38.0" prefWidth="123.0" style="-fx-background-color: #82d5f3; -fx-border-color: Black;" text="Guardar">

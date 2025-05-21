@@ -3,8 +3,8 @@ package es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades;
 public class Matematico extends Unidad{
     public Matematico(String nombre, boolean profe) {
         super("c4",nombre,90,44,10,12,1,profe);
-        this.setElementoEspecifico1(new ElementoEspecifico("Calculadora",0,0,0,0,0));
-        this.setElementoEspecifico2(new ElementoEspecifico("Transportador",0,0,0,0,0));
+        this.setElementoEspecifico1(new ElementoEspecifico("Calculadora",0,12,0,-2,0));
+        this.setElementoEspecifico2(new ElementoEspecifico("Transportador",0,-10,0,0,2));
     }
 
     public void evolucionar() {
