@@ -13,7 +13,7 @@
    </ImageView>
    <ImageView fitHeight="79.0" fitWidth="82.0" layoutX="968.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true">
       <image>
-         <Image url="@Imagen/Conquista_logo.png" />
+         <Image url="@Imagen/Logo.png" />
       </image>
    </ImageView>
    <VBox alignment="CENTER" layoutX="45.0" layoutY="157.0" prefHeight="286.0" prefWidth="246.0" spacing="10.0">

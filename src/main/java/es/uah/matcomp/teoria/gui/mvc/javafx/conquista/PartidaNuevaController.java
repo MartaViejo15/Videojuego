@@ -140,6 +140,7 @@ public class PartidaNuevaController {
                 s.setTitle("Partida");
                 s.setScene(scene);
                 PartidaController controller = fxmlLoader.getController();
+                controller.setStage(s);
                 mandarFaccion(controller);
                 controller.setMis_unidades(unidades);
                 mandarMapa(controller);
