@@ -61,7 +61,7 @@ public class Preguntas {
         res9.add("pH");
         res10.add("CO2");
         res10.add("Dióxido de carbono");
-        this.preguntas.add(new Pregunta("¿A qué elemento corresponde el símbolo Na?",res1));
+        this.preguntas.add(new Pregunta("¿A qué elemento químico corresponde el símbolo Na?",res1));
         this.preguntas.add(new Pregunta("¿Cuál es el símbolo químico del agua?",res2));
         this.preguntas.add(new Pregunta("¿Principalmente, qué gas necesitamos para respirar?",res3));
         this.preguntas.add(new Pregunta("¿De qué está compuesta la mina del lápiz?",res4));
@@ -69,7 +69,7 @@ public class Preguntas {
         this.preguntas.add(new Pregunta("¿Cuál es el gas más abundante de la atmósfera terrestre?",res6));
         this.preguntas.add(new Pregunta("¿De qué elemento viene el nombre de la razón áurea?",res7));
         this.preguntas.add(new Pregunta("¿Qué nombre recibe la tabla que organiza los elementos químicos?",res8));
-        this.preguntas.add(new Pregunta("¿Con qué se mide la acidez o basicidad de una sustancia?",res9));
+        this.preguntas.add(new Pregunta("¿Con qué se mide el grado de acidez o basicidad?",res9));
         this.preguntas.add(new Pregunta("¿Cuál es el principal componente del aire que exhalamos?",res10));
     }
     private void generarPreguntasBiologo() {
@@ -104,7 +104,7 @@ public class Preguntas {
         this.preguntas.add(new Pregunta("¿Cómo se llama el proceso por el cuál las plantas obtienen su alimento?",res4));
         this.preguntas.add(new Pregunta("¿Qué organismo causa enfermedades como la gripe?",res5));
         this.preguntas.add(new Pregunta("¿Qué parte del cerebro controla el equilibrio?",res6));
-        this.preguntas.add(new Pregunta("¿Qué células se encargan de proteger el cuerpo frente a enfermedades?",res7));
+        this.preguntas.add(new Pregunta("¿Qué células se encargan de defender al cuerpo frente a enfermedades?",res7));
         this.preguntas.add(new Pregunta("¿Cómo se llama la ciencia que estudia los ecosistemas?",res8));
         this.preguntas.add(new Pregunta("¿Qué parte de la flor produce el polen?",res9));
         this.preguntas.add(new Pregunta("¿Qué animal tiene 3 corazones?",res10));
