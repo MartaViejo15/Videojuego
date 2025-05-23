@@ -7,102 +7,143 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PersonajesLetrasController">
    <children>
-      <VBox prefHeight="600.0" prefWidth="1050.0" spacing="10.0">
+      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="1050.0" spacing="10.0">
          <children>
             <Label alignment="CENTER" prefHeight="100.0" prefWidth="1050.0" text="PERSONAJES LETRAS">
                <font>
                   <Font name="System Bold" size="40.0" />
                </font></Label>
-            <Label alignment="CENTER" prefHeight="100.0" prefWidth="1050.0" text="ELIGE DOS DE ESTOS PERSONAJES">
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="1050.0" text="ELIGE DOS DE ESTOS PERSONAJES">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font></Label>
-            <HBox prefHeight="173.0" prefWidth="1120.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="200.0" prefWidth="1120.0" spacing="200.0">
                <children>
-                  <VBox alignment="TOP_CENTER" prefHeight="191.0" prefWidth="350.0" style="-fx-border-color: black;">
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="350.0">
+                        <HBox alignment="CENTER" prefHeight="25.0" prefWidth="350.0">
                            <children>
-                              <CheckBox mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="POETA">
+                              <CheckBox fx:id="LB1" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="POETA">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font></CheckBox>
                            </children></HBox>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Imagen/poeta.png" />
-                           </image></ImageView>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="198.0">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Imagen/poeta.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="label1" alignment="CENTER" layoutY="-3.0" onMouseEntered="#onPoeta" onMouseExited="#offPoeta" prefHeight="183.0" prefWidth="198.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                           </children></AnchorPane>
                      </children></VBox>
-                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="350.0" style="-fx-border-color: black;">
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="350.0">
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0">
                            <children>
-                              <CheckBox mnemonicParsing="false" prefHeight="50.0" prefWidth="118.0" text="FILÓLOGO">
+                              <CheckBox fx:id="LB2" mnemonicParsing="false" prefHeight="50.0" prefWidth="118.0" text="FILÓLOGO">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font></CheckBox>
                            </children></HBox>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Imagen/filólogo.png" />
-                           </image></ImageView>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="8.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Imagen/filólogo.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="label2" alignment="CENTER" layoutY="-2.0" onMouseEntered="#onFilologo" onMouseExited="#offFilologo" prefHeight="175.0" prefWidth="198.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                           </children></AnchorPane>
                      </children></VBox>
-                  <VBox alignment="TOP_CENTER" prefHeight="173.0" prefWidth="350.0" style="-fx-border-color: black;">
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="350.0">
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="198.0">
                            <children>
-                              <CheckBox mnemonicParsing="false" prefHeight="50.0" prefWidth="138.0" text="HISTORIADOR">
+                              <CheckBox fx:id="LB3" mnemonicParsing="false" prefHeight="50.0" prefWidth="138.0" text="HISTORIADOR">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font></CheckBox>
                            </children></HBox>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Imagen/historiador.png" />
-                           </image></ImageView>
-                     </children></VBox>
-               </children></HBox>
-            <HBox prefHeight="232.0" prefWidth="1064.0" spacing="10.0">
-               <children>
-                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="525.0" style="-fx-border-color: black;">
-                     <children>
-                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="525.0">
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <CheckBox mnemonicParsing="false" prefHeight="50.0" prefWidth="111.0" text="ABOGADO">
+                              <ImageView fitHeight="115.0" fitWidth="175.0" layoutX="11.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Imagen/historiador.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="label3" alignment="CENTER" onMouseEntered="#onHistoriador" onMouseExited="#offHistoriador" prefHeight="174.0" prefWidth="198.0">
                                  <font>
-                                    <Font name="System Bold" size="15.0" />
-                                 </font></CheckBox>
-                           </children></HBox>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Imagen/abogado.png" />
-                           </image></ImageView>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="525.0" />
-                     </children></VBox>
-                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="525.0" style="-fx-border-color: black;">
-                     <children>
-                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="525.0">
-                           <children>
-                              <CheckBox mnemonicParsing="false" prefHeight="50.0" prefWidth="109.0" text="MAESTRO">
-                                 <font>
-                                    <Font name="System Bold" size="15.0" />
-                                 </font></CheckBox>
-                           </children></HBox>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Imagen/maestro.png" />
-                           </image></ImageView>
-                        <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="73.0">
-                                 <children>
-                                    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="OK" />
-                                 </children>
-                              </VBox>
+                                    <Font size="15.0" />
+                                 </font></Label>
                            </children>
-                        </HBox>
+                        </AnchorPane>
                      </children></VBox>
                </children></HBox>
+            <HBox alignment="CENTER" prefHeight="200.0" prefWidth="1050.0" spacing="200.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+                     <children>
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0">
+                           <children>
+                              <CheckBox fx:id="LB4" mnemonicParsing="false" prefHeight="50.0" prefWidth="111.0" text="ABOGADO">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font></CheckBox>
+                           </children></HBox>
+                        <AnchorPane prefHeight="175.0" prefWidth="198.0">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="21.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Imagen/abogado.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="label4" alignment="CENTER" layoutY="-2.0" onMouseEntered="#onAbogado" onMouseExited="#offAbogado" prefHeight="175.0" prefWidth="198.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                           </children></AnchorPane>
+                     </children></VBox>
+                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+                     <children>
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0">
+                           <children>
+                              <CheckBox fx:id="LB5" mnemonicParsing="false" prefHeight="50.0" prefWidth="109.0" text="MAESTRO">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font></CheckBox>
+                           </children></HBox>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="198.0">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="158.0" layoutX="20.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Imagen/maestro.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="label5" alignment="CENTER" layoutX="-1.0" layoutY="-2.0" onMouseEntered="#onMaestro" onMouseExited="#offMaestro" prefHeight="175.0" prefWidth="198.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                           </children>
+                        </AnchorPane>
+                     </children></VBox>
+               </children></HBox>
+            <HBox alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="1053.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="73.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#Aceptar" prefHeight="25.0" prefWidth="57.0" text="OK" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
          </children></VBox>
    </children>
 </AnchorPane>
