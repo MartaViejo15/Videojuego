@@ -4,19 +4,50 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.12" >
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1050.0" style="-fx-background-color: rgba(188,94,94)" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox prefHeight="600.0" prefWidth="1050.0">
-         <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="98.0" prefWidth="1051.0" text="CRÉDITOS">
-               <font>
-                  <Font name="System Bold" size="30.0" />
-               </font>
-            </Label>
-
-            <Label prefHeight="50.0" prefWidth="1067.0" text="Label" />
-            <Label prefHeight="50.0" prefWidth="1050.0" text="Label" />
-         </children>
-      </VBox>
+      <ScrollPane prefHeight="600.0" prefWidth="1050.0" style="-fx-background-color: rgba(188,94,94)">
+         <content>
+            <AnchorPane prefHeight="598.0" prefWidth="1033.0" style="-fx-background-color: rgba(188,94,94)">
+               <children>
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+                  <VBox layoutX="374.0" layoutY="14.0" prefHeight="89.0" prefWidth="286.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="95.0" prefWidth="304.0" text="CRÉDITOS" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Label>
+                     </children></VBox>
+                  <VBox layoutX="210.0" layoutY="103.0" prefHeight="467.0" prefWidth="613.0">
+                     <TextFlow prefHeight="478.0" prefWidth="613.0" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <children>
+                           <Text style="-fx-font-weight: bold; -fx-fill: white; -fx-font-size: 18;" text="Desarrollo y programación&#10;" underline="true" />
+                           <Text style="-fx-fill: white; -fx-font-size: 15;" text="Robert Rafael Susanu Martínez&#10;Sofía Wu&#10;Marta Viejo García&#10;&#10;" />
+                           <Text style="-fx-font-weight: bold; -fx-fill: white; -fx-font-size: 18;" text="Diseño del juego&#10;" underline="true" />
+                           <Text style="-fx-fill: white; -fx-font-size: 15;" text="Robert Rafael Susanu Martínez&#10;Sofía Wu&#10;Marta Viejo García&#10;&#10;" />
+                           <Text style="-fx-font-weight: bold; -fx-fill: white; -fx-font-size: 18;" text="Diseño gráfico y arte&#10;" underline="true" />
+                           <Text style="-fx-fill: white; -fx-font-size: 15;" text="Bases del diseño: Sofía Wu&#10;Canva&#10;Nieta (IA china)&#10;ChatGPT&#10;&#10;" />
+                           <Text style="-fx-font-weight: bold; -fx-fill: white; -fx-font-size: 18;" text="Historia y guión&#10;" underline="true" />
+                           <Text style="-fx-fill: white; -fx-font-size: 15;" text="Marta Viejo García&#10;&#10;" />
+                           <Text style="-fx-font-weight: bold; -fx-fill: white; -fx-font-size: 18;" text="Investigación&#10;" underline="true" />
+                           <Text style="-fx-fill: white; -fx-font-size: 15;" text="Robert Rafael Susanu Martínez&#10;&#10;" />
+                           <Text style="-fx-font-weight: bold; -fx-fill: white; -fx-font-size: 18;" text="Herramientas y tecnologías usadas&#10;" underline="true" />
+                           <Text style="-fx-fill: white; -fx-font-size: 15;" text="Lenguaje de programación: Java&#10;Entorno de desarrollo (IDE): IntelliJ IDEA&#10;Framework de interfaz gráfica: JavaFX&#10;&#10;" />
+                           <Text style="-fx-font-weight: bold; -fx-fill: white; -fx-font-size: 18;" text="Asignaturas&#10;" underline="true" />
+                           <Text style="-fx-fill: white; -fx-font-size: 15;" text="Metodología de la programación&#10;Estructuras de datos&#10;&#10;" />
+                           <Text style="-fx-font-weight: bold; -fx-fill: white; -fx-font-size: 18;" text="Curso académico&#10;" underline="true" />
+                           <Text style="-fx-fill: white; -fx-font-size: 15;" text="2024/2025&#10;&#10;" />
+                           <Text style="-fx-font-weight: bold; -fx-fill: white; -fx-font-size: 18;" text="Grado y curso de realización&#10;" underline="true" />
+                           <Text style="-fx-fill: white; -fx-font-size: 15;" text="Grado en Matemáticas y Computación (GMyC)&#10;Primer curso&#10;&#10;" />
+                           <Text style="-fx-font-weight: bold; -fx-fill: white; -fx-font-size: 18;" text="Menciones especiales&#10;" underline="true" />
+                           <Text style="-fx-fill: white; -fx-font-size: 15;" text="Agradecimiento a Antonio Moratilla Ocaña por la guía y supervisión del proyecto" />
+                           <Region prefHeight="60.0" />
+                        </children>
+                     </TextFlow>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </content></ScrollPane>
    </children>
 </AnchorPane>
