@@ -126,9 +126,19 @@ public class PartidaController {
     private void ponerUnidad(int fila, int columna, UnidadProperty unidad) {
         tablero.getCasilla(fila,columna).setUnidad(unidad);
         unidad.mover(fila,columna);
+        Integer filaNodo = 0;
+        Integer columnaNodo = 0;
         for (Node nodo : Mapa.getChildren()) {
-            Integer filaNodo = GridPane.getRowIndex(nodo);
-            Integer columnaNodo = GridPane.getColumnIndex(nodo);
+            if (GridPane.getRowIndex(nodo) == null){
+                filaNodo = 0;
+            } else{
+                filaNodo = GridPane.getRowIndex(nodo);
+            }
+            if (GridPane.getColumnIndex(nodo) == null){
+                columnaNodo = 0;
+            } else{
+                columnaNodo = GridPane.getColumnIndex(nodo);
+            }
             if (filaNodo == fila && columnaNodo == columna) {
                 AnchorPane casilla = (AnchorPane) nodo;
                 ImageView imagen = (ImageView) casilla.getChildren().getFirst();
