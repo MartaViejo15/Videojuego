@@ -122,7 +122,8 @@ public class PartidaController {
         //Poner Enemigos en Mapa y tablero
         //hacer(similar a poner mis unidades
     }
-    private void ponerUnidad(int fila, int columna,UnidadProperty unidad) {
+    @FXML
+    private void ponerUnidad(int fila, int columna, UnidadProperty unidad) {
         tablero.getCasilla(fila,columna).setUnidad(unidad);
         unidad.mover(fila,columna);
         for (Node nodo : Mapa.getChildren()) {
@@ -149,6 +150,7 @@ public class PartidaController {
     private UnidadProperty generarUnidadLetras(Lista<UnidadProperty> unidades,boolean profe) {
         int rand = new Random().nextInt(4);
         UnidadProperty unidad = null;
+        rand = 0; //para probar
         if(rand == 0){
             unidad = new UnidadProperty(new Abogado("Abogado" + getN_unidades(unidades,"l4"),profe));
         }

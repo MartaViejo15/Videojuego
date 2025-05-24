@@ -22,7 +22,7 @@ public class UnidadProperty {
     public UnidadProperty(Unidad Base) {
         this.Base = Base;
         rollback();
-        this.posicion = new int[1];
+        this.posicion = new int[2];
     }
 
     public int atacar(UnidadProperty unidad){
