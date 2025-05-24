@@ -5,7 +5,6 @@ import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Elemento;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Lista;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.tablero.Tablero;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.Abogado;
-import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.Unidad;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.UnidadProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

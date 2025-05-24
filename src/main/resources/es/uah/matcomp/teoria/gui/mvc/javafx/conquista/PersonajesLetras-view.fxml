@@ -23,7 +23,7 @@
                      <children>
                         <HBox alignment="CENTER" prefHeight="25.0" prefWidth="350.0">
                            <children>
-                              <CheckBox fx:id="LB1" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="POETA">
+                              <CheckBox fx:id="LB1" mnemonicParsing="false" onAction="#selecPersonaje1" prefHeight="50.0" prefWidth="100.0" text="POETA">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font></CheckBox>
@@ -45,7 +45,7 @@
                      <children>
                         <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0">
                            <children>
-                              <CheckBox fx:id="LB2" mnemonicParsing="false" prefHeight="50.0" prefWidth="118.0" text="FILÓLOGO">
+                              <CheckBox fx:id="LB2" mnemonicParsing="false" onAction="#selecPersonaje2" prefHeight="50.0" prefWidth="118.0" text="FILÓLOGO">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font></CheckBox>
@@ -67,7 +67,7 @@
                      <children>
                         <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="198.0">
                            <children>
-                              <CheckBox fx:id="LB3" mnemonicParsing="false" prefHeight="50.0" prefWidth="138.0" text="HISTORIADOR">
+                              <CheckBox fx:id="LB3" mnemonicParsing="false" onAction="#selecPersonaje3" prefHeight="50.0" prefWidth="138.0" text="HISTORIADOR">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font></CheckBox>
@@ -93,7 +93,7 @@
                      <children>
                         <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0">
                            <children>
-                              <CheckBox fx:id="LB4" mnemonicParsing="false" prefHeight="50.0" prefWidth="111.0" text="ABOGADO">
+                              <CheckBox fx:id="LB4" mnemonicParsing="false" onAction="#selecPersonaje4" prefHeight="50.0" prefWidth="111.0" text="ABOGADO">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font></CheckBox>
@@ -115,7 +115,7 @@
                      <children>
                         <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0">
                            <children>
-                              <CheckBox fx:id="LB5" mnemonicParsing="false" prefHeight="50.0" prefWidth="109.0" text="MAESTRO">
+                              <CheckBox fx:id="LB5" mnemonicParsing="false" onAction="#selecPersonaje5" prefHeight="50.0" prefWidth="109.0" text="MAESTRO">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font></CheckBox>

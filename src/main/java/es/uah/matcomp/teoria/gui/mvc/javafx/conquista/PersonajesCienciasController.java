@@ -4,15 +4,13 @@ import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Lista;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.*;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class PersonajesCienciasController{
     private Lista<UnidadProperty> unidades;
+    private PartidaNuevaController partidaNuevaController;
 
     @FXML
     private Label label1;
@@ -45,10 +43,10 @@ public class PersonajesCienciasController{
             if(CB2.isSelected() && CB3.isSelected() || CB2.isSelected() && CB4.isSelected() || CB2.isSelected() && CB5.isSelected() || CB3.isSelected() && CB4.isSelected() || CB3.isSelected() && CB5.isSelected() || CB4.isSelected() && CB5.isSelected()){
                CB1.setSelected(false);
             }else{
-                unidades.add(new UnidadProperty(new Quimico("Químico1", true)) );
+                unidades.add(new UnidadProperty(new Quimico("Químico0", true)) );
             }
         }else{
-            unidades.delete(new UnidadProperty(new Quimico("Químico1", true)));
+            unidades.delete(new UnidadProperty(new Quimico("Químico0", true)));
         }
     }
 
@@ -58,10 +56,10 @@ public class PersonajesCienciasController{
             if(CB1.isSelected() && CB3.isSelected() ||CB1.isSelected() && CB4.isSelected() ||CB1.isSelected() && CB5.isSelected() || CB3.isSelected() && CB4.isSelected() || CB3.isSelected() && CB5.isSelected() || CB4.isSelected() && CB5.isSelected()){
                 CB2.setSelected(false);
             }else{
-                unidades.add(new UnidadProperty(new Biologo("Biologo1", true)) );
+                unidades.add(new UnidadProperty(new Biologo("Biologo0", true)) );
             }
         }else{
-            unidades.delete(new UnidadProperty(new Biologo("Biologo1", true)));
+            unidades.delete(new UnidadProperty(new Biologo("Biologo0", true)));
         }
     }
 
@@ -71,10 +69,10 @@ public class PersonajesCienciasController{
             if(CB1.isSelected() && CB2.isSelected() ||CB1.isSelected() && CB4.isSelected() ||CB1.isSelected() && CB5.isSelected() || CB2.isSelected() && CB4.isSelected() || CB2.isSelected() && CB5.isSelected() || CB4.isSelected() && CB5.isSelected()){
                 CB3.setSelected(false);
             }else{
-                unidades.add(new UnidadProperty(new Ingeniero("Ingeniero1", true)) );
+                unidades.add(new UnidadProperty(new Ingeniero("Ingeniero0", true)) );
             }
         }else{
-            unidades.delete(new UnidadProperty(new Ingeniero("Ingeniero1", true)));
+            unidades.delete(new UnidadProperty(new Ingeniero("Ingeniero0", true)));
         }
     }
 
@@ -84,10 +82,10 @@ public class PersonajesCienciasController{
             if(CB1.isSelected() && CB2.isSelected() ||CB1.isSelected() && CB3.isSelected() ||CB1.isSelected() && CB5.isSelected() || CB2.isSelected() && CB3.isSelected() || CB3.isSelected() && CB5.isSelected()){
                 CB4.setSelected(false);
             }else{
-                unidades.add(new UnidadProperty(new Matematico("Matemático1", true)));
+                unidades.add(new UnidadProperty(new Matematico("Matemático0", true)));
             }
         }else{
-            unidades.delete(new UnidadProperty(new Matematico("Matemático1", true)));
+            unidades.delete(new UnidadProperty(new Matematico("Matemático0", true)));
         }
     }
 
@@ -97,18 +95,16 @@ public class PersonajesCienciasController{
             if(CB1.isSelected() && CB2.isSelected() ||CB1.isSelected() && CB3.isSelected() ||CB1.isSelected() && CB4.isSelected() || CB2.isSelected() && CB3.isSelected() || CB2.isSelected() && CB4.isSelected() || CB3.isSelected() && CB4.isSelected()){
                 CB5.setSelected(false);
             }else{
-                unidades.add(new UnidadProperty(new Medico("Médico1", true)));
+                unidades.add(new UnidadProperty(new Medico("Médico0", true)));
             }
         }else{
-            unidades.delete(new UnidadProperty(new Medico("Médico1", true)));
+            unidades.delete(new UnidadProperty(new Medico("Médico0", true)));
         }
     }
 
     @FXML
     protected void Aceptar(){
-        FXMLLoader FL = new FXMLLoader(getClass().getResource("/fxml/PartidaNueva-view.fxml"));
-        PartidaNuevaController controller = FL.getController();
-        controller.setUnidades(unidades);
+        partidaNuevaController.setUnidades(unidades);
         stage.close();
     }
 
@@ -152,5 +148,15 @@ public class PersonajesCienciasController{
     @FXML
     protected void offMedico(){
         label5.setText(null);
+    }
+
+    protected void setUnidades(Lista<UnidadProperty> unidades){
+        this.unidades = unidades;
+    }
+    protected void setStage(Stage stage){
+        this.stage = stage;
+    }
+    protected void setPartidaNuevaController(PartidaNuevaController partidaNuevaController){
+        this.partidaNuevaController = partidaNuevaController;
     }
 }

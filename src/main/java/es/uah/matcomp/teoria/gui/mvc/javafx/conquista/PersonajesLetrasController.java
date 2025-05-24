@@ -3,15 +3,13 @@ package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Lista;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.*;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class PersonajesLetrasController{
-    Lista<UnidadProperty> unidades = new Lista<>();
+    Lista<UnidadProperty> unidades;
+    private PartidaNuevaController partidaNuevaController;
 
     @FXML
     private Label label1;
@@ -44,10 +42,10 @@ public class PersonajesLetrasController{
             if(LB2.isSelected() && LB3.isSelected() || LB2.isSelected() && LB4.isSelected() || LB2.isSelected() && LB5.isSelected() || LB3.isSelected() && LB4.isSelected() || LB3.isSelected() && LB5.isSelected() || LB4.isSelected() && LB5.isSelected()){
                 LB1.setSelected(false);
             }else{
-                unidades.add(new UnidadProperty(new Poeta("Poeta1", true)));
+                unidades.add(new UnidadProperty(new Poeta("Poeta0", true)));
             }
         }else{
-            unidades.delete(new UnidadProperty(new Poeta("Poeta1", true)));
+            unidades.delete(new UnidadProperty(new Poeta("Poeta0", true)));
         }
     }
 
@@ -57,10 +55,10 @@ public class PersonajesLetrasController{
             if(LB1.isSelected() && LB3.isSelected() ||LB1.isSelected() && LB4.isSelected() ||LB1.isSelected() && LB5.isSelected() || LB3.isSelected() && LB4.isSelected() || LB3.isSelected() && LB5.isSelected() || LB4.isSelected() && LB5.isSelected()){
                 LB2.setSelected(false);
             }else{
-                unidades.add(new UnidadProperty(new Filologo("Filólogo1", true)));
+                unidades.add(new UnidadProperty(new Filologo("Filólogo0", true)));
             }
         }else{
-            unidades.delete(new UnidadProperty(new Filologo("Filólogo1", true)));
+            unidades.delete(new UnidadProperty(new Filologo("Filólogo0", true)));
         }
     }
 
@@ -70,10 +68,10 @@ public class PersonajesLetrasController{
             if(LB1.isSelected() && LB2.isSelected() ||LB1.isSelected() && LB4.isSelected() ||LB1.isSelected() && LB5.isSelected() || LB2.isSelected() && LB4.isSelected() || LB2.isSelected() && LB5.isSelected() || LB4.isSelected() && LB5.isSelected()){
                 LB3.setSelected(false);
             }else{
-                unidades.add(new UnidadProperty(new Historiador("Historiador1", true)));
+                unidades.add(new UnidadProperty(new Historiador("Historiador0", true)));
             }
         }else{
-            unidades.delete(new UnidadProperty(new Historiador("Historiador1", true)));
+            unidades.delete(new UnidadProperty(new Historiador("Historiador0", true)));
         }
     }
 
@@ -83,10 +81,10 @@ public class PersonajesLetrasController{
             if(LB1.isSelected() && LB2.isSelected() ||LB1.isSelected() && LB3.isSelected() ||LB1.isSelected() && LB5.isSelected() || LB2.isSelected() && LB3.isSelected() || LB3.isSelected() && LB5.isSelected()){
                 LB4.setSelected(false);
             }else{
-                unidades.add(new UnidadProperty(new Abogado("Abogado1", true)));
+                unidades.add(new UnidadProperty(new Abogado("Abogado0", true)));
             }
         }else{
-            unidades.delete(new UnidadProperty(new Abogado("Abogado1", true)));
+            unidades.delete(new UnidadProperty(new Abogado("Abogado0", true)));
         }
     }
 
@@ -96,18 +94,16 @@ public class PersonajesLetrasController{
             if(LB1.isSelected() && LB2.isSelected() ||LB1.isSelected() && LB3.isSelected() ||LB1.isSelected() && LB4.isSelected() || LB2.isSelected() && LB3.isSelected() || LB2.isSelected() && LB4.isSelected() || LB3.isSelected() && LB4.isSelected()){
                 LB5.setSelected(false);
             }else{
-                unidades.add(new UnidadProperty(new Maestro("Maestro1", true)));
+                unidades.add(new UnidadProperty(new Maestro("Maestro0", true)));
             }
         }else{
-            unidades.delete(new UnidadProperty(new Maestro("Maestro1", true)));
+            unidades.delete(new UnidadProperty(new Maestro("Maestro0", true)));
         }
     }
 
     @FXML
     protected void Aceptar(){
-        FXMLLoader FL = new FXMLLoader(getClass().getResource("/fxml/PartidaNueva-view.fxml"));
-        PartidaNuevaController controller = FL.getController();
-        controller.setUnidades(unidades);
+        partidaNuevaController.setUnidades(unidades);
         stage.close();
     }
 
@@ -151,5 +147,15 @@ public class PersonajesLetrasController{
     @FXML
     protected void offMaestro(){
         label5.setText(null);
+    }
+
+    protected void setUnidades(Lista<UnidadProperty> unidades){
+        this.unidades = unidades;
+    }
+    protected void setStage(Stage stage){
+        this.stage = stage;
+    }
+    protected void setPartidaNuevaController(PartidaNuevaController partidaNuevaController){
+        this.partidaNuevaController = partidaNuevaController;
     }
 }

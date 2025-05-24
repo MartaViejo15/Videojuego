@@ -1,7 +1,6 @@
 package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Lista;
-import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.Unidad;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.UnidadProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +14,7 @@ public class PartidaNuevaController {
     private Stage ciencias;
     private Stage letras;
     private Stage mapa_nueva;
-    private Lista<UnidadProperty> unidades;
+    private Lista<UnidadProperty> unidades = new Lista<>();
 
     @FXML
     private CheckBox t1;
@@ -94,7 +93,9 @@ public class PartidaNuevaController {
             s.setTitle("Elegir Personajes Ciencias");
             s.setScene(scene);
             PersonajesCienciasController controller = fxmlLoader.getController();
-            //controller.setStage(s);
+            controller.setStage(s);
+            controller.setUnidades(unidades);
+            controller.setPartidaNuevaController(this);
             s.show();
             ciencias = s;
         }catch(Exception e){
@@ -117,7 +118,9 @@ public class PartidaNuevaController {
             s.setTitle("Elegir Personajes Letras");
             s.setScene(scene);
             PersonajesLetrasController controller = fxmlLoader.getController();
-            //controller.setStage(s);
+            controller.setStage(s);
+            controller.setUnidades(unidades);
+            controller.setPartidaNuevaController(this);
             s.show();
             letras = s;
         }catch(Exception e){
