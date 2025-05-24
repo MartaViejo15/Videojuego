@@ -135,7 +135,6 @@ public class PartidaNuevaController {
         } else if (!t1.isSelected() && !t2.isSelected() && !t3.isSelected() && !t4.isSelected()) {
             this.Mapa.setStyle("-fx-text-fill: red;");
         }else {
-            //stage.close();
             Stage s = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Partida-view.fxml"));
             try {
@@ -147,10 +146,12 @@ public class PartidaNuevaController {
                 mandarFaccion(controller);
                 controller.setMis_unidades(unidades);
                 mandarMapa(controller);
+                controller.initData();
                 s.show();
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            stage.close();
         }
     }
     private void mandarFaccion(PartidaController controller){

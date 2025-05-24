@@ -6,19 +6,22 @@ import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Lista;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.tablero.Tablero;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.Abogado;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.UnidadProperty;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import java.net.URL;
 import java.util.Random;
-import java.util.ResourceBundle;
 
-public class PartidaController implements Initializable {
+public class PartidaController {
     @FXML
     private Label turnos;
     @FXML
@@ -30,28 +33,91 @@ public class PartidaController implements Initializable {
 
     private Stage stage;
 
-    private Tablero tablero;
+    private Tablero tablero = new Tablero();
     private String faccion;
     private Lista<UnidadProperty> Mis_unidades;
-    private Lista<UnidadProperty> Enemigos;
+    private Lista<UnidadProperty> Enemigos = new Lista<>();
     private Lista<Inventario> inventarios;
     private int punto;
     private int ronda;
     private UnidadProperty seleccionado;
     private int mapa;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    @FXML
+    public void initData() {
         punto = 2;
         ronda = 1;
         puntos.setText("TE QUEDAN " + punto + " PUNTOS");
         turnos.setText("RONDA " + ronda + " : TU TURNO");
         configurarMapa();
-        //configurarUnidades();
+        configurarUnidades();
         informacion.setText("Selecciona una acción.");
     }
+    @FXML
     private void configurarMapa() {
         //Configurar Mapa segun el identificador (atributo mapa)
+        if(mapa == 1){
+            mapa1();
+        }
+    }
+    @FXML
+    private void mapa1() {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                //Parte Visual
+                Image imagen = new Image(getClass().getResourceAsStream("/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Imagen/Logo.png"));
+                ImageView imagenView = new ImageView(imagen);
+                imagenView.setVisible(false);
+                AnchorPane casilla = new AnchorPane(imagenView);
+                casilla.setStyle("-fx-border-color: black;");
+                casilla.setMinSize(60,60);
+                casilla.setOnMouseClicked(onClicked(Mapa,j,i));
+                Mapa.add(casilla, i, j);
+                //Parte no visual
+                tablero.addCasilla(i,j);
+            }
+        }
+        //aristas
+        for(int i = 0; i < 10; i++){
+            for (int j = 0; j < 10; j++) {
+                if(j+1 < 10){
+                    tablero.addArista(2,tablero.getCasilla(i,j),tablero.getCasilla(i,j+1));
+                    tablero.addArista(2,tablero.getCasilla(i,j+1),tablero.getCasilla(i,j));
+                }if(i+1 < 10){
+                    tablero.addArista(3,tablero.getCasilla(i,j),tablero.getCasilla(i+1,j));
+                    tablero.addArista(3,tablero.getCasilla(i+1,j),tablero.getCasilla(i,j));
+                }
+            }
+        }
+        //casillas especiales
+        tablero.cambiarDif_mov(tablero.getCasilla(2,4),4);
+        tablero.cambiarDif_mov(tablero.getCasilla(7,5),4);
+    }
+    @FXML
+    public EventHandler<MouseEvent> onClicked(GridPane grid, int fila, int columna) {
+        return mouseEvent -> {
+            UnidadProperty flotante = tablero.getCasilla(fila,columna).getUnidad();
+            if( flotante != null){
+                this.seleccionado = flotante;
+            }else{
+                informacion.setText("Seleccione unidad");
+            }
+        };
+    }
+    private Node Ocultar(GridPane grid, int fila, int columna) {
+        for (Node nodo : grid.getChildren()) {
+            Integer filaNodo = GridPane.getRowIndex(nodo);
+            Integer columnaNodo = GridPane.getColumnIndex(nodo);
+            if (filaNodo == fila && columnaNodo == columna) {
+                AnchorPane casilla = (AnchorPane) nodo;
+                Node hijo = casilla.getChildren().getFirst();
+                hijo.setVisible(false);
+                ImageView imagen = (ImageView) hijo;
+                imagen.setImage(new Image(getClass().getResourceAsStream("/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Imagen/Logo.png")));
+                return nodo;
+            }
+        }
+        return null;
     }
     private void configurarUnidades() {
         //configurar unidades
@@ -82,8 +148,11 @@ public class PartidaController implements Initializable {
         //similar a letras
     }
     private int getN_unidades(Lista<UnidadProperty> unidades,String id){
-        Elemento<UnidadProperty> aux = unidades.getPrimero();
         int res = 0;
+        if(unidades.getPrimero() == null){
+            return res;
+        }
+        Elemento<UnidadProperty> aux = unidades.getPrimero();
         if(aux.getDato().getBase().getId().equals(id)){
             res ++;
         }while(aux.getSiguiente() != null){
@@ -140,6 +209,7 @@ public class PartidaController implements Initializable {
                 InventarioController controller = fxmlLoader.getController();
                 controller.setUnidad(seleccionado);
                 controller.setstage(s);
+                controller.initData();
                 s.show();
             }catch(Exception e){
                 e.printStackTrace();

@@ -5,15 +5,11 @@ import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.inventario.Inventario;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Elemento;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.UnidadProperty;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class InventarioController implements Initializable {
+public class InventarioController {
     @FXML
     private Label Nombre;
     @FXML
@@ -114,8 +110,7 @@ public class InventarioController implements Initializable {
         this.unidad = unidad;
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initData() {
         esp1.setText(unidad.getBase().getElementoEspecifico1().getNombre());
         esp2.setText(unidad.getBase().getElementoEspecifico2().getNombre());
         Nombre.setText(unidad.getBase().getNombre());

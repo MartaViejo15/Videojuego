@@ -14,6 +14,11 @@ public class Arista {
     public int getDificultadDeMovimiento() {
         return DificultadDeMovimiento;
     }
+
+    public void setDificultadDeMovimiento(int dificultadDeMovimiento) {
+        DificultadDeMovimiento = dificultadDeMovimiento;
+    }
+
     public Casilla getOrigen() {
         return origen;
     }

@@ -16,7 +16,20 @@ public class PantallaPrincipalController {
 
     @FXML
     private void partidaNueva(ActionEvent event) {
-        abrirVentanaYCerrarPP("PartidaNueva-view.fxml", "Partida nueva", event);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("PartidaNueva-view.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Partida nueva");
+            stage.setScene(new Scene(root));
+            PartidaNuevaController controller = loader.getController();
+            controller.setStage(stage);
+            //stage.getIcons().add(new Image(getClass().getResourceAsStream("/Imagen/Conquista_logo.png")));
+            stage.show();
+            stagePrincipal.close();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -67,6 +80,10 @@ public class PantallaPrincipalController {
         } catch (IOException e){
             e.printStackTrace();
         }
+    }
+
+    protected void setStagePrincipal(Stage stagePrincipal) {
+        this.stagePrincipal = stagePrincipal;
     }
 
 }
