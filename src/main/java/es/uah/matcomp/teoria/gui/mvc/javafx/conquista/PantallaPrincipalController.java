@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
@@ -35,6 +36,7 @@ public class PantallaPrincipalController {
 
     @FXML
     private void salir(ActionEvent event) {
+        abrirVentana("Salir-view.fxml", "Salir");
         stagePrincipal.close();
     }
 
@@ -45,6 +47,7 @@ public class PantallaPrincipalController {
             Stage stage = new Stage();
             stage.setTitle(titulo);
             stage.setScene(new Scene(root));
+            //stage.getIcons().add(new Image(getClass().getResourceAsStream("/Imagen/Conquista_logo.png")));
             stage.show();
             stagePrincipal.close();
         } catch (IOException e){
@@ -59,6 +62,7 @@ public class PantallaPrincipalController {
             Stage stage = new Stage();
             stage.setTitle(titulo);
             stage.setScene(new Scene(root));
+            //stage.getIcons().add(new Image(getClass().getResourceAsStream("/Imagen/Conquista_logo.png")));
             stage.show();
         } catch (IOException e){
             e.printStackTrace();

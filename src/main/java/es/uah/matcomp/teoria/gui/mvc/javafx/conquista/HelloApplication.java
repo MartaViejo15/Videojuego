@@ -3,6 +3,7 @@ package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,6 +15,8 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 1050, 600);
         stage.setTitle("Conquista");
         stage.setScene(scene);
+        //stage.getIcons().add(new Image(HelloApplication.class.getResourceAsStream("/Imagen/Conquista_logo.png")));
+
         stage.show();
     }
 
