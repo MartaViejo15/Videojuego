@@ -1,39 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1050.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1050.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.12">
   <tabs>
-      <Tab style="-fx-background-color: #243673; -fx-text-fill: white;" text="¿Cómo se juega?">
+      <Tab style="-fx-background-color: #243673; -fx-text-fill: WHITE;" text="¿Cómo se juega?">
           <content>
               <ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="1050.0">
                   <content>
-                      <VBox prefHeight="572.0" prefWidth="1069.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15;">
-                              <Label alignment="CENTER" prefHeight="56.0" prefWidth="1051.0" text="¿Cómo se juega?" textAlignment="CENTER" textFill="WHITE">
+                      <VBox prefHeight="572.0" prefWidth="1069.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15; -fx-padding: 20;">
+                              <Label alignment="CENTER" prefHeight="67.0" prefWidth="1035.0" text="¿Cómo se juega?" textAlignment="CENTER" textFill="WHITE">
                         <font>
-                           <Font size="30.0" />
+                           <Font name="System Bold" size="30.0" />
                         </font></Label>
-                              <Label text="Paso 2: Crea tu personaje" textFill="WHITE" />
-                              <Label text="Paso 3: Comienza la aventura" />
-                              <Label text="Paso 4" />
-                              <Label text="Paso 5" />
-                              <Label text="Paso 6" />
-                              <Label text="Paso 7" />
-                              <Label text="Paso 8" />
-                              <Label text="Paso 9" />
-                              <Label text="Paso 10" />
-                              <Label text="Paso 11" />
-                              <Label text="Paso 12" />
-                              <Label text="Paso 13" />
-                              <Label text="Paso 14" />
-                              <Label text="Paso 15" />
-                              <Label text="Paso 16" />
-                              <Label text="Paso 17" />
-                              <Label text="Paso 18" />
-                              <Label text="Paso 19" />
-                              <Label text="Paso 20" />
+                              <Label alignment="CENTER" prefHeight="21.0" prefWidth="167.0" text="Paso 2: Crea tu personaje" textAlignment="CENTER" textFill="WHITE" />
+                              <Label text="Paso 3: Comienza la aventura" textFill="WHITE" />
+                              <Label text="Paso 4" textFill="WHITE" />
+                              <Label text="Paso 5" textFill="WHITE" />
                       </VBox>
                   </content>
               </ScrollPane>
@@ -43,30 +29,168 @@
         <content>
             <ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="1050.0">
                 <content>
-                    <VBox prefHeight="572.0" prefWidth="1035.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15;">
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="1050.0" text="Personajes">
+                    <VBox prefHeight="572.0" prefWidth="1069.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15; -fx-padding: 20;">
+                        <Label alignment="CENTER" prefHeight="67.0" prefWidth="1035.0" text="Personajes" textFill="WHITE">
                         <font>
-                           <Font size="30.0" />
+                           <Font name="System Bold" size="30.0" />
                         </font></Label>
-                        <Label text="Paso 2: Crea tu personaje" />
-                        <Label text="Paso 3: Comienza la aventura" />
-                        <Label text="Paso 4" />
-                        <Label text="Paso 5" />
-                        <Label text="Paso 6" />
-                        <Label text="Paso 7" />
-                        <Label text="Paso 8" />
-                        <Label text="Paso 9" />
-                        <Label text="Paso 10" />
-                        <Label text="Paso 11" />
-                        <Label text="Paso 12" />
-                        <Label text="Paso 13" />
-                        <Label text="Paso 14" />
-                        <Label text="Paso 15" />
-                        <Label text="Paso 16" />
-                        <Label text="Paso 17" />
-                        <Label text="Paso 18" />
-                        <Label text="Paso 19" />
-                        <Label text="Paso 20" />
+                        <TextFlow prefWidth="800.0">
+                            <Text style="-fx-font-weight: bold;-fx-font-size: 16;-fx-fill: white" text="Ciencias vs Letras&#10;" />
+                            <Text style="-fx-fill: white" text="La lucha de dos facciones completamente distintas nos lleva a la división de los personajes en estas dos facciones, ciencias y letras. Cada personaje dispone de unos puntos de vida (HP), ataque, defensa, rango de movimiento y rango de ataque.&#10;" />
+                        </TextFlow>
+                        <HBox alignment="TOP_LEFT" spacing="10">
+                        <TextFlow prefWidth="800.0">
+                            <Text style="-fx-font-weight: bold; -fx-font-size: 16;-fx-fill: white;" text="Ciencias&#10;" />
+                            <Text style="-fx-fill: white;" text=" - " />
+                            <Text style="-fx-underline: true;-fx-fill: white;" text="Químico:" />
+                            <Text style="-fx-fill: white;" text=" Con sus reacciones químicas e instrumentos de laboratorio, el químico cumple la función de sniper, con las siguientes características: &#10;" />
+                            <Text style="-fx-fill: white;" text="    • Puntos de vida (HP): 100 - 150&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Ataque: 32 - 48&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Defensa: 10 - 15&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Rango de movimiento: 6 - 9&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Rango de ataque: 6&#10;&#10;" />
+
+                            <Text style="-fx-fill: white;" text=" - " />
+                            <Text style="-fx-underline: true;-fx-fill: white;" text="Biólogo:" />
+                            <Text style="-fx-fill: white;" text=" Observando la flora y la fauna y preparando cultivos microbianos en placas petri, el biólogo es un tanque perfecto, con las siguientes características: &#10;" wrappingWidth="737.021484375" />
+                            <Text style="-fx-fill: white;" text="    • Puntos de vida (HP): 200 - 300&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Ataque: 40 - 60&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Defensa: 24 - 36&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Rango de movimiento: 8 - 12&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Rango de ataque: 2&#10;&#10;" />
+
+                            <Text style="-fx-fill: white;" text=" - " />
+                            <Text style="-fx-underline: true;-fx-fill: white;" text="Ingeniero:" />
+                            <Text style="-fx-fill: white;" text=" Programando tras el ordenador, creando nuevas IAs y juntando cables en circuitos combinacionales, el ingeniero cumple idealmente la función de guerrero, con las siguientes características: &#10;" />
+                            <Text style="-fx-fill: white;" text="    • Puntos de vida (HP): 150 - 225&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Ataque: 30 - 45&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Defensa: 18 - 27&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Rango de movimiento: 8 - 12&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Rango de ataque: 3&#10;&#10;" />
+
+                            <Text style="-fx-fill: white;" text=" - " />
+                            <Text style="-fx-underline: true;-fx-fill: white;" text="Matemático:" />
+                            <Text style="-fx-fill: white;" text=" Entre fórmulas y teoremas, razonamientos y cálculos, el matemático cumple la función de asesino, con las siguientes características: &#10;" />
+                            <Text style="-fx-fill: white;" text="    • Puntos de vida (HP): 90 - 135&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Ataque: 44 - 66&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Defensa: 10 - 15&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Rango de movimiento: 12 - 18&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Rango de ataque: 1&#10;&#10;" />
+
+                            <Text style="-fx-fill: white;" text=" - " />
+                            <Text style="-fx-underline: true;-fx-fill: white;" text="Médico:" />
+                            <Text style="-fx-fill: white;" text=" Cirugías, revisiones, TACs y mucho mucho trabajo hacen del médico el mejor curandero, con las siguientes características: &#10;" />
+                            <Text style="-fx-fill: white;" text="    • Puntos de vida (HP): 160 - 240&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Ataque: 28 - 42&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Defensa: 16 - 24&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Rango de movimiento: 6 - 9&#10;" />
+                            <Text style="-fx-fill: white;" text="    • Rango de ataque: 4&#10;&#10;" />
+                        </TextFlow>
+                        <VBox spacing="80">
+                            <ImageView fitHeight="100" fitWidth="150" preserveRatio="true">
+                                <image>
+                                    <Image url="@Imagen/químico_rojo.png" />
+                                </image>
+                            </ImageView>
+                            <ImageView fitHeight="100" fitWidth="150" preserveRatio="true">
+                                <image>
+                                    <Image url="@Imagen/biólogo_rojo.png" />
+                                </image>
+                            </ImageView>
+                            <ImageView fitHeight="100" fitWidth="150" preserveRatio="true">
+                                <image>
+                                    <Image url="@Imagen/ingeniero_rojo.png" />
+                                </image>
+                            </ImageView>
+                            <ImageView fitHeight="100" fitWidth="150" preserveRatio="true">
+                                <image>
+                                    <Image url="@Imagen/mates_rojo.png" />
+                                </image>
+                            </ImageView>
+                            <ImageView fitHeight="100" fitWidth="150" preserveRatio="true">
+                                <image>
+                                    <Image url="@Imagen/médico_rojo.png" />
+                                </image>
+                            </ImageView>
+                        </VBox>
+                    </HBox>
+                        <HBox alignment="TOP_LEFT" spacing="20">
+                            <TextFlow prefWidth="800.0" style="-fx-text-fill: white">
+                                <Text style="-fx-font-weight: bold; -fx-font-size: 16; -fx-fill: white;" text="Letras&#10;" />
+                                <Text style="-fx-fill: white;" text=" - " />
+                                <Text style="-fx-underline: true; -fx-fill: white;" text="Poeta:" />
+                                <Text style="-fx-fill: white;" text=" Cuando palabras juntamos y como versos enlazamos, a un asesino nos encontramos, con las siguientes características: &#10;" />
+                                <Text style="-fx-fill: white;" text="    • Puntos de vida (HP): 90 - 135&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Ataque: 40 - 60&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Defensa: 10 - 15&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Rango de movimiento: 10 - 15&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Rango de ataque: 2&#10;&#10;" />
+
+                                <Text style="-fx-fill: white;" text=" - " />
+                                <Text style="-fx-underline: true;-fx-fill: white;" text="Filólogo:" />
+                                <Text style="-fx-fill: white;" text=" Entre Lengua y Literatura, asoma un tanque maravilloso, con las siguientes características: &#10;" />
+                                <Text style="-fx-fill: white;" text="    • Puntos de vida (HP): 200 - 300&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Ataque: 30 - 45&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Defensa: 26 - 39&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Rango de movimiento: 8 - 12&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Rango de ataque: 4&#10;&#10;" />
+
+                                <Text style="-fx-fill: white;" text=" - " />
+                                <Text style="-fx-underline: true;-fx-fill: white;" text="Historiador:" />
+                                <Text style="-fx-fill: white;" text=" Años y años estudiados y miles historias que contar hacen al mejor curandero de la facción, con las siguientes características: &#10;" />
+                                <Text style="-fx-fill: white;" text="    • Puntos de vida (HP): 160 - 240&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Ataque: 28 - 42&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Defensa: 16 - 24&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Rango de movimiento: 6 - 9&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Rango de ataque: 4&#10;&#10;" />
+
+                                <Text style="-fx-fill: white;" text=" - " />
+                                <Text style="-fx-underline: true;-fx-fill: white;" text="Abogado:" />
+                                <Text style="-fx-fill: white;" text=" Denuncias y juicios, leyes y más leyes, el abogado cumple la función de guerrero, con las siguientes características: &#10;" />
+                                <Text style="-fx-fill: white;" text="    • Puntos de vida (HP): 150 - 225&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Ataque: 30 - 45&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Defensa: 18 - 27&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Rango de movimiento: 8 - 12&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Rango de ataque: 3&#10;&#10;" />
+
+                                <Text style="-fx-fill: white;" text=" - " />
+                                <Text style="-fx-underline: true;-fx-fill: white;" text="Maestro:" />
+                                <Text style="-fx-fill: white;" text=" Rodeado de niños, enseñando y ayudando, con habilidades de lanzar tizas el maestro cumple la función de sniper, con las siguientes características: &#10;" />
+                                <Text style="-fx-fill: white;" text="    • Puntos de vida (HP): 100 - 150&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Ataque: 30 - 45&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Defensa: 10 - 15&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Rango de movimiento: 4 - 6&#10;" />
+                                <Text style="-fx-fill: white;" text="    • Rango de ataque: 7&#10;&#10;" />
+
+                            </TextFlow>
+                            <VBox spacing="80">
+                                <ImageView fitHeight="100" fitWidth="150" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Imagen/poeta_rojo.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="100" fitWidth="150" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Imagen/filólogo_rojo.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="100" fitWidth="150" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Imagen/historiador_rojo.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="100" fitWidth="150" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Imagen/abogado_rojo.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="100" fitWidth="150" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Imagen/maestro_rojo.png" />
+                                    </image>
+                                </ImageView>
+                            </VBox>
+                        </HBox>
                     </VBox>
                 </content>
             </ScrollPane>
@@ -76,30 +200,16 @@
           <content>
               <ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="1050.0">
                   <content>
-                      <VBox prefHeight="572.0" prefWidth="1035.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15;">
-                          <Label alignment="CENTER" prefHeight="17.0" prefWidth="1056.0" text="Inventario">
+                      <VBox prefHeight="572.0" prefWidth="1035.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15; -fx-padding: 20;">
+                          <Label alignment="CENTER" prefHeight="67.0" prefWidth="1035.0" text="Inventario" textFill="WHITE">
                         <font>
-                           <Font size="30.0" />
+                           <Font name="System Bold" size="30.0" />
                         </font></Label>
-                          <Label text="Paso 2: Crea tu personaje" />
-                          <Label text="Paso 3: Comienza la aventura" />
-                          <Label text="Paso 4" />
-                          <Label text="Paso 5" />
-                          <Label text="Paso 6" />
-                          <Label text="Paso 7" />
-                          <Label text="Paso 8" />
-                          <Label text="Paso 9" />
-                          <Label text="Paso 10" />
-                          <Label text="Paso 11" />
-                          <Label text="Paso 12" />
-                          <Label text="Paso 13" />
-                          <Label text="Paso 14" />
-                          <Label text="Paso 15" />
-                          <Label text="Paso 16" />
-                          <Label text="Paso 17" />
-                          <Label text="Paso 18" />
-                          <Label text="Paso 19" />
-                          <Label text="Paso 20" />
+                          <Label text="Paso 2: Crea tu personaje" textFill="WHITE" />
+                          <Label text="Paso 3: Comienza la aventura" textFill="WHITE" />
+                          <Label text="Paso 4" textFill="WHITE" />
+                          <Label text="Paso 5" textFill="WHITE" />
+                          <Label text="Paso 6" textFill="WHITE" />
                       </VBox>
                   </content>
               </ScrollPane>
@@ -109,66 +219,37 @@
           <content>
               <ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="1050.0">
                   <content>
-                      <VBox prefHeight="572.0" prefWidth="1035.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15;">
-                          <Label alignment="CENTER" prefHeight="17.0" prefWidth="1074.0" text="Mapas">
+                      <VBox prefHeight="572.0" prefWidth="1035.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15; -fx-padding: 20;">
+                          <Label alignment="CENTER" prefHeight="67.0" prefWidth="1035.0" text="Mapas" textFill="WHITE">
                         <font>
-                           <Font size="30.0" />
+                           <Font name="System Bold" size="30.0" />
                         </font></Label>
-                          <Label text="Paso 2: Crea tu personaje" />
-                          <Label text="Paso 3: Comienza la aventura" />
-                          <Label text="Paso 4" />
-                          <Label text="Paso 5" />
-                          <Label text="Paso 6" />
-                          <Label text="Paso 7" />
-                          <Label text="Paso 8" />
-                          <Label text="Paso 9" />
-                          <Label text="Paso 10" />
-                          <Label text="Paso 11" />
-                          <Label text="Paso 12" />
-                          <Label text="Paso 13" />
-                          <Label text="Paso 14" />
-                          <Label text="Paso 15" />
-                          <Label text="Paso 16" />
-                          <Label text="Paso 17" />
-                          <Label text="Paso 18" />
-                          <Label text="Paso 19" />
-                          <Label text="Paso 20" />
+                          <Label text="Paso 2: Crea tu personaje" textFill="WHITE" />
+                          <Label text="Paso 3: Comienza la aventura" textFill="WHITE" />
+                          <Label text="Paso 4" textFill="WHITE" />
+                          <Label text="Paso 5" textFill="WHITE" />
+                          <Label text="Paso 6" textFill="WHITE" />
                       </VBox>
                   </content>
               </ScrollPane>
           </content>
       </Tab>
-      <Tab style="-fx-background-color: #243673; -fx-text-fill: white;" text="Atención al cliente">
+      <Tab style="-fx-background-color: #243673; -fx-text-fill: white" text="Atención al cliente">
           <content>
-              <ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="1050.0">
-                  <content>
-                      <VBox prefHeight="572.0" prefWidth="1035.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15;">
-                          <Label alignment="CENTER" prefHeight="17.0" prefWidth="1066.0" text="Atención al cliente" textFill="white">
-                        <font>
-                           <Font size="30.0" />
-                        </font></Label>
-                          <Label text="Paso 2: Crea tu personaje" textFill="white" />
-                          <Label text="Paso 3: Comienza la aventura" />
-                          <Label text="Paso 4" />
-                          <Label text="Paso 5" />
-                          <Label text="Paso 6" />
-                          <Label text="Paso 7" />
-                          <Label text="Paso 8" />
-                          <Label text="Paso 9" />
-                          <Label text="Paso 10" />
-                          <Label text="Paso 11" />
-                          <Label text="Paso 12" />
-                          <Label text="Paso 13" />
-                          <Label text="Paso 14" />
-                          <Label text="Paso 15" />
-                          <Label text="Paso 16" />
-                          <Label text="Paso 17" />
-                          <Label text="Paso 18" />
-                          <Label text="Paso 19" />
-                          <Label text="Paso 20" />
-                      </VBox>
-                  </content>
-              </ScrollPane>
+              <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="1050.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15; -fx-padding: 20;">
+                  <Label alignment="CENTER" prefHeight="67.0" prefWidth="1035.0" text="Atención al cliente" textAlignment="CENTER" textFill="WHITE">
+                      <font>
+                          <Font name="System Bold" size="30.0" />
+                      </font>
+                  </Label>
+                  <Region prefHeight="79.0" prefWidth="995.0" />
+                  <TextFlow prefWidth="995.0" textAlignment="CENTER">
+                      <Text style="-fx-font-weight: bold; -fx-font-size: 18; -fx-fill: white;" text="¡Hey jugador!&#10;" />
+                      <Text style="-fx-fill: white;" text="¿Algo no está funcionando como debería? ¿Tienes preguntas o sugerencias? Nuestro equipo de soporte está listo para NO ayudarte.&#10;&#10;" />
+                      <Text style="-fx-fill: white;" text="¡Duda en escribirnos y no lo hagas! Tienes muchos juegos más disponibles, ¡te invitamos a que te vayas a jugar a otra cosa!&#10;&#10;" />
+                      <Text style="-fx-font-style: italic; -fx-fill: white;" text="Con cariño (y algo de resignación),&#10;El equipo que hizo lo que pudo." />
+                  </TextFlow>
+              </VBox>
           </content>
       </Tab>
   </tabs>
