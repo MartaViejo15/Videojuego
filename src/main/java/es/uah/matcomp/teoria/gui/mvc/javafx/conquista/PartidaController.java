@@ -65,11 +65,14 @@ public class PartidaController {
     }
     @FXML
     private void mapa1() {
+        Mapa.getChildren().clear();
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 //Parte Visual
                 Image imagen = new Image(getClass().getResourceAsStream("/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Imagen/Logo.png"));
                 ImageView imagenView = new ImageView(imagen);
+                imagenView.setFitHeight(60);
+                imagenView.setFitWidth(60);
                 imagenView.setVisible(false);
                 AnchorPane casilla = new AnchorPane(imagenView);
                 casilla.setStyle("-fx-border-color: black;");
@@ -102,6 +105,7 @@ public class PartidaController {
             UnidadProperty flotante = tablero.getCasilla(fila,columna).getUnidad();
             if( flotante != null){
                 this.seleccionado = flotante;
+                informacion.setText("Seleccionado unidad: " + seleccionado.getBase().getNombre());
             }else{
                 informacion.setText("Seleccione unidad");
             }
@@ -110,7 +114,7 @@ public class PartidaController {
     private void configurarUnidades() {
         //Poner mis_unidades en Mapa y tablero
         ponerUnidad(0,0,Mis_unidades.getPrimero().getDato());
-        ponerUnidad(Mapa.getRowCount(),0,Mis_unidades.getPrimero().getSiguiente().getDato());
+        ponerUnidad(Mapa.getRowCount()-1,0,Mis_unidades.getPrimero().getSiguiente().getDato());
         //genero enemigos
         if(faccion.equals("c")){
             Enemigos.add(generarUnidadLetras(Enemigos,true));
@@ -125,18 +129,12 @@ public class PartidaController {
     @FXML
     private void ponerUnidad(int fila, int columna, UnidadProperty unidad) {
         tablero.getCasilla(fila,columna).setUnidad(unidad);
-        unidad.mover(fila,columna);
-        Integer filaNodo = 0;
-        Integer columnaNodo = 0;
         for (Node nodo : Mapa.getChildren()) {
-            if (GridPane.getRowIndex(nodo) == null){
-                filaNodo = 0;
-            } else{
+            Integer filaNodo = 0;
+            Integer columnaNodo = 0;
+            if(GridPane.getRowIndex(nodo) != null){
                 filaNodo = GridPane.getRowIndex(nodo);
-            }
-            if (GridPane.getColumnIndex(nodo) == null){
-                columnaNodo = 0;
-            } else{
+            }if(GridPane.getColumnIndex(nodo) != null){
                 columnaNodo = GridPane.getColumnIndex(nodo);
             }
             if (filaNodo == fila && columnaNodo == columna) {
