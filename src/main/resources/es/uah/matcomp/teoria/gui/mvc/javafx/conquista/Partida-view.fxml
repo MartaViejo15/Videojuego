@@ -72,12 +72,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="PAUSA">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="SALTAR TURNO">
+                        <Button mnemonicParsing="false" onAction="#onClickSaltarTurno" prefHeight="50.0" prefWidth="144.0" text="SALTAR TURNO">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -95,7 +90,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="SALIR">
+                        <Button mnemonicParsing="false" onAction="#onClickSalir" prefHeight="50.0" prefWidth="125.0" text="SALIR">
                            <font>
                               <Font size="15.0" />
                            </font>

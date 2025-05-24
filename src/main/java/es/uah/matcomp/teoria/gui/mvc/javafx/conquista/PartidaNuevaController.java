@@ -137,6 +137,7 @@ public class PartidaNuevaController {
         }else {
             Stage s = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Partida-view.fxml"));
+            stage.close();
             try {
                 Scene scene = new Scene(fxmlLoader.load(), 1050, 600);
                 s.setTitle("Partida");
@@ -151,7 +152,6 @@ public class PartidaNuevaController {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            stage.close();
         }
     }
     private void mandarFaccion(PartidaController controller){

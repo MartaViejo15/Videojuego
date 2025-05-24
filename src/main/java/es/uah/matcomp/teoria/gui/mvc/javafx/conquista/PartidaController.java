@@ -33,10 +33,10 @@ public class PartidaController {
 
     private Stage stage;
 
-    private Tablero tablero = new Tablero();
+    private Tablero tablero;
     private String faccion;
     private Lista<UnidadProperty> Mis_unidades;
-    private Lista<UnidadProperty> Enemigos = new Lista<>();
+    private Lista<UnidadProperty> Enemigos;
     private Lista<Inventario> inventarios;
     private int punto;
     private int ronda;
@@ -45,6 +45,8 @@ public class PartidaController {
 
     @FXML
     public void initData() {
+        this.tablero = new Tablero();
+        this.Enemigos = new Lista<>();
         punto = 2;
         ronda = 1;
         puntos.setText("TE QUEDAN " + punto + " PUNTOS");
@@ -59,6 +61,7 @@ public class PartidaController {
         if(mapa == 1){
             mapa1();
         }
+        //hacer el resto de mapas
     }
     @FXML
     private void mapa1() {
@@ -71,7 +74,7 @@ public class PartidaController {
                 AnchorPane casilla = new AnchorPane(imagenView);
                 casilla.setStyle("-fx-border-color: black;");
                 casilla.setMinSize(60,60);
-                casilla.setOnMouseClicked(onClicked(Mapa,j,i));
+                casilla.setOnMouseClicked(onClicked(j,i));
                 Mapa.add(casilla, i, j);
                 //Parte no visual
                 tablero.addCasilla(i,j);
@@ -94,7 +97,7 @@ public class PartidaController {
         tablero.cambiarDif_mov(tablero.getCasilla(7,5),4);
     }
     @FXML
-    public EventHandler<MouseEvent> onClicked(GridPane grid, int fila, int columna) {
+    public EventHandler<MouseEvent> onClicked(int fila, int columna) {
         return mouseEvent -> {
             UnidadProperty flotante = tablero.getCasilla(fila,columna).getUnidad();
             if( flotante != null){
@@ -104,48 +107,57 @@ public class PartidaController {
             }
         };
     }
-    private Node Ocultar(GridPane grid, int fila, int columna) {
-        for (Node nodo : grid.getChildren()) {
+    private void configurarUnidades() {
+        //Poner mis_unidades en Mapa y tablero
+        ponerUnidad(0,0,Mis_unidades.getPrimero().getDato());
+        ponerUnidad(Mapa.getRowCount(),0,Mis_unidades.getPrimero().getSiguiente().getDato());
+        //genero enemigos
+        if(faccion.equals("c")){
+            Enemigos.add(generarUnidadLetras(Enemigos,true));
+            Enemigos.add(generarUnidadLetras(Enemigos,true));
+        }else{
+            Enemigos.add(generarUnidadCiencias(Enemigos,true));
+            Enemigos.add(generarUnidadCiencias(Enemigos,true));
+        }
+        //Poner Enemigos en Mapa y tablero
+        //hacer(similar a poner mis unidades
+    }
+    private void ponerUnidad(int fila, int columna,UnidadProperty unidad) {
+        tablero.getCasilla(fila,columna).setUnidad(unidad);
+        unidad.mover(fila,columna);
+        for (Node nodo : Mapa.getChildren()) {
             Integer filaNodo = GridPane.getRowIndex(nodo);
             Integer columnaNodo = GridPane.getColumnIndex(nodo);
             if (filaNodo == fila && columnaNodo == columna) {
                 AnchorPane casilla = (AnchorPane) nodo;
-                Node hijo = casilla.getChildren().getFirst();
-                hijo.setVisible(false);
-                ImageView imagen = (ImageView) hijo;
-                imagen.setImage(new Image(getClass().getResourceAsStream("/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Imagen/Logo.png")));
-                return nodo;
+                ImageView imagen = (ImageView) casilla.getChildren().getFirst();
+                ponerImagen(unidad,imagen);
+                imagen.setVisible(true);
             }
         }
-        return null;
     }
-    private void configurarUnidades() {
-        //configurar unidades
-
-        //Poner mis_unidades en Mapa y tablero
-
-        //genero enemigos
-        if(faccion.equals("c")){
-            generarUnidadLetras(Enemigos,true);
-            generarUnidadLetras(Enemigos,true);
-        }else{
-            generarUnidadCiencias(Enemigos,true);
-            generarUnidadCiencias(Enemigos,true);
+    @FXML
+    private void ponerImagen(UnidadProperty unidad, ImageView imagen) {
+        if(unidad.getBase().getId().equals("c1")){
+            imagen.setImage(new Image(getClass().getResourceAsStream("/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Imagen/quimico.png")));
         }
-        //Poner Enemigos en Mapa y tablero
+        if(unidad.getBase().getId().equals("c2")){
+            imagen.setImage(new Image(getClass().getResourceAsStream("/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Imagen/biólogo .png")));
+        }
+        //hacer(con el id, cambiando el imagen
     }
-    private String generarUnidadLetras(Lista<UnidadProperty> unidades,boolean profe) {
+    private UnidadProperty generarUnidadLetras(Lista<UnidadProperty> unidades,boolean profe) {
         int rand = new Random().nextInt(4);
-        String id = "";
+        UnidadProperty unidad = null;
         if(rand == 0){
-            unidades.add(new UnidadProperty(new Abogado("Abogado" + getN_unidades(unidades,"l4"),profe)));
-            id = "l4";
+            unidad = new UnidadProperty(new Abogado("Abogado" + getN_unidades(unidades,"l4"),profe));
         }
-        //falta resto de casos
-        return id;
+        //hacer(falta resto de casos
+        return unidad;
     }
-    private void generarUnidadCiencias(Lista<UnidadProperty> unidades,boolean profe) {
-        //similar a letras
+    private UnidadProperty generarUnidadCiencias(Lista<UnidadProperty> unidades,boolean profe) {
+        return null;
+        //hacer(similar a letras
     }
     private int getN_unidades(Lista<UnidadProperty> unidades,String id){
         int res = 0;
@@ -216,13 +228,85 @@ public class PartidaController {
             }
         }
     }
+    @FXML
+    public void onClickSalir(){
+        Stage s = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PantallaPrincipal-view.fxml"));
+        try{
+            Scene scene = new Scene(fxmlLoader.load(), 1050, 600);
+            s.setTitle("Conquista");
+            s.setScene(scene);
+            PantallaPrincipalController controller = fxmlLoader.getController();
+            controller.setStagePrincipal(s);
+            s.show();
+            this.stage.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    public void onClickSaltarTurno(){
+        punto = 0;
+        puntos.setText("TE QUEDAN " + punto + " PUNTOS");
+        actualizar();
+    }
 
     @FXML
-    protected boolean Pregunta(){
-        int id = new Random().nextInt(5);
-        while(id == 0){
-            id = new Random().nextInt(5);
+    public void actualizar(){
+        //termina turno del jugador
+        if(punto == 0){
+            //pasa turno de ai
+            turnos.setText("RONDA " + ronda + " : TURNO DE CONTRINCANTE");
+            reestablecerPuntos();
+            while(punto != 0){
+                Contrario();
+            }
+            //termina turno de ai, empieza nueva ronda
+            ronda ++;
+            if(ronda % 3 == 0){
+                //entrada unidad nueva con pregunta
+                entraUnidad();
+            }
+            reestablecerPuntos();
+            turnos.setText("RONDA " + ronda + " : TU TURNO");
+            puntos.setText("TE QUEDAN " + punto + " PUNTOS");
         }
+    }
+    private void reestablecerPuntos(){
+        if(ronda < 4){
+            punto = 2;
+        }else {
+            punto = 3;
+        }
+    }
+    protected void Contrario(){
+        //movimiento de ai
+    }
+
+    protected void entraUnidad(){
+        //para jugador
+        UnidadProperty nueva = null;
+        if(faccion.equals("c")){
+            nueva = generarUnidadCiencias(Mis_unidades,false);
+        }else{
+            nueva = generarUnidadLetras(Mis_unidades,false);
+        }
+        if(Pregunta(nueva.getBase().getId())){
+            informacion.setText("Respuesta correcta. Elige una casilla para poner tu unidad nueva.");
+            Mis_unidades.add(nueva);
+            //añadir la nueva en el tablero
+            añadirUnidad(nueva);
+        }else{
+            informacion.setText("Respuesta incorrecta. No consiguiste unidad nueva.");
+        }
+        //para ai
+        //hacer(diferente que el jugador
+    }
+    protected void añadirUnidad(UnidadProperty nueva){
+        //falta
+    }
+    @FXML
+    protected boolean Pregunta(String id){
         Stage s = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Pregunta-view.fxml"));
         try{
@@ -234,7 +318,7 @@ public class PartidaController {
         }
         PreguntaController controller = fxmlLoader.getController();
         controller.setStage(s);
-        controller.setId(faccion + id);
+        controller.setId(id);
         s.show();
         while(s.isShowing()){}
         //Otra forma de esperar a contestar la pregunta?
