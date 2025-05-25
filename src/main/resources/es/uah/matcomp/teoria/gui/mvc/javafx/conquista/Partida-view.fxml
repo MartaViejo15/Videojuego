@@ -81,7 +81,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="GUARDAR">
+                        <Button mnemonicParsing="false" onAction="#guardar" prefHeight="50.0" prefWidth="125.0" text="GUARDAR">
                            <font>
                               <Font size="15.0" />
                            </font>

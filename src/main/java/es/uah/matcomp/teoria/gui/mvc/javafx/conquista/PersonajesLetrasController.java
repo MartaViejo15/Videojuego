@@ -78,7 +78,7 @@ public class PersonajesLetrasController{
     @FXML
     protected void selecPersonaje4(){
         if (LB4.isSelected()){
-            if(LB1.isSelected() && LB2.isSelected() ||LB1.isSelected() && LB3.isSelected() ||LB1.isSelected() && LB5.isSelected() || LB2.isSelected() && LB3.isSelected() || LB3.isSelected() && LB5.isSelected()){
+            if(LB1.isSelected() && LB2.isSelected() ||LB1.isSelected() && LB3.isSelected() ||LB1.isSelected() && LB5.isSelected() || LB2.isSelected() && LB3.isSelected() || LB2.isSelected() && LB5.isSelected() || LB3.isSelected() && LB5.isSelected()){
                 LB4.setSelected(false);
             }else{
                 unidades.add(new UnidadProperty(new Abogado("Abogado0", true)));

@@ -1,5 +1,6 @@
 package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 
+import com.google.gson.Gson;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.inventario.Inventario;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Elemento;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Lista;
@@ -20,6 +21,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 public class PartidaController {
@@ -531,6 +535,59 @@ public class PartidaController {
         if(ronda % 2 == 0){
             //genero inventario
             //falta por hacer
+        }
+    }
+
+    @FXML
+    protected void guardar(){
+        String Partida1 = "Partida1.json";
+        String Partida2 = "Partida2.json";
+        String Partida3 = "Partida3.json";
+        String Partida4 = "Partida4.json";
+
+        File Archivo1 = new File(Partida1);
+        File Archivo2 = new File(Partida2);
+        File Archivo3 = new File(Partida3);
+        File Archivo4 = new File(Partida4);
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Partida-view.fxml"));
+        PartidaController controller = fxmlLoader.getController();
+
+        if(Archivo1.length() == 0){
+            Gson gson = new Gson();
+            try (FileWriter writer1 = new FileWriter(Partida1)) {
+                gson.toJson(controller, writer1);
+                System.out.println("Guardado en partida 1");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        if(Archivo2.length() == 0){
+            Gson gson = new Gson();
+            try (FileWriter writer2 = new FileWriter(Partida2)) {
+                gson.toJson(controller, writer2);
+                System.out.println("Guardado en partida 2");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        if(Archivo3.length() == 0){
+            Gson gson = new Gson();
+            try (FileWriter writer3 = new FileWriter(Partida3)) {
+                gson.toJson(controller, writer3);
+                System.out.println("Guardado en partida 3");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        if(Archivo4.length() == 0){
+            Gson gson = new Gson();
+            try (FileWriter writer4 = new FileWriter(Partida4)) {
+                gson.toJson(controller, writer4);
+                System.out.println("Guardado en partida 4");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
