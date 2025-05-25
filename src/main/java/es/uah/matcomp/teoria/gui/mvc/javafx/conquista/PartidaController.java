@@ -20,6 +20,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -50,6 +52,8 @@ public class PartidaController {
 
     private boolean atacar;
     private boolean mover;
+
+    private static final Logger log = LogManager.getLogger(PartidaController.class);
 
     @FXML
     public void initData() {
@@ -540,10 +544,10 @@ public class PartidaController {
 
     @FXML
     protected void guardar(){
-        String Partida1 = "Partida1.json";
-        String Partida2 = "Partida2.json";
-        String Partida3 = "Partida3.json";
-        String Partida4 = "Partida4.json";
+        String Partida1 = "src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida1.json";
+        String Partida2 = "src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida2.json";
+        String Partida3 = "src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida3.json";
+        String Partida4 = "src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida4.json";
 
         File Archivo1 = new File(Partida1);
         File Archivo2 = new File(Partida2);
