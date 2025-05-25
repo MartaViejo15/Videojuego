@@ -147,4 +147,10 @@ public class Tablero {
     public Lista<Arista> getAristas() {
         return aristas;
     }
+    public void setCasillas(Lista<Casilla> casillas) {
+        this.casillas = casillas;
+    }
+    public void setAristas(Lista<Arista> aristas) {
+        this.aristas = aristas;
+    }
 }

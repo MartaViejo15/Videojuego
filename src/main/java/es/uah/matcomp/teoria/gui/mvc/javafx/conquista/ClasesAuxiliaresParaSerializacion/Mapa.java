@@ -9,6 +9,13 @@ public class Mapa {
     private String colorFondo;
     private String colorBorde;
 
+    public Mapa() {
+        tablero = new Tablero();
+        alturaGrid = 2;
+        LongitudGrid = 2;
+        colorFondo = "White";
+        colorBorde = "black";
+    }
     public Mapa(Tablero tablero, int alturaGrid, int LongitudGrid, String colorFondo, String colorBorde) {
         this.tablero = tablero;
         this.alturaGrid = alturaGrid;
@@ -31,5 +38,20 @@ public class Mapa {
     }
     public String getColorBorde() {
         return colorBorde;
+    }
+    public void setTablero(Tablero tablero) {
+        this.tablero = tablero;
+    }
+    public void setLongitudGrid(int longitudGrid) {
+        LongitudGrid = longitudGrid;
+    }
+    public void setAlturaGrid(int alturaGrid) {
+        this.alturaGrid = alturaGrid;
+    }
+    public void setColorFondo(String colorFondo) {
+        this.colorFondo = colorFondo;
+    }
+    public void setColorBorde(String colorBorde) {
+        this.colorBorde = colorBorde;
     }
 }

@@ -6,6 +6,10 @@ public class Preguntas {
     private Lista<Pregunta> preguntas;
     private String id;
 
+    public Preguntas() {
+        preguntas = new Lista<>();
+        id = "";
+    }
     public Preguntas(String id) {
         this.preguntas = new Lista<>();
         this.id = id;
@@ -397,5 +401,15 @@ public class Preguntas {
         this.preguntas.add(new Pregunta("¿Qué documento oficial certifica estudios?",res8));
         this.preguntas.add(new Pregunta("¿Qué tipo de enseñanza se da a través de internet?",res9));
         this.preguntas.add(new Pregunta("¿Qué área fomenta el conocimiento del entorno?",res10));
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    public void setPreguntas(Lista<Pregunta> preguntas) {
+        this.preguntas = preguntas;
+    }
+    public String getId() {
+        return id;
     }
 }

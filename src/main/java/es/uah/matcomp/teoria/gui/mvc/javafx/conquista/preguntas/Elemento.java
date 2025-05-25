@@ -1,5 +1,9 @@
 package es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, property = "@id")
 public class Elemento<v> {
     //atributo
     protected v dato;

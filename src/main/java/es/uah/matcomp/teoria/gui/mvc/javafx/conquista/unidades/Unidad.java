@@ -12,6 +12,18 @@ public abstract class Unidad {
     private ElementoEspecifico elementoEspecifico1;
     private ElementoEspecifico elementoEspecifico2;
 
+    public Unidad() {
+        id="";
+        nombre="";
+        HP=0;
+        Ataque=0;
+        Defensa=0;
+        Rango_Movimiento=0;
+        Rango_Ataque=0;
+        Profe=false;
+        elementoEspecifico1=null;
+        elementoEspecifico2=null;
+    }
     public Unidad(String id, String nombre, int HP, int ataque, int Defensa, int Rango_Movimiento, int Rango_Ataque, boolean profe) {
         this.id = id;
         this.nombre = nombre;
@@ -74,6 +86,9 @@ public abstract class Unidad {
         }
     }
 
+    public void setHP(Integer HP) {
+        this.HP = HP;
+    }
     public String getId() {
         return id;
     }

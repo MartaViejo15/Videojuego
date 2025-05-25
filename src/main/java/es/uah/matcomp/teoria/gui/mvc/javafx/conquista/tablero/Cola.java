@@ -26,4 +26,7 @@ public class Cola<T> {
     public Lista<T> getLista() {
         return lista;
     }
+    public void setLista(Lista<T> lista) {
+        this.lista = lista;
+    }
 }

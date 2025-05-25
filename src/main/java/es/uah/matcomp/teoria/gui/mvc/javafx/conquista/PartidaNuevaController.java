@@ -67,6 +67,7 @@ public class PartidaNuevaController {
                 CrearMapaController controller = fxmlLoader.getController();
                 controller.setstage(mapa_nueva);
                 controller.setAnteriorStage(stage);
+                controller.setPartidaNuevaController(this);
                 controller.initData();
                 mapa_nueva.show();
             }catch(Exception e){

@@ -19,6 +19,16 @@ public class UnidadProperty {
     private Lista<Inventario> Inventario = new Lista<>();
     private int[] posicion;
 
+    public UnidadProperty() {
+        Base = null;
+        HP = new SimpleIntegerProperty();
+        Ataque = new SimpleIntegerProperty();
+        Defensa = new SimpleIntegerProperty();
+        Rango_Movimiento = new SimpleIntegerProperty();
+        Rango_Ataque = new SimpleIntegerProperty();
+        Inventario = new Lista<>();
+        posicion = new int[2];
+    }
     public UnidadProperty(Unidad Base) {
         this.Base = Base;
         rollback();
@@ -109,5 +119,32 @@ public class UnidadProperty {
     }
     public Lista<Inventario> getInventario() {
         return Inventario;
+    }
+    public int[] getPosicion() {
+        return posicion;
+    }
+    public void setRango_Movimiento(int rango_Movimiento) {
+        this.Rango_Movimiento.set(rango_Movimiento);
+    }
+    public void setRango_Ataque(int rango_Ataque) {
+        this.Rango_Ataque.set(rango_Ataque);
+    }
+    public void setPosicion(int[] posicion) {
+        this.posicion = posicion;
+    }
+    public void setInventario(Lista<Inventario> inventario) {
+        Inventario = inventario;
+    }
+    public void setHP(int HP) {
+        this.HP.set(HP);
+    }
+    public void setDefensa(int defensa) {
+        this.Defensa.set(defensa);
+    }
+    public void setAtaque(int ataque) {
+        this.Ataque.set(ataque);
+    }
+    public void setBase(Unidad base) {
+        Base = base;
     }
 }

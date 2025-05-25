@@ -1,5 +1,9 @@
 package es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, property = "@id")
 public class Lista<v> {
     //atributos
     protected Elemento<v> primero;
@@ -85,5 +89,14 @@ public class Lista<v> {
     }
     public Elemento<v> getPrimero() {
         return primero;
+    }
+    public void setPrimero(Elemento<v> primero) {
+        this.primero = primero;
+    }
+    public int getN_elementos() {
+        return N_elementos;
+    }
+    public void setN_elementos(int N_elementos) {
+        this.N_elementos = N_elementos;
     }
 }

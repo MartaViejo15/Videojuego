@@ -11,6 +11,15 @@ public abstract class Inventario {
     private int Rango_ataque;
     private int N_elementos;
 
+    public Inventario() {
+        nombre = "";
+        HP = 0;
+        Ataque = 0;
+        Defensa = 0;
+        Rango_movimiento = 0;
+        Rango_ataque = 0;
+        N_elementos = 0;
+    }
     public Inventario(String nombre, int HP, int Ataque, int Defensa, int Rango_movimiento, int Rango_ataque) {
         this.nombre = nombre;
         this.HP = HP;
@@ -46,5 +55,27 @@ public abstract class Inventario {
     }
     public void añadir(){
         N_elementos++;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public void setAtaque(int ataque) {
+        Ataque = ataque;
+    }
+    public void setHP(int HP) {
+        this.HP = HP;
+    }
+    public void setDefensa(int defensa) {
+        Defensa = defensa;
+    }
+    public void setRango_movimiento(int rango_movimiento) {
+        Rango_movimiento = rango_movimiento;
+    }
+    public void setRango_ataque(int rango_ataque) {
+        Rango_ataque = rango_ataque;
+    }
+    public void setN_elementos(int n_elementos) {
+        N_elementos = n_elementos;
     }
 }

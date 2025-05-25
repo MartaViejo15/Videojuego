@@ -1,10 +1,9 @@
 package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 
-import com.google.gson.Gson;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.ClasesAuxiliaresParaSerializacion.Mapa;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.tablero.Tablero;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Slider;
@@ -15,7 +14,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.io.FileWriter;
+import java.io.File;
 import java.io.IOException;
 
 public class CrearMapaController {
@@ -36,6 +35,7 @@ public class CrearMapaController {
     private Stage anteriorStage;
 
     private Tablero tablero;
+    private PartidaNuevaController partidaNuevaController;
 
     @FXML
     private void actualizarEstilo() {
@@ -55,18 +55,16 @@ public class CrearMapaController {
     @FXML
     protected void guadar(){
         completarTablero();
-        Gson gson = new Gson();
+        ObjectMapper mapper = new ObjectMapper();
         Mapa datos = new Mapa(this.tablero,(int) this.altura.getValue(),(int) this.longitud.getValue(),this.traducirColor(this.colorFondo.getValue()),this.traducirColor(this.colorBorde.getValue()));
-        try (FileWriter writer1 = new FileWriter("Mapa personalizada.json")) {
-            gson.toJson(datos, writer1);
-        } catch (IOException e) {
+        try {
+            mapper.writeValue(new File("Mapa personalizada.json"),datos);
+        }catch (IOException e){
             e.printStackTrace();
         }
         stage.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PartidaNueva-view.fxml"));
-        PartidaNuevaController controller = fxmlLoader.getController();
-        controller.setMapa_nueva(this.stage);
-        controller.setStage(anteriorStage);
+        partidaNuevaController.setMapa_nueva(this.stage);
+        partidaNuevaController.setStage(anteriorStage);
         anteriorStage.show();
     }
     private void completarTablero(){
@@ -117,5 +115,8 @@ public class CrearMapaController {
     }
     public int getDif_mov(){
         return ((int) dif_mov.getValue());
+    }
+    public void setPartidaNuevaController(PartidaNuevaController partidaNuevaController) {
+        this.partidaNuevaController = partidaNuevaController;
     }
 }
