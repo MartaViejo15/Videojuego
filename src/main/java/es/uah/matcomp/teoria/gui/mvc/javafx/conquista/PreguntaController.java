@@ -5,16 +5,13 @@ import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Lista;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Pregunta;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Preguntas;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.net.URL;
 import java.util.Random;
-import java.util.ResourceBundle;
 
-public class PreguntaController implements Initializable {
+public class PreguntaController {
     private Stage stage;
     private String id;
     private Lista<String> respuestas;
@@ -42,8 +39,7 @@ public class PreguntaController implements Initializable {
         return false;
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initData() {
         Preguntas p = new Preguntas(id);
         p.cargarPreguntas();
         int r = new Random().nextInt(9);

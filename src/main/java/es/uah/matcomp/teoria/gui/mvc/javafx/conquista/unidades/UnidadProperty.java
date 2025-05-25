@@ -71,13 +71,6 @@ public class UnidadProperty {
         }
     }
 
-    public void commit(){
-        Base.setHP(HP.get());
-        Base.setAtaque(Ataque.get());
-        Base.setDefensa(Defensa.get());
-        Base.setRango_Movimiento(Rango_Movimiento.get());
-        Base.setRango_Ataque(Rango_Ataque.get());
-    }
     public void rollback(){
         HP.set(Base.getHP());
         Ataque.set(Base.getAtaque());
@@ -90,8 +83,11 @@ public class UnidadProperty {
         this.posicion[0] = x;
         this.posicion[1] = y;
     }
-    public int[] getPosicion() {
-        return posicion;
+    public int getPosicionX() {
+        return posicion[0];
+    }
+    public int getPosicionY() {
+        return posicion[1];
     }
     public Unidad getBase() {
         return Base;

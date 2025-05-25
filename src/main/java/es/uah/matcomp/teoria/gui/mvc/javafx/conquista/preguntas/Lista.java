@@ -68,6 +68,17 @@ public class Lista<v> {
         }
         return null;
     }
+    public Lista<v> reverse() {
+        Lista<v> res = new Lista<>();
+        rev(primero, res);
+        return res;
+    }
+    private void rev(Elemento<v> aux, Lista<v> res) {
+        if(aux != null) {
+            rev(aux.siguiente, res);
+            res.add(aux.dato);
+        }
+    }
 
     public int getNumElementos() {
         return N_elementos;

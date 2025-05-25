@@ -18,19 +18,19 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label fx:id="informacion" alignment="CENTER" prefHeight="75.0" prefWidth="525.0" text="INFORMACIÓN RELEVANTE">
+                  <Label fx:id="informacion" alignment="CENTER" prefHeight="75.0" prefWidth="525.0" text="INFORMACIÓN RELEVANTE" wrapText="true">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
                   <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="ATACAR">
+                        <Button fx:id="onClickAtacar" mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="ATACAR">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="MOVER">
+                        <Button fx:id="onClickMover" mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="MOVER">
                            <font>
                               <Font size="15.0" />
                            </font>

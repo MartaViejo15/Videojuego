@@ -3,6 +3,7 @@ package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.inventario.Inventario;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Elemento;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Lista;
+import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.tablero.Casilla;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.tablero.Tablero;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.Abogado;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.UnidadProperty;
@@ -43,6 +44,9 @@ public class PartidaController {
     private UnidadProperty seleccionado;
     private int mapa;
 
+    private boolean atacar;
+    private boolean mover;
+
     @FXML
     public void initData() {
         this.tablero = new Tablero();
@@ -54,6 +58,8 @@ public class PartidaController {
         configurarMapa();
         configurarUnidades();
         informacion.setText("Selecciona una acción.");
+        atacar = false;
+        mover = false;
     }
     @FXML
     private void configurarMapa() {
@@ -103,13 +109,112 @@ public class PartidaController {
     public EventHandler<MouseEvent> onClicked(int fila, int columna) {
         return mouseEvent -> {
             UnidadProperty flotante = tablero.getCasilla(fila,columna).getUnidad();
-            if( flotante != null){
-                this.seleccionado = flotante;
-                informacion.setText("Seleccionado unidad: " + seleccionado.getBase().getNombre());
-            }else{
+            if(seleccionado == null && flotante == null){
                 informacion.setText("Seleccione unidad");
+            } else if (seleccionado == null) {
+                if(comprobarEquipo(Mis_unidades,flotante)){
+                    this.seleccionado = flotante;
+                    informacion.setText("Seleccionada unidad: " + seleccionado.getBase().getNombre());
+                }else{
+                    informacion.setText("Unidad seleccionada no de tu equipo.");
+                }
+            } else if (mover){
+                if(flotante != null){
+                    informacion.setText("Casilla ocupada");
+                } /*si la posicion del flotante está fuera del rango_mov
+                informacion.setText("Casilla fuera del rango de movimiento");
+                hacer
+                */ else {
+                    accionMover(fila,columna);
+                    informacion.setText(seleccionado.getBase().getNombre() + " mueve a la casilla " + fila + ", " + columna);
+                    onClickMover();
+                    seleccionado = null;
+                    punto--;
+                    actualizar();
+                }
+            } else if (atacar) {
+                if(flotante == null){
+                    informacion.setText("Elige unidad a que quiere atacar.");
+                }/*si la posicion del flotante está fuera del rango_ataque
+                informacion.setText("Unidad fuera del rango de ataque");
+                hacer
+                */ else if (!comprobarEquipo(Enemigos,flotante)) {
+                    informacion.setText("No puedes atacar unidad de tu equipo.");
+                } else {
+                    informacion.setText(seleccionado.getBase().getNombre() + " ataca a " + flotante.getBase().getNombre() + ", con daño: " + accionAtacar(flotante));
+                    comprobarMuerte(flotante);
+                    onClickAtacar();
+                    seleccionado = null;
+                    punto--;
+                    actualizar();
+                }
             }
         };
+    }
+    @FXML
+    public void accionMover(int fila, int columna) {
+        //parte visual
+        for (Node nodo : Mapa.getChildren()) {
+            Integer filaNodo = 0;
+            Integer columnaNodo = 0;
+            if(GridPane.getRowIndex(nodo) != null){
+                filaNodo = GridPane.getRowIndex(nodo);
+            }if(GridPane.getColumnIndex(nodo) != null){
+                columnaNodo = GridPane.getColumnIndex(nodo);
+            }
+            if(filaNodo ==seleccionado.getPosicionX() && columnaNodo ==seleccionado.getPosicionY()){
+                AnchorPane casilla = (AnchorPane) nodo;
+                ImageView imagen = (ImageView) casilla.getChildren().getFirst();
+                imagen.setVisible(false);
+            } else if (filaNodo == fila && columnaNodo == columna) {
+                //falta caso de que si hay inventario en dicha casilla
+                //hacer
+                AnchorPane casilla = (AnchorPane) nodo;
+                ImageView imagen = (ImageView) casilla.getChildren().getFirst();
+                ponerImagen(seleccionado,imagen);
+                imagen.setVisible(true);
+            }
+        }
+        //parte no visual
+        tablero.getCasilla(seleccionado.getPosicionX(),seleccionado.getPosicionY()).setUnidad(null);
+        Casilla destino = tablero.getCasilla(fila,columna);
+        if(destino.getInventario() != null){
+            seleccionado.cogerInventario(destino.getInventario());
+            destino.setInventario(null);
+        }
+        destino.setUnidad(seleccionado);
+    }
+    private int accionAtacar(UnidadProperty flotante) {
+        return this.seleccionado.atacar(flotante);
+    }
+    @FXML
+    private void comprobarMuerte(UnidadProperty flotante) {
+        if(flotante.getHP().get() <= 0){
+            //parte visual
+            for (Node nodo : Mapa.getChildren()) {
+                Integer filaNodo = 0;
+                Integer columnaNodo = 0;
+                if(GridPane.getRowIndex(nodo) != null){
+                    filaNodo = GridPane.getRowIndex(nodo);
+                }if(GridPane.getColumnIndex(nodo) != null){
+                    columnaNodo = GridPane.getColumnIndex(nodo);
+                }
+                if(filaNodo == flotante.getPosicionX() && columnaNodo == flotante.getPosicionY()){
+                    AnchorPane casilla = (AnchorPane) nodo;
+                    ImageView imagen = (ImageView) casilla.getChildren().getFirst();
+                    imagen.setVisible(false);
+                }
+            }
+            //parte no visual
+            if(comprobarEquipo(Enemigos,flotante)){
+                Enemigos.delete(flotante);
+            }else {
+                Mis_unidades.delete(flotante);
+            }
+        }
+    }
+    private boolean comprobarEquipo(Lista<UnidadProperty> equipo, UnidadProperty unidad) {
+        return equipo.buscar(unidad).equals(unidad);
     }
     private void configurarUnidades() {
         //Poner mis_unidades en Mapa y tablero
@@ -184,6 +289,74 @@ public class PartidaController {
             aux = aux.getSiguiente();
         }
         return res;
+    }
+
+    @FXML
+    public void onClickAtacar() {
+        if(seleccionado == null){
+            informacion.setText("Seleccione unidad");
+        }else{
+            if(atacar){
+                atacar = false;
+                verRangoAta(new Lista<>());
+            }else{
+                atacar = true;
+                mover = false;
+                informacion.setText("Seleccione unidad para atacar");
+                //buscar rango ataque
+                //falta por hacer(no es getCasillaAlcanzable como el mover, ya que no hay dif_mov
+            }
+
+        }
+    }
+    @FXML
+    public void onClickMover() {
+        if(seleccionado == null){
+            informacion.setText("Seleccione unidad");
+        }else{
+            if(mover){
+                mover = false;
+                verRangoMov(new Lista<>());
+            }else{
+                mover = true;
+                atacar = false;
+                informacion.setText("Seleccione casilla para mover");
+                Lista<Casilla> casillasAlcanzables = tablero.getCasillasAlcanzable(tablero.getCasilla(seleccionado.getPosicionX(),seleccionado.getPosicionY()),seleccionado.getRango_Movimiento().get());
+                verRangoMov(casillasAlcanzables);
+            }
+        }
+    }
+    private void verRangoMov(Lista<Casilla> casillasAlcanzables) {
+        for (Node nodo : Mapa.getChildren()) {
+            Integer filaNodo = 0;
+            Integer columnaNodo = 0;
+            if(GridPane.getRowIndex(nodo) != null){
+                filaNodo = GridPane.getRowIndex(nodo);
+            }if(GridPane.getColumnIndex(nodo) != null){
+                columnaNodo = GridPane.getColumnIndex(nodo);
+            }
+            AnchorPane casilla = (AnchorPane) nodo;
+            casilla.setStyle("-fx-background-color: white");
+            if(mover && casillasAlcanzables.buscar(tablero.getCasilla(filaNodo,columnaNodo)) != null){
+                casilla.setStyle("-fx-background-color: #243673");
+            }
+        }
+    }
+    private void verRangoAta(Lista<Casilla> casillasAlcanzables) {
+        for (Node nodo : Mapa.getChildren()) {
+            Integer filaNodo = 0;
+            Integer columnaNodo = 0;
+            if(GridPane.getRowIndex(nodo) != null){
+                filaNodo = GridPane.getRowIndex(nodo);
+            }if(GridPane.getColumnIndex(nodo) != null){
+                columnaNodo = GridPane.getColumnIndex(nodo);
+            }
+            AnchorPane casilla = (AnchorPane) nodo;
+            casilla.setStyle("-fx-background-color: white");
+            if(atacar && casillasAlcanzables.buscar(tablero.getCasilla(filaNodo,columnaNodo)) != null){
+                casilla.setStyle("-fx-background-color: rgba(188,94,94);");
+            }
+        }
     }
 
     @FXML
@@ -263,6 +436,10 @@ public class PartidaController {
 
     @FXML
     public void actualizar(){
+        if(Enemigos.getNumElementos() == 0){
+            //gana jugador
+            //falta por hacer
+        }
         //termina turno del jugador
         if(punto == 0){
             //pasa turno de ai
@@ -273,6 +450,14 @@ public class PartidaController {
             }
             //termina turno de ai, empieza nueva ronda
             ronda ++;
+            //refrescar unidad
+            Elemento<UnidadProperty> aux = Mis_unidades.getPrimero();
+            while(aux != null){
+                aux.getDato().rollback();
+                comprobarMuerte(aux.getDato());
+                aux = aux.getSiguiente();
+            }
+            refrescarInventario();
             if(ronda % 3 == 0){
                 //entrada unidad nueva con pregunta
                 entraUnidad();
@@ -291,6 +476,7 @@ public class PartidaController {
     }
     protected void Contrario(){
         //movimiento de ai
+        //falta por hacer
     }
 
     protected void entraUnidad(){
@@ -313,7 +499,7 @@ public class PartidaController {
         //hacer(diferente que el jugador
     }
     protected void añadirUnidad(UnidadProperty nueva){
-        //falta
+        //falta por hacer
     }
     @FXML
     protected boolean Pregunta(String id){
@@ -329,11 +515,23 @@ public class PartidaController {
         PreguntaController controller = fxmlLoader.getController();
         controller.setStage(s);
         controller.setId(id);
+        controller.initData();
         s.show();
         while(s.isShowing()){}
         //Otra forma de esperar a contestar la pregunta?
         //Si el usuario no contesta y hace alguna otra accion?
         return controller.aceptar();
+    }
+    protected void refrescarInventario(){
+        if(mapa == 1){
+            refrescarInventario1();
+        }
+    }
+    protected void refrescarInventario1(){
+        if(ronda % 2 == 0){
+            //genero inventario
+            //falta por hacer
+        }
     }
 
     protected void setFaccion(String faccion){
