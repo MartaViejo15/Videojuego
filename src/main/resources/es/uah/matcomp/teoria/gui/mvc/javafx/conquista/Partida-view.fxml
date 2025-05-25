@@ -62,7 +62,7 @@
                               <Font size="15.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="HISTORIAL">
+                        <Button mnemonicParsing="false" onAction="#onClickHistorial" prefHeight="50.0" prefWidth="125.0" text="HISTORIAL">
                            <font>
                               <Font size="15.0" />
                            </font>

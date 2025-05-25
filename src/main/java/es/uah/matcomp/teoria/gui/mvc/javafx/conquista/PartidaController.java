@@ -381,6 +381,20 @@ public class PartidaController {
         }
     }
     @FXML
+    public void onClickHistorial(){
+        Stage StageHistorial = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Historial-view.fxml"));
+        try{
+            Scene sceneHistorial = new Scene(fxmlLoader.load(), 350, 400);
+            StageHistorial.setTitle("Historial");
+            StageHistorial.setScene(sceneHistorial);
+            StageHistorial.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+    }
+    @FXML
     public void onClickVerEstados(){
         if(seleccionado == null){
             informacion.setText("Seleccione unidad");
@@ -565,8 +579,7 @@ public class PartidaController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        if(Archivo2.length() == 0){
+        }else if(Archivo2.length() == 0){
             Gson gson = new Gson();
             try (FileWriter writer2 = new FileWriter(Partida2)) {
                 gson.toJson(controller, writer2);
@@ -574,8 +587,7 @@ public class PartidaController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        if(Archivo3.length() == 0){
+        }else if(Archivo3.length() == 0){
             Gson gson = new Gson();
             try (FileWriter writer3 = new FileWriter(Partida3)) {
                 gson.toJson(controller, writer3);
@@ -583,8 +595,7 @@ public class PartidaController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        if(Archivo4.length() == 0){
+        }else if(Archivo4.length() == 0){
             Gson gson = new Gson();
             try (FileWriter writer4 = new FileWriter(Partida4)) {
                 gson.toJson(controller, writer4);
