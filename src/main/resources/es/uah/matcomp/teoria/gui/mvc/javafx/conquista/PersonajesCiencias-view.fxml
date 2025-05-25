@@ -7,23 +7,23 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.PersonajesCienciasController">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="1050.0" spacing="10.0">
+      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="1050.0" spacing="10.0" style="-fx-background-color: rgba(188,94,94);">
          <children>
-            <Label alignment="CENTER" prefHeight="100.0" prefWidth="1050.0" text="PERSONAJES CIENCIAS" textAlignment="CENTER">
+            <Label alignment="CENTER" prefHeight="100.0" prefWidth="1050.0" text="PERSONAJES CIENCIAS" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="40.0" />
                </font></Label>
-            <Label alignment="CENTER" prefHeight="40.0" prefWidth="1050.0" text="ELIGE DOS DE ESTOS PERSONAJES">
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="1050.0" text="ELIGE DOS DE ESTOS PERSONAJES" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font></Label>
             <HBox alignment="CENTER" prefHeight="200.0" prefWidth="1050.0" spacing="200.0">
                <children>
-                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-background-color: #243673;">
                      <children>
                         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="350.0">
                            <children>
-                              <CheckBox fx:id="CB1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#selecPersonaje1" prefHeight="50.0" prefWidth="150.0" text="QUÍMICO">
+                              <CheckBox fx:id="CB1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#selecPersonaje1" prefHeight="50.0" prefWidth="150.0" text="QUÍMICO" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -47,11 +47,11 @@
                            </children>
                         </AnchorPane>
                      </children></VBox>
-                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-background-color: #243673;">
                      <children>
                         <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="200.0">
                            <children>
-                              <CheckBox fx:id="CB2" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#selecPersonaje2" prefHeight="25.0" prefWidth="150.0" text="BIÓLOGO" textAlignment="CENTER">
+                              <CheckBox fx:id="CB2" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#selecPersonaje2" prefHeight="25.0" prefWidth="150.0" text="BIÓLOGO" textAlignment="CENTER" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -60,9 +60,9 @@
                         </HBox>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <ImageView fitHeight="128.0" fitWidth="171.0" layoutX="27.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="138.0" fitWidth="174.0" layoutX="16.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Imagen/biólogo.png" />
+                                    <Image url="@Imagen/biólogo%20.png" />
                                  </image>
                               </ImageView>
                               <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="174.0" prefWidth="200.0">
@@ -76,11 +76,11 @@
                            </children>
                         </AnchorPane>
                      </children></VBox>
-                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-background-color: #243673;">
                      <children>
                         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
                            <children>
-                              <CheckBox fx:id="CB3" contentDisplay="CENTER" mnemonicParsing="false" onAction="#selecPersonaje3" prefHeight="25.0" prefWidth="121.0" text="INGENIERO">
+                              <CheckBox fx:id="CB3" contentDisplay="CENTER" mnemonicParsing="false" onAction="#selecPersonaje3" prefHeight="25.0" prefWidth="121.0" text="INGENIERO" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font></CheckBox>
@@ -88,9 +88,9 @@
                         </HBox>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <ImageView fitHeight="150.0" layoutX="22.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="150.0" fitWidth="174.0" layoutX="13.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Imagen/informático.png" />
+                                    <Image url="@Imagen/ingeniero.png" />
                                  </image>
                               </ImageView>
                               <VBox layoutX="-3.0" layoutY="-1.0" prefHeight="186.0" prefWidth="199.0">
@@ -107,11 +107,11 @@
                </children></HBox>
             <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="1050.0" spacing="200.0">
                <children>
-                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-background-color: #243673;">
                      <children>
                         <HBox alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="198.0">
                            <children>
-                              <CheckBox fx:id="CB4" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#selecPersonaje4" prefHeight="41.0" prefWidth="137.0" text="MATEMÁTICO">
+                              <CheckBox fx:id="CB4" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#selecPersonaje4" prefHeight="41.0" prefWidth="137.0" text="MATEMÁTICO" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -122,7 +122,7 @@
                            <children>
                               <ImageView fitHeight="142.0" fitWidth="144.0" layoutX="26.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Imagen/mate.png" />
+                                    <Image url="@Imagen/mates.png" />
                                  </image>
                               </ImageView>
                               <VBox layoutX="-3.0" layoutY="6.0" prefHeight="167.0" prefWidth="200.0">
@@ -136,11 +136,11 @@
                            </children>
                         </AnchorPane>
                      </children></VBox>
-                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-background-color: #243673;">
                      <children>
                         <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0">
                            <children>
-                              <CheckBox fx:id="CB5" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#selecPersonaje5" prefHeight="41.0" prefWidth="121.0" text="MÉDICO" textAlignment="CENTER">
+                              <CheckBox fx:id="CB5" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#selecPersonaje5" prefHeight="41.0" prefWidth="121.0" text="MÉDICO" textAlignment="CENTER" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -169,7 +169,7 @@
                            <children>
                               <VBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="73.0">
                                  <children>
-                                    <Button mnemonicParsing="false" onAction="#Aceptar" prefHeight="25.0" prefWidth="57.0" text="OK" />
+                                    <Button mnemonicParsing="false" onAction="#Aceptar" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #243673;" text="OK" textFill="WHITE" />
                                  </children>
                               </VBox>
                            </children>

@@ -7,11 +7,11 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.CargarPartidaErrorController">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="1050.0">
+      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="1050.0" style="-fx-background-color: rgba(188,94,94);">
          <children>
             <HBox alignment="CENTER" prefHeight="120.0" prefWidth="1050.0">
                <children>
-                  <Label prefHeight="58.0" prefWidth="346.0" text="CARGAR PARTIDA">
+                  <Label prefHeight="58.0" prefWidth="346.0" text="CARGAR PARTIDA" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="40.0" />
                      </font></Label>
@@ -21,16 +21,16 @@
                   <VBox prefHeight="480.0" prefWidth="70.0" />
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Imagen/descarga.png" />
+                        <Image url="@Imagen/alerta%20.png" />
                      </image></ImageView>
                   <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="524.0">
                      <children>
-                        <Label text="¡ATENCIÓN!">
+                        <Label text="¡ATENCIÓN!" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="30.0" />
                            </font>
                         </Label>
-                        <Label text="No hay partidas iniciadas">
+                        <Label text="No hay partidas iniciadas" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="30.0" />
                            </font>
@@ -39,11 +39,11 @@
                   </VBox>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Imagen/descarga.png" />
+                        <Image url="@Imagen/alerta%20.png" />
                      </image></ImageView>
                   <VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="70.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="OK" />
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #243673;" text="OK" textFill="WHITE" />
                      </children>
                   </VBox>
                </children></HBox>
