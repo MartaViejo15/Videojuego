@@ -60,7 +60,7 @@ public class PantallaPrincipalController {
             Stage stage = new Stage();
             stage.setTitle(titulo);
             stage.setScene(new Scene(root));
-            //stage.getIcons().add(new Image(getClass().getResourceAsStream("/Imagen/Conquista_logo.png")));
+            //stage.getIcons().add(new Image(getClass().getResourceAsStream("/Imagen/Logo.png")));
             stage.show();
             stagePrincipal.close();
         } catch (IOException e){
@@ -75,7 +75,7 @@ public class PantallaPrincipalController {
             Stage stage = new Stage();
             stage.setTitle(titulo);
             stage.setScene(new Scene(root));
-            //stage.getIcons().add(new Image(getClass().getResourceAsStream("/Imagen/Conquista_logo.png")));
+            //stage.getIcons().add(new Image(getClass().getResourceAsStream("/Imagen/Logo.png")));
             stage.show();
         } catch (IOException e){
             e.printStackTrace();

@@ -18,7 +18,7 @@ public class Preguntas {
         if(Objects.equals(id, "c1")){
             generarPreguntasQuimico();
         } else if (Objects.equals(id, "c2")) {
-            generarPreguntasBiologo();
+            generarPreguntasBiólogo();
         } else if (Objects.equals(id, "c3")) {
             generarPreguntasIngeniero();
         } else if (Objects.equals(id, "c4")) {
@@ -72,7 +72,7 @@ public class Preguntas {
         this.preguntas.add(new Pregunta("¿Con qué se mide el grado de acidez o basicidad?",res9));
         this.preguntas.add(new Pregunta("¿Cuál es el principal componente del aire que exhalamos?",res10));
     }
-    private void generarPreguntasBiologo() {
+    private void generarPreguntasBiólogo() {
         Lista<String> res1= new Lista<>();
         Lista<String> res2= new Lista<>();
         Lista<String> res3= new Lista<>();

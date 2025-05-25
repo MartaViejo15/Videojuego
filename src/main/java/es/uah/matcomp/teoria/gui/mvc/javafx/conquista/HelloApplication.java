@@ -17,7 +17,7 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         PantallaPrincipalController controller = fxmlLoader.getController();
         controller.setStagePrincipal(stage);
-        //stage.getIcons().add(new Image(HelloApplication.class.getResourceAsStream("/Imagen/Conquista_logo.png")));
+        //stage.getIcons().add(new Image(HelloApplication.class.getResourceAsStream("/Imagen/Logo.png")));
 
         stage.show();
     }

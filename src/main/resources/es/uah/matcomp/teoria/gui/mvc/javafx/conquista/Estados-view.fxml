@@ -4,21 +4,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.EstadosController">
+<AnchorPane prefHeight="400.0" prefWidth="350.0" style="-fx-background-color: rgba(188,94,94);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.EstadosController">
    <children>
       <VBox alignment="CENTER" layoutX="15.0" layoutY="14.0" prefHeight="114.0" prefWidth="320.0">
          <children>
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="ESTADOS">
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="ESTADOS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <Label fx:id="nombreUnidadLabel" text="NOMBRE UNIDAD">
+            <Label fx:id="nombreUnidadLabel" text="NOMBRE UNIDAD" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="rangoUnidadLabel" alignment="CENTER" text="Alumno/profe">
+            <Label fx:id="rangoUnidadLabel" alignment="CENTER" text="Alumno/profe" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
@@ -27,23 +27,23 @@
       </VBox>
       <VBox alignment="TOP_LEFT" layoutX="55.0" layoutY="156.0" prefHeight="177.0" prefWidth="240.0" spacing="20">
          <children>
-            <Label fx:id="hpLabel" text="• Puntos de vida (HP):">
+            <Label fx:id="hpLabel" text="• Puntos de vida (HP):" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <Label fx:id="ataqueLabel" text="• Ataque:">
+            <Label fx:id="ataqueLabel" text="• Ataque:" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <Label fx:id="defensaLabel" text="• Defensa:">
+            <Label fx:id="defensaLabel" text="• Defensa:" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <Label fx:id="rMovimientoLabel" text="• Rango de movimiento:">
+            <Label fx:id="rMovimientoLabel" text="• Rango de movimiento:" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <Label fx:id="rAtaqueLabel" text="• Rango de ataque:">
+            <Label fx:id="rAtaqueLabel" text="• Rango de ataque:" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font></Label>

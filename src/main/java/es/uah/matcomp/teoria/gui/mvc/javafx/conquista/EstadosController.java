@@ -22,10 +22,10 @@ public class EstadosController {
     public void setEstados(String nombreUnidad, String rangoUnidad, int hp, int ataque, int defensa, int rMovimiento, int rAtaque) {
         this.nombreUnidadLabel.setText(nombreUnidad);
         this.rangoUnidadLabel.setText(rangoUnidad);
-        this.hpLabel.setText("• Puntos de vida (HP):" + hp);
-        this.ataqueLabel.setText("• Ataque:" + ataque);
-        this.defensaLabel.setText("• Defensa:" + defensa);
-        this.rMovimientoLabel.setText("• Rango de movimiento:" + rMovimiento);
-        this.rAtaqueLabel.setText("• Rango de ataque:" + rAtaque);
+        this.hpLabel.setText("• Puntos de vida (HP):  " + hp);
+        this.ataqueLabel.setText("• Ataque:  " + ataque);
+        this.defensaLabel.setText("• Defensa:  " + defensa);
+        this.rMovimientoLabel.setText("• Rango de movimiento:  " + rMovimiento);
+        this.rAtaqueLabel.setText("• Rango de ataque:  " + rAtaque);
     }
 }

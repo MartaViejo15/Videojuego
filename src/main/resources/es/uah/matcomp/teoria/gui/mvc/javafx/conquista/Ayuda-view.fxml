@@ -5,14 +5,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1050.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.12">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1050.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
   <tabs>
-      <Tab style="-fx-background-color: #243673; -fx-text-fill: WHITE;" text="¿Cómo se juega?">
+      <Tab style="-fx-text-fill: white;" text="¿Cómo se juega?">
           <content>
               <ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="1050.0">
                   <content>
                       <VBox prefHeight="572.0" prefWidth="1069.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15; -fx-padding: 20;">
-                              <Label alignment="CENTER" prefHeight="67.0" prefWidth="1035.0" text="¿Cómo se juega?" textAlignment="CENTER" textFill="WHITE">
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="995.0" text="¿Cómo se juega?" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="System Bold" size="30.0" />
                         </font></Label>
@@ -25,12 +25,12 @@
               </ScrollPane>
           </content>
       </Tab>
-    <Tab style="-fx-background-color: #243673; -fx-text-fill: white;" text="Personajes">
+    <Tab style="-fx-text-fill: white;" text="Personajes">
         <content>
             <ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="1050.0">
                 <content>
                     <VBox prefHeight="572.0" prefWidth="1069.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15; -fx-padding: 20;">
-                        <Label alignment="CENTER" prefHeight="67.0" prefWidth="1035.0" text="Personajes" textFill="WHITE">
+                        <Label alignment="CENTER" prefHeight="42.0" prefWidth="995.0" text="Personajes" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="System Bold" size="30.0" />
                         </font></Label>
@@ -196,12 +196,12 @@
             </ScrollPane>
         </content>
     </Tab>
-      <Tab style="-fx-background-color: #243673; -fx-text-fill: white;" text="Inventario">
+      <Tab style="-fx-text-fill: white;" text="Inventario">
           <content>
               <ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="1050.0">
                   <content>
                       <VBox prefHeight="572.0" prefWidth="1035.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15; -fx-padding: 20;">
-                          <Label alignment="CENTER" prefHeight="67.0" prefWidth="1035.0" text="Inventario" textFill="WHITE">
+                          <Label alignment="CENTER" prefHeight="41.0" prefWidth="995.0" text="Inventario" textFill="WHITE">
                         <font>
                            <Font name="System Bold" size="30.0" />
                         </font></Label>
@@ -215,12 +215,12 @@
               </ScrollPane>
           </content>
       </Tab>
-      <Tab style="-fx-background-color: #243673; -fx-text-fill: white;" text="Mapas">
+      <Tab style="-fx-text-fill: white;" text="Mapas">
           <content>
               <ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="1050.0">
                   <content>
                       <VBox prefHeight="572.0" prefWidth="1035.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15; -fx-padding: 20;">
-                          <Label alignment="CENTER" prefHeight="67.0" prefWidth="1035.0" text="Mapas" textFill="WHITE">
+                          <Label alignment="CENTER" prefHeight="42.0" prefWidth="995.0" text="Mapas" textFill="WHITE">
                         <font>
                            <Font name="System Bold" size="30.0" />
                         </font></Label>
@@ -234,15 +234,15 @@
               </ScrollPane>
           </content>
       </Tab>
-      <Tab style="-fx-background-color: #243673; -fx-text-fill: white" text="Atención al cliente">
+      <Tab style="-fx-text-fill: white" text="Atención al cliente">
           <content>
               <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="1050.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15; -fx-padding: 20;">
-                  <Label alignment="CENTER" prefHeight="67.0" prefWidth="1035.0" text="Atención al cliente" textAlignment="CENTER" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="42.0" prefWidth="1010.0" text="Atención al cliente" textAlignment="CENTER" textFill="WHITE">
                       <font>
                           <Font name="System Bold" size="30.0" />
                       </font>
                   </Label>
-                  <Region prefHeight="79.0" prefWidth="995.0" />
+                  <Region prefHeight="86.0" prefWidth="1010.0" />
                   <TextFlow prefWidth="995.0" textAlignment="CENTER">
                       <Text style="-fx-font-weight: bold; -fx-font-size: 18; -fx-fill: white;" text="¡Hey jugador!&#10;" />
                       <Text style="-fx-fill: white;" text="¿Algo no está funcionando como debería? ¿Tienes preguntas o sugerencias? Nuestro equipo de soporte está listo para NO ayudarte.&#10;&#10;" />
