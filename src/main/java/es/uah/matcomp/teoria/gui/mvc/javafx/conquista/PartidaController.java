@@ -91,8 +91,8 @@ public class PartidaController {
                 AnchorPane casilla = new AnchorPane(imagenView);
                 casilla.setStyle("-fx-border-color: black;");
                 casilla.setMinSize(60,60);
-                casilla.setOnMouseClicked(onClicked(j,i));
-                Mapa.add(casilla, i, j);
+                casilla.setOnMouseClicked(onClicked(i,j));
+                Mapa.add(casilla, j, i);
                 //Parte no visual
                 tablero.addCasilla(i,j);
             }
@@ -124,7 +124,7 @@ public class PartidaController {
                     this.seleccionado = flotante;
                     informacion.setText("Seleccionada unidad: " + seleccionado.getBase().getNombre());
                 }else{
-                    informacion.setText("Unidad seleccionada no de tu equipo.");
+                    informacion.setText("Unidad seleccionada no es de tu equipo.");
                 }
             } else if (mover){
                 if(flotante != null){
@@ -156,6 +156,9 @@ public class PartidaController {
                     punto--;
                     actualizar();
                 }
+            } else {
+                this.seleccionado = flotante;
+                informacion.setText("Seleccionada unidad: " + seleccionado.getBase().getNombre());
             }
         };
     }
@@ -303,6 +306,8 @@ public class PartidaController {
     public void onClickAtacar() {
         if(seleccionado == null){
             informacion.setText("Seleccione unidad");
+        } else if (!comprobarEquipo(Mis_unidades,seleccionado)) {
+            informacion.setText("Unidad seleccionada no es de tu equipo");
         }else{
             if(atacar){
                 atacar = false;
@@ -321,6 +326,8 @@ public class PartidaController {
     public void onClickMover() {
         if(seleccionado == null){
             informacion.setText("Seleccione unidad");
+        }else if (!comprobarEquipo(Mis_unidades,seleccionado)) {
+            informacion.setText("Unidad seleccionada no es de tu equipo");
         }else{
             if(mover){
                 mover = false;

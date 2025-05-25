@@ -6,52 +6,42 @@
 
 <VBox prefHeight="600.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uah.matcomp.teoria.gui.mvc.javafx.conquista.CrearMapaController">
    <children>
-      <HBox alignment="CENTER" prefHeight="600.0" prefWidth="1050.0">
+      <HBox alignment="CENTER" prefHeight="600.0" prefWidth="1050.0" style="-fx-background-color: rgba(188,94,94);">
          <children>
-            <GridPane fx:id="mapa" gridLinesVisible="true" maxHeight="520.0" maxWidth="520.0" prefHeight="520.0" prefWidth="520.0">
-              <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+            <GridPane fx:id="mapa" alignment="CENTER" gridLinesVisible="true" maxHeight="600.0" maxWidth="600.0" prefHeight="600.0" prefWidth="600.0">
             </GridPane>
             <VBox alignment="CENTER" prefHeight="600.0" prefWidth="430.0" spacing="15.0">
                <children>
                   <HBox alignment="CENTER" prefHeight="60.0" prefWidth="430.0" spacing="20.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="100.0" text="Altura">
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="100.0" text="Altura" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Slider fx:id="altura" majorTickUnit="4.0" max="30.0" min="2.0" prefHeight="42.0" prefWidth="210.0" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="altura" majorTickUnit="4.0" max="30.0" min="2.0" onMouseClicked="#initData" prefHeight="42.0" prefWidth="210.0" showTickLabels="true" showTickMarks="true" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="210.0" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="100.0" text="Longitud">
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="100.0" text="Longitud" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Slider fx:id="longitud" majorTickUnit="4.0" max="30.0" min="2.0" prefHeight="42.0" prefWidth="210.0" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="longitud" majorTickUnit="4.0" max="30.0" min="2.0" onMouseClicked="#initData" prefHeight="42.0" prefWidth="210.0" showTickLabels="true" showTickMarks="true" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
                      <children>
                         <VBox alignment="CENTER" prefHeight="70.0" prefWidth="121.0">
                            <children>
-                              <Label alignment="CENTER" prefHeight="9.0" prefWidth="120.0" text="Dificutad de">
+                              <Label alignment="CENTER" prefHeight="9.0" prefWidth="120.0" text="Dificutad de" textFill="WHITE">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="19.0" prefWidth="100.0" text="moviento">
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="19.0" prefWidth="100.0" text="moviento" textFill="WHITE">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -63,30 +53,30 @@
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="275.0" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="100.0" text="Color">
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="152.0" text="Color de fondo" textFill="WHITE">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="17.0" />
                            </font>
                         </Label>
-                        <ColorPicker fx:id="color" prefHeight="25.0" prefWidth="204.0" />
+                        <ColorPicker fx:id="colorFondo" onAction="#actualizarEstilo" prefHeight="25.0" prefWidth="170.0" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" layoutX="10.0" layoutY="240.0" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="339.0" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="137.0" text="Tiempo por turno (s)">
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="152.0" text="Color de borde" textFill="WHITE">
                            <font>
-                              <Font size="13.0" />
+                              <Font size="17.0" />
                            </font>
                         </Label>
-                        <Slider fx:id="tiempo" majorTickUnit="30.0" max="300.0" min="120.0" prefHeight="42.0" prefWidth="226.0" showTickLabels="true" showTickMarks="true" />
+                        <ColorPicker fx:id="colorBorde" onAction="#actualizarEstilo" prefHeight="25.0" prefWidth="170.0" />
                      </children>
                   </HBox>
-                  <Button mnemonicParsing="false" onAction="#guadar" prefHeight="38.0" prefWidth="123.0" style="-fx-background-color: #82d5f3; -fx-border-color: Black;" text="Guardar">
+                  <Button mnemonicParsing="false" onAction="#guadar" prefHeight="38.0" prefWidth="123.0" style="-fx-background-color: #243673; -fx-border-color: Black;" text="Guardar" textFill="WHITE">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Button>
-                  <Button layoutX="163.0" layoutY="491.0" mnemonicParsing="false" onAction="#Salir" prefHeight="38.0" prefWidth="123.0" style="-fx-background-color: #82d5f3; -fx-border-color: Black;" text="Salir">
+                  <Button layoutX="163.0" layoutY="491.0" mnemonicParsing="false" onAction="#Salir" prefHeight="38.0" prefWidth="123.0" style="-fx-background-color: #243673; -fx-border-color: Black;" text="Salir" textFill="WHITE">
                      <font>
                         <Font size="17.0" />
                      </font>

@@ -54,7 +54,7 @@
                                           <CheckBox fx:id="g8" layoutX="10.0" layoutY="174.0" mnemonicParsing="false" text="TAC" textFill="WHITE" />
                                           <CheckBox fx:id="g9" layoutX="10.0" layoutY="201.0" mnemonicParsing="false" text="Dinosaurio" textFill="WHITE" />
                                           <CheckBox fx:id="g10" layoutX="10.0" layoutY="229.0" mnemonicParsing="false" text="Roca sedimentaria" textFill="WHITE" />
-                                          <Label fx:id="NoHay" text="No hay nada aquí..." />
+                                          <Label fx:id="NoHay" text="No hay nada aquí..." textFill="WHITE" />
                                        </children>
                                     </VBox>
                                     <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="50.0" spacing="10.0">
