@@ -38,7 +38,7 @@
                               </ImageView>
                               <VBox layoutX="7.0" prefHeight="176.0" prefWidth="198.0">
                                  <children>
-                                    <Label fx:id="label1" alignment="CENTER" onMouseEntered="#onQuimico" onMouseExited="#offQuimico" prefHeight="173.0" prefWidth="195.0">
+                                    <Label fx:id="label1" alignment="CENTER" onMouseEntered="#onQuimico" onMouseExited="#offQuimico" prefHeight="173.0" prefWidth="195.0" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font></Label>
@@ -67,7 +67,7 @@
                               </ImageView>
                               <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="174.0" prefWidth="200.0">
                                  <children>
-                                    <Label fx:id="label2" alignment="CENTER" onMouseEntered="#onBiologo" onMouseExited="#offBiologo" prefHeight="176.0" prefWidth="200.0">
+                                    <Label fx:id="label2" alignment="CENTER" onMouseEntered="#onBiologo" onMouseExited="#offBiologo" prefHeight="176.0" prefWidth="200.0" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font></Label>
@@ -95,7 +95,7 @@
                               </ImageView>
                               <VBox layoutX="-3.0" layoutY="-1.0" prefHeight="186.0" prefWidth="199.0">
                                  <children>
-                                    <Label fx:id="label3" alignment="CENTER" onMouseEntered="#onIngeniero" onMouseExited="#offIngeniero" prefHeight="177.0" prefWidth="199.0">
+                                    <Label fx:id="label3" alignment="CENTER" onMouseEntered="#onIngeniero" onMouseExited="#offIngeniero" prefHeight="177.0" prefWidth="199.0" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font></Label>
@@ -127,7 +127,7 @@
                               </ImageView>
                               <VBox layoutX="-3.0" layoutY="6.0" prefHeight="167.0" prefWidth="200.0">
                                  <children>
-                                    <Label fx:id="label4" alignment="CENTER" onMouseEntered="#onMatematico" onMouseExited="#offMatematico" prefHeight="170.0" prefWidth="202.0">
+                                    <Label fx:id="label4" alignment="CENTER" onMouseEntered="#onMatematico" onMouseExited="#offMatematico" prefHeight="170.0" prefWidth="202.0" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font></Label>
@@ -156,7 +156,7 @@
                               </ImageView>
                               <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="174.0" prefWidth="198.0">
                                  <children>
-                                    <Label fx:id="label5" alignment="CENTER" onMouseEntered="#onMedico" onMouseExited="#offMedico" prefHeight="183.0" prefWidth="212.0">
+                                    <Label fx:id="label5" alignment="CENTER" onMouseEntered="#onMedico" onMouseExited="#offMedico" prefHeight="183.0" prefWidth="212.0" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font></Label>

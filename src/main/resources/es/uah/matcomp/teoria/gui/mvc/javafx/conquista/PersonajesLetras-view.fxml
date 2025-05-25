@@ -35,7 +35,7 @@
                                     <Image url="@Imagen/poeta%20.png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="label1" alignment="CENTER" layoutY="-3.0" onMouseEntered="#onPoeta" onMouseExited="#offPoeta" prefHeight="183.0" prefWidth="198.0">
+                              <Label fx:id="label1" alignment="CENTER" layoutY="-3.0" onMouseEntered="#onPoeta" onMouseExited="#offPoeta" prefHeight="183.0" prefWidth="198.0" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font></Label>
@@ -57,7 +57,7 @@
                                     <Image url="@Imagen/filólogo%20.png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="label2" alignment="CENTER" layoutY="-2.0" onMouseEntered="#onFilologo" onMouseExited="#offFilologo" prefHeight="175.0" prefWidth="198.0">
+                              <Label fx:id="label2" alignment="CENTER" layoutY="-2.0" onMouseEntered="#onFilologo" onMouseExited="#offFilologo" prefHeight="175.0" prefWidth="198.0" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font></Label>
@@ -79,7 +79,7 @@
                                     <Image url="@Imagen/historiador%20.png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="label3" alignment="CENTER" onMouseEntered="#onHistoriador" onMouseExited="#offHistoriador" prefHeight="174.0" prefWidth="198.0">
+                              <Label fx:id="label3" alignment="CENTER" onMouseEntered="#onHistoriador" onMouseExited="#offHistoriador" prefHeight="174.0" prefWidth="198.0" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font></Label>
@@ -105,7 +105,7 @@
                                     <Image url="@Imagen/abogado%20.png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="label4" alignment="CENTER" layoutY="-2.0" onMouseEntered="#onAbogado" onMouseExited="#offAbogado" prefHeight="175.0" prefWidth="198.0">
+                              <Label fx:id="label4" alignment="CENTER" layoutY="-2.0" onMouseEntered="#onAbogado" onMouseExited="#offAbogado" prefHeight="175.0" prefWidth="198.0" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font></Label>
@@ -127,7 +127,7 @@
                                     <Image url="@Imagen/maestro%20.png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="label5" alignment="CENTER" layoutX="-1.0" layoutY="-2.0" onMouseEntered="#onMaestro" onMouseExited="#offMaestro" prefHeight="175.0" prefWidth="198.0">
+                              <Label fx:id="label5" alignment="CENTER" layoutX="-1.0" layoutY="-2.0" onMouseEntered="#onMaestro" onMouseExited="#offMaestro" prefHeight="175.0" prefWidth="198.0" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font></Label>

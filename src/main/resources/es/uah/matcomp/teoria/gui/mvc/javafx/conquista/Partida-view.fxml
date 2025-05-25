@@ -12,7 +12,6 @@
             </GridPane>
             <VBox prefHeight="600.0" prefWidth="525.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="44.0" prefWidth="100.0" style="-fx-border-color: BLACK;" text="Temporizador" />
                   <Label fx:id="turnos" alignment="CENTER" prefHeight="75.0" prefWidth="525.0" text="TU TURNO / TURNO DEL CONTRINCANTE">
                      <font>
                         <Font size="20.0" />
