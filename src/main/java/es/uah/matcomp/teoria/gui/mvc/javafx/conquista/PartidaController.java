@@ -85,6 +85,9 @@ public class PartidaController {
         if (mapa == 2){
             mapa2();
         }
+        if(mapa == 3){
+            mapa3();
+        }
         //hacer el resto de mapas
     }
     @FXML
@@ -160,6 +163,48 @@ public class PartidaController {
         tablero.cambiarDif_mov(tablero.getCasilla(6,2),3);
         tablero.cambiarDif_mov(tablero.getCasilla(7,7),3);
     }
+
+    @FXML
+    private void mapa3() {
+        Mapa.getChildren().clear();
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 10; j++) {
+                //Parte Visual
+                Image imagen = new Image(getClass().getResourceAsStream("/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Imagen/Logo.png"));
+                ImageView imagenView = new ImageView(imagen);
+                imagenView.setFitHeight(60);
+                imagenView.setFitWidth(60);
+                imagenView.setVisible(false);
+                AnchorPane casilla = new AnchorPane(imagenView);
+                casilla.setStyle("-fx-border-color: black;");
+                casilla.setMinSize(60,60);
+                casilla.setOnMouseClicked(onClicked(i,j));
+                Mapa.add(casilla, j, i);
+                //Parte no visual
+                tablero.addCasilla(i,j);
+            }
+        }
+        //aristas
+        for(int i = 0; i < 7; i++){
+            for (int j = 0; j < 10; j++) {
+                if(j+1 < 10){
+                    tablero.addArista(3,tablero.getCasilla(i,j),tablero.getCasilla(i,j+1));
+                    tablero.addArista(3,tablero.getCasilla(i,j+1),tablero.getCasilla(i,j));
+                }if(i+1 < 7){
+                    tablero.addArista(1,tablero.getCasilla(i,j),tablero.getCasilla(i+1,j));
+                    tablero.addArista(1,tablero.getCasilla(i+1,j),tablero.getCasilla(i,j));
+                }
+            }
+        }
+        //casillas especiales
+        tablero.cambiarDif_mov(tablero.getCasilla(3,4),4);
+        tablero.cambiarDif_mov(tablero.getCasilla(1,3),4);
+        tablero.cambiarDif_mov(tablero.getCasilla(1,5),4);
+        tablero.cambiarDif_mov(tablero.getCasilla(7,3),4);
+        tablero.cambiarDif_mov(tablero.getCasilla(7,5),4);
+        tablero.cambiarDif_mov(tablero.getCasilla(4,4),4);
+    }
+
     @FXML
     public EventHandler<MouseEvent> onClicked(int fila, int columna) {
         return mouseEvent -> {
