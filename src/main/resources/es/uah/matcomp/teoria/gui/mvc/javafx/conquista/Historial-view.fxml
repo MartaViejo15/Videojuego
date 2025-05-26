@@ -8,12 +8,12 @@
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="350.0" style="-fx-background-color: rgba(188,94,94);">
          <children>
-            <Label prefHeight="60.0" prefWidth="146.0" text="Historial" textFill="WHITE">
+            <Label text="Historial" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
             </Label>
-            <Label prefHeight="40.0" prefWidth="73.0" text="Registro" textFill="WHITE">
+            <Label text="Registro" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
@@ -31,7 +31,7 @@
                </children></VBox>
             <HBox alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="332.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#Aceptar" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #243673;" text="Aceptar" textFill="WHITE" />
+                  <Button mnemonicParsing="false" onAction="#Aceptar" prefHeight="25.0" style="-fx-background-color: #243673;" text="Aceptar" textFill="WHITE" />
                </children>
             </HBox>
          </children></VBox>

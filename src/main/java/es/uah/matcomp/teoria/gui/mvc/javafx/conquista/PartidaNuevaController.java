@@ -158,9 +158,9 @@ public class PartidaNuevaController {
     }
     private void mandarFaccion(PartidaController controller){
         if (letra.isSelected()) {
-            controller.setFaccion("l");
+            controller.setFaction("l");
         } else {
-            controller.setFaccion("c");
+            controller.setFaction("c");
         }
     }
     private void mandarMapa(PartidaController controller){

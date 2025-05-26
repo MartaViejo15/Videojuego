@@ -1,7 +1,6 @@
 package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.google.gson.Gson;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.ClasesAuxiliaresParaSerializacion.Mapa;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.ClasesAuxiliaresParaSerializacion.PartidaASerializar;
@@ -271,27 +270,7 @@ public class PartidaController {
         Mapa.getChildren().clear();
         try{
             Mapa m = mapper.readValue("Mapa personalizada",Mapa.class);
-            for (int i = 0; i < m.getAlturaGrid(); i++) {
-                for (int j = 0; j < m.getLongitudGrid(); j++) {
-                    Image imagen = new Image(getClass().getResourceAsStream("/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Imagen/Logo.png"));
-                    ImageView imagenView = new ImageView(imagen);
-                    int mayor = 0;
-                    if(m.getAlturaGrid()<m.getLongitudGrid()){
-                        mayor = m.getLongitudGrid();
-                    }else {
-                        mayor = m.getAlturaGrid();
-                    }
-                    double tamaño = Math.round((float) 600 /mayor);
-                    imagenView.setFitHeight(tamaño);
-                    imagenView.setFitWidth(tamaño);
-                    imagenView.setVisible(false);
-                    AnchorPane casilla = new AnchorPane(imagenView);
-                    casilla.setStyle("-fx-border-color: " + m.getColorBorde() + "; -fx-background-color: " + m.getColorFondo() + ";");
-                    casilla.setMinSize(tamaño,tamaño);
-                    casilla.setOnMouseClicked(onClicked(j,i));
-                    Mapa.add(casilla, i, j);
-                }
-            }
+            generarMapa(m);
             this.tablero = m.getTablero();
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
@@ -565,6 +544,41 @@ public class PartidaController {
             }
         }
     }
+    @FXML
+    protected void cargarMapa(PartidaASerializar datosPartida){
+        this.tablero = datosPartida.getMapa().getTablero();
+        this.faccion = datosPartida.getFaccion();
+        this.Mis_unidades = datosPartida.getMis_unidades();
+        this.Enemigos = datosPartida.getEnemigos();
+        this.inventarios = datosPartida.getInventarios();
+        this.punto = datosPartida.getPunto();
+        this.ronda = datosPartida.getRonda();
+        this.seleccionado = datosPartida.getSeleccionado();
+        this.mapa = datosPartida.getIdentificadorMapa();
+        this.atacar = datosPartida.isAtacar();
+        this.mover = datosPartida.isMover();
+        this.Logs.setText(datosPartida.getLog());
+        puntos.setText("TE QUEDAN " + punto + " PUNTOS");
+        turnos.setText("RONDA " + ronda + " : TU TURNO");
+        informacion.setText("PARTIDA CARGADA");
+        Mapa.getChildren().clear();
+        Mapa m = datosPartida.getMapa();
+        generarMapa(m);
+        Elemento<UnidadProperty> aux = Mis_unidades.getPrimero();
+        while(aux != null){
+            int fila = aux.getDato().getPosicionX();
+            int columna = aux.getDato().getPosicionY();
+            ponerUnidad(fila,columna,aux.getDato());
+            aux = aux.getSiguiente();
+        }
+        aux = Enemigos.getPrimero();
+        while(aux != null){
+            int fila = aux.getDato().getPosicionX();
+            int columna = aux.getDato().getPosicionY();
+            ponerUnidad(fila,columna,aux.getDato());
+            aux = aux.getSiguiente();
+        }
+    }
 
     @FXML
     public void onClickAyuda(){
@@ -785,7 +799,7 @@ public class PartidaController {
         if(mapa == 4){
             ObjectMapper mapper = new ObjectMapper();
             try{
-                Mapa m = mapper.readValue("Mapa personalizada",Mapa.class);
+                Mapa m = mapper.readValue("Mapa personalizada.json",Mapa.class);
                 colorFondo = m.getColorFondo();
                 colorBorde = m.getColorBorde();
             } catch (JsonProcessingException e) {
@@ -832,7 +846,26 @@ public class PartidaController {
         }
     }
 
-    protected void setFaccion(String faccion){
+    private void generarMapa(Mapa m) {
+        for (int i = 0; i < m.getAlturaGrid(); i++) {
+            for (int j = 0; j < m.getLongitudGrid(); j++) {
+                Image imagen = new Image(getClass().getResourceAsStream("/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Imagen/Logo.png"));
+                ImageView imagenView = new ImageView(imagen);
+                int mayor = Math.max(m.getAlturaGrid(), m.getLongitudGrid());
+                double tamaño = Math.round((float) 600 /mayor);
+                imagenView.setFitHeight(tamaño);
+                imagenView.setFitWidth(tamaño);
+                imagenView.setVisible(false);
+                AnchorPane casilla = new AnchorPane(imagenView);
+                casilla.setStyle("-fx-border-color: " + m.getColorBorde() + "; -fx-background-color: " + m.getColorFondo() + ";");
+                casilla.setMinSize(tamaño,tamaño);
+                casilla.setOnMouseClicked(onClicked(j,i));
+                Mapa.add(casilla, i, j);
+            }
+        }
+    }
+
+    protected void setFaction(String faccion){
         this.faccion = faccion;
     }
     protected void setMis_unidades(Lista<UnidadProperty> Mis_unidades){
