@@ -20,6 +20,8 @@ public class PartidaASerializar {
     private boolean atacar;
     private boolean mover;
 
+    private String log;
+
     public PartidaASerializar(){
         this.mapa = new Mapa();
         this.Mis_unidades = new Lista<>();
@@ -31,9 +33,10 @@ public class PartidaASerializar {
         this.identificadorMapa = 0;
         this.atacar = false;
         this.mover = false;
+        this.log = "";
     }
 
-    public PartidaASerializar(Mapa mapa, String faccion, Lista<UnidadProperty> unidades, Lista<UnidadProperty> enemigos, Lista<Inventario> inventario, int punto, int ronda, UnidadProperty seleccionado, int identificadorMapa, boolean atacar, boolean mover) {
+    public PartidaASerializar(Mapa mapa, String faccion, Lista<UnidadProperty> unidades, Lista<UnidadProperty> enemigos, Lista<Inventario> inventario, int punto, int ronda, UnidadProperty seleccionado, int identificadorMapa, boolean atacar, boolean mover, String log) {
         this.mapa = mapa;
         this.faccion = faccion;
         this.Mis_unidades = unidades;
@@ -45,6 +48,7 @@ public class PartidaASerializar {
         this.identificadorMapa = identificadorMapa;
         this.atacar = atacar;
         this.mover = mover;
+        this.log = log;
     }
 
     public Mapa getMapa() {
@@ -113,5 +117,10 @@ public class PartidaASerializar {
     public void setMover(boolean mover) {
         this.mover = mover;
     }
-
+    public String getLog() {
+        return log;
+    }
+    public void setLog(String log) {
+        this.log = log;
+    }
 }

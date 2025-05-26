@@ -1,6 +1,7 @@
 package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 
 import com.google.gson.Gson;
+import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.ClasesAuxiliaresParaSerializacion.PartidaASerializar;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +16,7 @@ import javafx.stage.Stage;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class CargarPartidaController{
     @FXML
@@ -32,17 +34,8 @@ public class CargarPartidaController{
     @FXML
     protected void cargarPartida1(){
         if(checkBox1.isSelected()) {
-            if (checkBox1.isSelected() && checkBox2.isSelected() || checkBox1.isSelected() && checkBox3.isSelected() || checkBox1.isSelected() && checkBox4.isSelected()) {
+            if (checkBox2.isSelected() || checkBox3.isSelected() || checkBox4.isSelected()) {
                 checkBox1.setSelected(false);
-            } else {
-                try (FileReader reader = new FileReader("src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida1.json")) {
-                    Gson gson = new Gson();
-                    PartidaController partida1 = gson.fromJson(reader, PartidaController.class);
-                    System.out.println("La partida 1 ha cargado");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    System.out.println("Error al leer el fichero");
-                }
             }
         }
     }
@@ -50,17 +43,8 @@ public class CargarPartidaController{
     @FXML
     protected void cargarPartida2(){
         if(checkBox2.isSelected()) {
-            if (checkBox2.isSelected() && checkBox1.isSelected() || checkBox2.isSelected() && checkBox3.isSelected() || checkBox2.isSelected() && checkBox4.isSelected()) {
+            if (checkBox1.isSelected() || checkBox3.isSelected() || checkBox4.isSelected()) {
                 checkBox2.setSelected(false);
-            } else {
-                try (FileReader reader = new FileReader("src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida2.json")) {
-                    Gson gson = new Gson();
-                    PartidaController partida2 = gson.fromJson(reader, PartidaController.class);
-                    System.out.println("La partida 2 ha cargado");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    System.out.println("Error al leer el fichero");
-                }
             }
         }
     }
@@ -68,17 +52,8 @@ public class CargarPartidaController{
     @FXML
     protected void cargarPartida3(){
         if(checkBox3.isSelected()) {
-            if (checkBox3.isSelected() && checkBox1.isSelected() || checkBox3.isSelected() && checkBox2.isSelected() || checkBox3.isSelected() && checkBox4.isSelected()) {
+            if (checkBox1.isSelected() || checkBox2.isSelected() || checkBox4.isSelected()) {
                 checkBox3.setSelected(false);
-            } else {
-                try (FileReader reader = new FileReader("src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida3.json")) {
-                    Gson gson = new Gson();
-                    PartidaController partida3 = gson.fromJson(reader, PartidaController.class);
-                    System.out.println("La partida 3 ha cargado");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    System.out.println("Error al leer el fichero");
-                }
             }
         }
     }
@@ -86,17 +61,8 @@ public class CargarPartidaController{
     @FXML
     protected void cargarPartida4(){
         if(checkBox4.isSelected()) {
-            if (checkBox4.isSelected() && checkBox1.isSelected() || checkBox4.isSelected() && checkBox2.isSelected() || checkBox4.isSelected() && checkBox3.isSelected()) {
+            if (checkBox1.isSelected() || checkBox2.isSelected() || checkBox3.isSelected()) {
                 checkBox4.setSelected(false);
-            } else {
-                try (FileReader reader = new FileReader("src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida4.json")) {
-                    Gson gson = new Gson();
-                    PartidaController partida4 = gson.fromJson(reader, PartidaController.class);
-                    System.out.println("La partida 4 ha cargado");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    System.out.println("Error al leer el fichero");
-                }
             }
         }
     }
@@ -156,7 +122,35 @@ public class CargarPartidaController{
 
     @FXML
     protected void Aceptar(){
-
+        String nombreArchivo = "";
+        if(checkBox1.isSelected()) {
+            nombreArchivo = "Partida1.json";
+        }else if(checkBox2.isSelected()) {
+            nombreArchivo = "Partida2.json";
+        }else if(checkBox3.isSelected()) {
+            nombreArchivo = "Partida3.json";
+        }else if(checkBox4.isSelected()) {
+            nombreArchivo = "Partida4.json";
+        }
+        try{
+            ObjectMapper mapper = new ObjectMapper();
+            PartidaASerializar partida = mapper.readValue(nombreArchivo, PartidaASerializar.class);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Patida-view.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Partida");
+            stage.setScene(new Scene(root));
+            PartidaController partidaController = loader.getController();
+            partidaController.cargarMapa(partida);
+            partidaController.setStage(stage);
+            //stage.getIcons().add(new Image(getClass().getResourceAsStream("/Imagen/Logo.png")));
+            stage.show();
+            stageCargar.close();
+        }catch(JsonProcessingException e){
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     protected void setStage(Stage stage){

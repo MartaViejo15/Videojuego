@@ -793,7 +793,7 @@ public class PartidaController {
             }
         }
 
-        PartidaASerializar datosPartida = new PartidaASerializar(new Mapa(tablero, Mapa.getRowCount() - 1, Mapa.getColumnCount() - 1, colorFondo  , colorBorde), faccion, Mis_unidades, Enemigos, inventarios, punto, ronda, seleccionado, mapa, atacar, mover);
+        PartidaASerializar datosPartida = new PartidaASerializar(new Mapa(tablero, Mapa.getRowCount() - 1, Mapa.getColumnCount() - 1, colorFondo  , colorBorde), faccion, Mis_unidades, Enemigos, inventarios, punto, ronda, seleccionado, mapa, atacar, mover,Logs.getText());
 
         if(Archivo1.length() == 0){
             ObjectMapper mapper1 = new ObjectMapper();
@@ -827,6 +827,8 @@ public class PartidaController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }else{
+            informacion.setText("No se puede guardar los datos de partida debido a que no hay más partidas");
         }
     }
 
