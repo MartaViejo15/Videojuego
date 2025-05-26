@@ -8,6 +8,8 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
+
+import java.io.File;
 import java.io.IOException;
 
 public class PantallaPrincipalController {
@@ -34,6 +36,30 @@ public class PantallaPrincipalController {
 
     @FXML
     private void cargarPartida(ActionEvent event) {
+        String Partida1 = "src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida1.json";
+        String Partida2 = "src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida2.json";
+        String Partida3 = "src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida3.json";
+        String Partida4 = "src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida4.json";
+
+        File Archivo1 = new File(Partida1);
+        File Archivo2 = new File(Partida2);
+        File Archivo3 = new File(Partida3);
+        File Archivo4 = new File(Partida4);
+        if(!Archivo1.exists() && !Archivo2.exists() && !Archivo3.exists() && !Archivo4.exists()) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("CargarPartidaError-view.fxml"));
+                Parent root = loader.load();
+                Stage stage = new Stage();
+                stage.setTitle("No hay partidas inicializadas");
+                stage.setScene(new Scene(root));
+                CargarPartidaErrorController controller = loader.getController();
+                controller.setStage(stage);
+                //stage.getIcons().add(new Image(getClass().getResourceAsStream("/Imagen/Logo.png")));
+                stage.show();
+            } catch (IOException e){
+                e.printStackTrace();
+            }
+        }
         abrirVentanaYCerrarPP("CargarPartida-view.fxml", "CargarPartida", event);
     }
 
@@ -60,6 +86,8 @@ public class PantallaPrincipalController {
             Stage stage = new Stage();
             stage.setTitle(titulo);
             stage.setScene(new Scene(root));
+            CargarPartidaController controller = loader.getController();
+            controller.setStage(stage);
             //stage.getIcons().add(new Image(getClass().getResourceAsStream("/Imagen/Logo.png")));
             stage.show();
             stagePrincipal.close();
