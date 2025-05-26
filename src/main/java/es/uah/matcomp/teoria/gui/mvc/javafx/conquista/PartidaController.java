@@ -8,6 +8,7 @@ import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.inventario.Inventario;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Elemento;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Lista;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.tablero.Casilla;
+import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.tablero.Cola;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.tablero.Tablero;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.*;
 import javafx.event.EventHandler;
@@ -216,17 +217,15 @@ public class PartidaController {
             if(seleccionado == null && flotante == null){
                 informacion.setText("Seleccione unidad");
             } else if (seleccionado == null) {
-                if(comprobarEquipo(Mis_unidades,flotante)){
-                    this.seleccionado = flotante;
-                    informacion.setText("Seleccionada unidad: " + seleccionado.getBase().getNombre());
-                }else{
-                    informacion.setText("Unidad seleccionada no es de tu equipo.");
-                }
+                this.seleccionado = flotante;
+                informacion.setText("Seleccionada unidad: " + seleccionado.getBase().getNombre());
             } else if (mover){
                 int disx = Math.abs(seleccionado.getPosicionX() - fila);
                 int disy = Math.abs(seleccionado.getPosicionY() - columna);
                 int distancia = disx + disy;
-                if(flotante != null){
+                if(comprobarEquipo(Mis_unidades,seleccionado)){
+                    informacion.setText("Unidad seleccionada no es de tu equipo.");
+                }else if(flotante != null){
                     informacion.setText("Casilla ocupada");
                 }else if (distancia > seleccionado.getBase().getRango_Movimiento()){
                     //no (hacer
@@ -245,7 +244,9 @@ public class PartidaController {
                 int disx = Math.abs(seleccionado.getPosicionX() - fila);
                 int disy = Math.abs(seleccionado.getPosicionY() - columna);
                 int distancia = disx + disy;
-                if(flotante == null){
+                if(comprobarEquipo(Mis_unidades,seleccionado)){
+                    informacion.setText("Unidad seleccionada no es de tu equipo.");
+                }else if(flotante == null){
                     informacion.setText("Elige unidad a que quiere atacar.");
                 } else if (distancia > seleccionado.getBase().getRango_Ataque()){
                     informacion.setText("Unidad fuera del rango de ataque");
@@ -690,9 +691,7 @@ public class PartidaController {
             //pasa turno de ai
             turnos.setText("RONDA " + ronda + " : TURNO DE CONTRINCANTE");
             reestablecerPuntos();
-            while(punto != 0){
-                Contrario();
-            }
+            Contrario();
             //termina turno de ai, empieza nueva ronda
             ronda ++;
             String info = "Ronda: " + ronda;
@@ -723,8 +722,21 @@ public class PartidaController {
         }
     }
     protected void Contrario(){
+        Cola<UnidadProperty> colaUnidad = new Cola<>(Enemigos);
+        while(punto != 0){
+            UnidadProperty seleccionadoIA = colaUnidad.dequeue();
+            movimientoIA(seleccionadoIA);
+            colaUnidad.enqueue(seleccionadoIA);
+        }
+        Enemigos.setPrimero(colaUnidad.getLista().getPrimero());
         //movimiento de ai
         //falta por hacer
+    }
+    private void movimientoIA(UnidadProperty seleccionadoIA){
+        //busca en el rango de ataque si hay enemigo atacable
+        //si hay, ataca
+        //si no, busca el enemigo más cercano, calcula camino hacia él, y mueve
+        punto --;
     }
 
     protected void entraUnidad(){
@@ -761,8 +773,6 @@ public class PartidaController {
         } else {
             informacion.setText("La IA no añadió unidad nueva esta ronda.");
         }
-        //para ai
-        //hacer(diferente que el jugador
     }
     protected void añadirUnidad(UnidadProperty nueva){
         //falta por hacer
