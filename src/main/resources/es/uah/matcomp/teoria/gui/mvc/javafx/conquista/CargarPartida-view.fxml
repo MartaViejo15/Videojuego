@@ -20,7 +20,10 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="900.0" style="-fx-border-color: black; -fx-background-color: #243673;">
                      <children>
-                        <ImageView fitHeight="120.0" fitWidth="150.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="120.0" fitWidth="150.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Imagen/mapa.png" />
+                           </image></ImageView>
                         <VBox prefHeight="120.0" prefWidth="650.0">
                            <children>
                               <Label prefHeight="60.0" prefWidth="650.0" text="Partida 1" textFill="WHITE">
@@ -54,7 +57,10 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="900.0" style="-fx-border-color: black; -fx-background-color: #243673;">
                      <children>
-                        <ImageView fitHeight="120.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="120.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Imagen/mapa.png" />
+                           </image></ImageView>
                         <VBox prefHeight="200.0" prefWidth="650.0">
                            <children>
                               <Label prefHeight="60.0" prefWidth="650.0" text="Partida 2" textFill="WHITE">
@@ -88,7 +94,10 @@
                <children>
                   <HBox prefHeight="120.0" prefWidth="900.0" style="-fx-border-color: black; -fx-background-color: #243673;">
                      <children>
-                        <ImageView fitHeight="120.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="120.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Imagen/mapa.png" />
+                           </image></ImageView>
                         <VBox prefHeight="120.0" prefWidth="653.0">
                            <children>
                               <Label prefHeight="60.0" prefWidth="650.0" text="Partida 3" textFill="WHITE">
@@ -123,7 +132,10 @@
                   <VBox prefHeight="120.0" prefWidth="78.0" />
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="900.0" style="-fx-border-color: black; -fx-background-color: #243673;">
                      <children>
-                        <ImageView fitHeight="120.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="120.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Imagen/mapa.png" />
+                           </image></ImageView>
                         <VBox prefHeight="200.0" prefWidth="650.0">
                            <children>
                               <Label prefHeight="60.0" prefWidth="648.0" text="Partida 4" textFill="WHITE">

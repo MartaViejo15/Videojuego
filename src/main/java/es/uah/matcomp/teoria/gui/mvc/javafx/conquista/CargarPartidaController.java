@@ -1,8 +1,12 @@
 package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 
 import com.google.gson.Gson;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.image.ImageView;
@@ -23,7 +27,7 @@ public class CargarPartidaController{
     private CheckBox checkBox4;
 
     @FXML
-    private Stage stage;
+    private Stage stageCargar;
 
     @FXML
     protected void cargarPartida1(){
@@ -31,7 +35,7 @@ public class CargarPartidaController{
             if (checkBox1.isSelected() && checkBox2.isSelected() || checkBox1.isSelected() && checkBox3.isSelected() || checkBox1.isSelected() && checkBox4.isSelected()) {
                 checkBox1.setSelected(false);
             } else {
-                try (FileReader reader = new FileReader("Partida1.json")) {
+                try (FileReader reader = new FileReader("src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida1.json")) {
                     Gson gson = new Gson();
                     PartidaController partida1 = gson.fromJson(reader, PartidaController.class);
                     System.out.println("La partida 1 ha cargado");
@@ -49,7 +53,7 @@ public class CargarPartidaController{
             if (checkBox2.isSelected() && checkBox1.isSelected() || checkBox2.isSelected() && checkBox3.isSelected() || checkBox2.isSelected() && checkBox4.isSelected()) {
                 checkBox2.setSelected(false);
             } else {
-                try (FileReader reader = new FileReader("Partida2.json")) {
+                try (FileReader reader = new FileReader("src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida2.json")) {
                     Gson gson = new Gson();
                     PartidaController partida2 = gson.fromJson(reader, PartidaController.class);
                     System.out.println("La partida 2 ha cargado");
@@ -67,7 +71,7 @@ public class CargarPartidaController{
             if (checkBox3.isSelected() && checkBox1.isSelected() || checkBox3.isSelected() && checkBox2.isSelected() || checkBox3.isSelected() && checkBox4.isSelected()) {
                 checkBox3.setSelected(false);
             } else {
-                try (FileReader reader = new FileReader("Partida3.json")) {
+                try (FileReader reader = new FileReader("src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida3.json")) {
                     Gson gson = new Gson();
                     PartidaController partida3 = gson.fromJson(reader, PartidaController.class);
                     System.out.println("La partida 3 ha cargado");
@@ -85,7 +89,7 @@ public class CargarPartidaController{
             if (checkBox4.isSelected() && checkBox1.isSelected() || checkBox4.isSelected() && checkBox2.isSelected() || checkBox4.isSelected() && checkBox3.isSelected()) {
                 checkBox4.setSelected(false);
             } else {
-                try (FileReader reader = new FileReader("Partida4.json")) {
+                try (FileReader reader = new FileReader("src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida4.json")) {
                     Gson gson = new Gson();
                     PartidaController partida4 = gson.fromJson(reader, PartidaController.class);
                     System.out.println("La partida 4 ha cargado");
@@ -100,7 +104,7 @@ public class CargarPartidaController{
 
     @FXML
     protected void eliminarPartida1(){
-        String Partida1 = "Partida1.json";
+        String Partida1 = "src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida1.json";
 
         try (FileWriter fw = new FileWriter(Partida1)) {
             fw.write("");  // Sobrescribe el contenido con vacío
@@ -113,7 +117,7 @@ public class CargarPartidaController{
 
     @FXML
     protected void eliminarPartida2(){
-        String Partida2 = "Partida2.json";
+        String Partida2 = "src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida2.json";
 
         try (FileWriter fw = new FileWriter(Partida2)) {
             fw.write("");  // Sobrescribe el contenido con vacío
@@ -126,7 +130,7 @@ public class CargarPartidaController{
 
     @FXML
     protected void eliminarPartida3(){
-        String Partida3 = "Partida3.json";
+        String Partida3 = "src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida3.json";
 
         try (FileWriter fw = new FileWriter(Partida3)) {
             fw.write("");  // Sobrescribe el contenido con vacío
@@ -139,10 +143,10 @@ public class CargarPartidaController{
 
     @FXML
     protected void eliminarPartida4(){
-        String Partida4 = "Partida4.json";
+        String Partida4 = "src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida4.json";
 
         try (FileWriter fw = new FileWriter(Partida4)) {
-            fw.write("");  // Sobrescribe el contenido con vacío
+            fw.write("");  // Pone el contenido como vacío
             System.out.println("Partida 4 borrada.");
         } catch (IOException e) {
             e.printStackTrace();
@@ -152,10 +156,10 @@ public class CargarPartidaController{
 
     @FXML
     protected void Aceptar(){
-        stage.close();
+
     }
 
     protected void setStage(Stage stage){
-        this.stage = stage;
+        this.stageCargar = stage;
     }
 }
