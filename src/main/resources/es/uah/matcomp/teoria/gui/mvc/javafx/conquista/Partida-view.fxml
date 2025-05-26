@@ -10,26 +10,26 @@
          <children>
             <GridPane fx:id="Mapa" alignment="CENTER" gridLinesVisible="true" maxHeight="600.0" maxWidth="600.0" prefHeight="600.0" prefWidth="600.0">
             </GridPane>
-            <VBox prefHeight="600.0" prefWidth="525.0">
+            <VBox prefHeight="600.0" prefWidth="525.0" style="-fx-background-color: rgba(188,94,94);">
                <children>
-                  <Label fx:id="turnos" alignment="CENTER" prefHeight="75.0" prefWidth="525.0" text="TU TURNO / TURNO DEL CONTRINCANTE">
+                  <Label fx:id="turnos" alignment="CENTER" prefHeight="75.0" prefWidth="525.0" text="TU TURNO / TURNO DEL CONTRINCANTE" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label fx:id="informacion" alignment="CENTER" prefHeight="75.0" prefWidth="525.0" text="INFORMACIÓN RELEVANTE" wrapText="true">
+                  <Label fx:id="informacion" alignment="CENTER" prefHeight="75.0" prefWidth="525.0" text="INFORMACIÓN RELEVANTE" textFill="WHITE" wrapText="true">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
                   <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button fx:id="onClickAtacar" mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="ATACAR">
+                        <Button fx:id="onClickAtacar" mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #243673;" text="ATACAR" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Button>
-                        <Button fx:id="onClickMover" mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="MOVER">
+                        <Button fx:id="onClickMover" mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #243673;" text="MOVER" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -38,31 +38,31 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#onClickVerEstados" prefHeight="50.0" prefWidth="125.0" text="VER ESTADOS">
+                        <Button mnemonicParsing="false" onAction="#onClickVerEstados" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #243673;" text="VER ESTADOS" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#onClickInventario" prefHeight="50.0" prefWidth="125.0" text="INVENTARIO">
+                        <Button mnemonicParsing="false" onAction="#onClickInventario" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #243673;" text="INVENTARIO" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Button>
                      </children>
                   </HBox>
-                  <Label fx:id="puntos" alignment="CENTER" prefHeight="17.0" prefWidth="525.0" text="TE QUEDAN X PUNTOS">
+                  <Label fx:id="puntos" alignment="CENTER" prefHeight="17.0" prefWidth="525.0" text="TE QUEDAN X PUNTOS" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
                   <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#onClickAyuda" prefHeight="50.0" prefWidth="125.0" text="AYUDA">
+                        <Button mnemonicParsing="false" onAction="#onClickAyuda" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #243673;" text="AYUDA" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#onClickHistorial" prefHeight="50.0" prefWidth="125.0" text="HISTORIAL">
+                        <Button mnemonicParsing="false" onAction="#onClickHistorial" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #243673;" text="HISTORIAL" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -71,7 +71,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#onClickSaltarTurno" prefHeight="50.0" prefWidth="144.0" text="SALTAR TURNO">
+                        <Button mnemonicParsing="false" onAction="#onClickSaltarTurno" prefHeight="50.0" prefWidth="144.0" style="-fx-background-color: #243673;" text="SALTAR TURNO" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -80,7 +80,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#guardar" prefHeight="50.0" prefWidth="125.0" text="GUARDAR">
+                        <Button mnemonicParsing="false" onAction="#guardar" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #243673;" text="GUARDAR" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -89,7 +89,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#onClickSalir" prefHeight="50.0" prefWidth="125.0" text="SALIR">
+                        <Button mnemonicParsing="false" onAction="#onClickSalir" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #243673;" text="SALIR" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>

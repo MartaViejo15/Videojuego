@@ -21,7 +21,7 @@
                   <VBox prefHeight="480.0" prefWidth="70.0" />
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Imagen/alerta%20.png" />
+                        <Image url="@Imagen/alerta.png" />
                      </image></ImageView>
                   <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="524.0">
                      <children>
@@ -39,7 +39,7 @@
                   </VBox>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Imagen/alerta%20.png" />
+                        <Image url="@Imagen/alerta.png" />
                      </image></ImageView>
                   <VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="70.0">
                      <children>
