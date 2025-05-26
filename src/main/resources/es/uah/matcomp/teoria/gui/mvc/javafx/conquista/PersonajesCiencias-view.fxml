@@ -60,9 +60,9 @@
                         </HBox>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <ImageView fitHeight="138.0" fitWidth="174.0" layoutX="16.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="138.0" fitWidth="150.0" layoutX="24.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Imagen/biólogo%20.png" />
+                                    <Image url="@Imagen/biólogo.png" />
                                  </image>
                               </ImageView>
                               <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="174.0" prefWidth="200.0">

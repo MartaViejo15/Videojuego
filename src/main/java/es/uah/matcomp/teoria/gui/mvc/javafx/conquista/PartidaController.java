@@ -1,6 +1,9 @@
 package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 
 import com.google.gson.Gson;
+import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.ClasesAuxiliaresParaSerializacion.Mapa;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.ClasesAuxiliaresParaSerializacion.PartidaASerializar;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.inventario.Inventario;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Elemento;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.preguntas.Lista;
@@ -37,6 +40,8 @@ public class PartidaController {
     @FXML
     private GridPane Mapa;
 
+    private Label Logs;
+
     private Stage stage;
 
     private Tablero tablero;
@@ -62,6 +67,9 @@ public class PartidaController {
         ronda = 1;
         puntos.setText("TE QUEDAN " + punto + " PUNTOS");
         turnos.setText("RONDA " + ronda + " : TU TURNO");
+        String info = "Ronda: " + ronda;
+        log.info(info);
+        Logs.setText(info + "\n");
         configurarMapa();
         configurarUnidades();
         informacion.setText("Selecciona una acción.");
@@ -180,6 +188,8 @@ public class PartidaController {
                 */ else {
                     accionMover(fila,columna);
                     informacion.setText(seleccionado.getBase().getNombre() + " mueve a la casilla " + fila + ", " + columna);
+                    log.info(informacion);
+                    Logs.setText(Logs.getText() + informacion +"\n");
                     onClickMover();
                     seleccionado = null;
                     punto--;
@@ -247,6 +257,9 @@ public class PartidaController {
         destino.setUnidad(seleccionado);
     }
     private int accionAtacar(UnidadProperty flotante) {
+        String info = seleccionado.getBase().getNombre() + " ha atacado a " + flotante.getBase().getNombre();
+        log.info(info);
+        Logs.setText(Logs.getText() + info +"\n");
         return this.seleccionado.atacar(flotante);
     }
     @FXML
@@ -270,8 +283,14 @@ public class PartidaController {
             //parte no visual
             if(comprobarEquipo(Enemigos,flotante)){
                 Enemigos.delete(flotante);
+                String info = "La unidad enemiga" + flotante.getBase().getNombre() + " ha sido eliminada";
+                log.info(info);
+                Logs.setText(Logs.getText() + info +"\n");
             }else {
                 Mis_unidades.delete(flotante);
+                String info = "Tu unidad" + flotante.getBase().getNombre() + " ha sido eliminada";
+                log.info(info);
+                Logs.setText(Logs.getText() + info +"\n");
             }
         }
     }
@@ -500,6 +519,9 @@ public class PartidaController {
             Scene sceneHistorial = new Scene(fxmlLoader.load(), 350, 400);
             StageHistorial.setTitle("Historial");
             StageHistorial.setScene(sceneHistorial);
+            HistorialController controller = fxmlLoader.getController();
+            controller.setLabelLogs(Logs);
+            controller.setStage(StageHistorial);
             StageHistorial.show();
         }catch(Exception e){
             e.printStackTrace();
@@ -571,6 +593,9 @@ public class PartidaController {
     @FXML
     public void actualizar(){
         if(Enemigos.getNumElementos() == 0){
+            String info = "El jugador ha ganado la partida";
+            log.info(info);
+            Logs.setText(Logs.getText() + info +"\n");
             //gana jugador
             //falta por hacer
         }
@@ -584,6 +609,9 @@ public class PartidaController {
             }
             //termina turno de ai, empieza nueva ronda
             ronda ++;
+            String info = "Ronda: " + ronda;
+            log.info(info);
+            Logs.setText(Logs.getText() + info +"\n");
             //refrescar unidad
             Elemento<UnidadProperty> aux = Mis_unidades.getPrimero();
             while(aux != null){
@@ -624,6 +652,9 @@ public class PartidaController {
         if(Pregunta(nueva.getBase().getId())){
             informacion.setText("Respuesta correcta. Elige una casilla para poner tu unidad nueva.");
             Mis_unidades.add(nueva);
+            String info = "Ha entrado la unidad: " + nueva.getBase().getNombre();
+            log.info(info);
+            Logs.setText(Logs.getText() + info +"\n");
             //añadir la nueva en el tablero
             añadirUnidad(nueva);
         }else{
@@ -680,37 +711,43 @@ public class PartidaController {
         File Archivo3 = new File(Partida3);
         File Archivo4 = new File(Partida4);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Partida-view.fxml"));
-        PartidaController controller = fxmlLoader.getController();
+        String colorFondo = "White";
+        String colorBorde = "Black";
+
+        if(mapa == 4){
+
+        }
+
+        PartidaASerializar datosPartida = new PartidaASerializar(new Mapa(tablero, Mapa.getRowCount() - 1, Mapa.getColumnCount() - 1, colorFondo  , colorBorde), faccion, Mis_unidades, Enemigos, inventarios, punto, ronda, seleccionado, mapa, atacar, mover);
 
         if(Archivo1.length() == 0){
-            Gson gson = new Gson();
+            ObjectMapper mapper1 = new ObjectMapper();
             try (FileWriter writer1 = new FileWriter(Partida1)) {
-                gson.toJson(controller, writer1);
+                mapper1.writeValue(Archivo1, datosPartida);
                 System.out.println("Guardado en partida 1");
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }else if(Archivo2.length() == 0){
-            Gson gson = new Gson();
+            ObjectMapper mapper2 = new ObjectMapper();
             try (FileWriter writer2 = new FileWriter(Partida2)) {
-                gson.toJson(controller, writer2);
+                mapper2.writeValue(Archivo2, datosPartida);
                 System.out.println("Guardado en partida 2");
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }else if(Archivo3.length() == 0){
-            Gson gson = new Gson();
+            ObjectMapper mapper3 = new ObjectMapper();
             try (FileWriter writer3 = new FileWriter(Partida3)) {
-                gson.toJson(controller, writer3);
+                mapper3.writeValue(Archivo3, datosPartida);
                 System.out.println("Guardado en partida 3");
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }else if(Archivo4.length() == 0){
-            Gson gson = new Gson();
+            ObjectMapper mapper4 = new ObjectMapper();
             try (FileWriter writer4 = new FileWriter(Partida4)) {
-                gson.toJson(controller, writer4);
+                mapper4.writeValue(Archivo4, datosPartida);
                 System.out.println("Guardado en partida 4");
             } catch (IOException e) {
                 e.printStackTrace();

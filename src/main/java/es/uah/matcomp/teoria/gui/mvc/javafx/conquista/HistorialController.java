@@ -2,6 +2,7 @@ package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -13,19 +14,7 @@ public class HistorialController {
     private Stage stage;
 
     @FXML
-    private Label label1;
-    @FXML
-    private Label label2;
-    @FXML
-    private Label label3;
-    @FXML
-    private Label label4;
-    @FXML
-    private Label label5;
-    @FXML
-    private Label label6;
-    @FXML
-    private Label label7;
+    private Label labelLogs;
 
     @FXML
     protected void logs(){
@@ -34,7 +23,14 @@ public class HistorialController {
 
     @FXML
     protected void Aceptar(ActionEvent event) {
+        stage.close();
+    }
 
+    public void setLabelLogs(Label text){
+        labelLogs.textProperty().bind(text.textProperty());
+    }
+    public void setStage(Stage stage){
+        this.stage = stage;
     }
 
 }
