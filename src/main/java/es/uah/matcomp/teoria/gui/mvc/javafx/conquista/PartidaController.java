@@ -1,5 +1,6 @@
 package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.gson.Gson;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.ClasesAuxiliaresParaSerializacion.Mapa;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -88,6 +89,9 @@ public class PartidaController {
         if(mapa == 3){
             mapa3();
         }
+        if(mapa == 4){
+            mapa4();
+        }
         //hacer el resto de mapas
     }
     @FXML
@@ -102,7 +106,7 @@ public class PartidaController {
                 imagenView.setFitWidth(60);
                 imagenView.setVisible(false);
                 AnchorPane casilla = new AnchorPane(imagenView);
-                casilla.setStyle("-fx-border-color: black;");
+                casilla.setStyle("-fx-border-color: black;-fx-background-color: white");
                 casilla.setMinSize(60,60);
                 casilla.setOnMouseClicked(onClicked(i,j));
                 Mapa.add(casilla, j, i);
@@ -137,7 +141,7 @@ public class PartidaController {
                 imagenView.setFitWidth(60);
                 imagenView.setVisible(false);
                 AnchorPane casilla = new AnchorPane(imagenView);
-                casilla.setStyle("-fx-border-color: black;");
+                casilla.setStyle("-fx-border-color: black; -fx-background-color: white");
                 casilla.setMinSize(60,60);
                 casilla.setOnMouseClicked(onClicked(j,i));
                 Mapa.add(casilla, i, j);
@@ -219,18 +223,15 @@ public class PartidaController {
                     informacion.setText("Unidad seleccionada no es de tu equipo.");
                 }
             } else if (mover){
-                if(flotante != null){
-                    informacion.setText("Casilla ocupada");
-                }
                 int disx = Math.abs(seleccionado.getPosicionX() - fila);
                 int disy = Math.abs(seleccionado.getPosicionY() - columna);
                 int distancia = disx + disy;
-                if (distancia > seleccionado.getBase().getRango_Movimiento()){
+                if(flotante != null){
+                    informacion.setText("Casilla ocupada");
+                }else if (distancia > seleccionado.getBase().getRango_Movimiento()){
+                    //no (hacer
                     informacion.setText("Casilla fuera del rango de movimiento");
-                }/*si la posicion del flotante está fuera del rango_mov
-                informacion.setText("Casilla fuera del rango de movimiento");
-                hacer
-                */ else {
+                }else {
                     accionMover(fila,columna);
                     informacion.setText(seleccionado.getBase().getNombre() + " mueve a la casilla " + fila + ", " + columna);
                     log.info(informacion);
@@ -241,18 +242,14 @@ public class PartidaController {
                     actualizar();
                 }
             } else if (atacar) {
+                int disx = Math.abs(seleccionado.getPosicionX() - fila);
+                int disy = Math.abs(seleccionado.getPosicionY() - columna);
+                int distancia = disx + disy;
                 if(flotante == null){
                     informacion.setText("Elige unidad a que quiere atacar.");
-                }
-                int disx = Math.abs(seleccionado.getPosicionX() - flotante.getPosicionX());
-                int disy = Math.abs(seleccionado.getPosicionY() - flotante.getPosicionY());
-                int distancia = disx + disy;
-                if (distancia > seleccionado.getBase().getRango_Ataque()){
+                } else if (distancia > seleccionado.getBase().getRango_Ataque()){
                     informacion.setText("Unidad fuera del rango de ataque");
-                }/*si la posicion del flotante está fuera del rango_ataque
-                informacion.setText("Unidad fuera del rango de ataque");
-                hacer
-                */ else if (!comprobarEquipo(Enemigos,flotante)) {
+                } else if (!comprobarEquipo(Enemigos,flotante)) {
                     informacion.setText("No puedes atacar unidad de tu equipo.");
                 } else {
                     informacion.setText(seleccionado.getBase().getNombre() + " ataca a " + flotante.getBase().getNombre() + ", con daño: " + accionAtacar(flotante));
@@ -267,6 +264,38 @@ public class PartidaController {
                 informacion.setText("Seleccionada unidad: " + seleccionado.getBase().getNombre());
             }
         };
+    }
+    @FXML
+    private void mapa4() {
+        ObjectMapper mapper = new ObjectMapper();
+        Mapa.getChildren().clear();
+        try{
+            Mapa m = mapper.readValue("Mapa personalizada",Mapa.class);
+            for (int i = 0; i < m.getAlturaGrid(); i++) {
+                for (int j = 0; j < m.getLongitudGrid(); j++) {
+                    Image imagen = new Image(getClass().getResourceAsStream("/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Imagen/Logo.png"));
+                    ImageView imagenView = new ImageView(imagen);
+                    int mayor = 0;
+                    if(m.getAlturaGrid()<m.getLongitudGrid()){
+                        mayor = m.getLongitudGrid();
+                    }else {
+                        mayor = m.getAlturaGrid();
+                    }
+                    double tamaño = Math.round((float) 600 /mayor);
+                    imagenView.setFitHeight(tamaño);
+                    imagenView.setFitWidth(tamaño);
+                    imagenView.setVisible(false);
+                    AnchorPane casilla = new AnchorPane(imagenView);
+                    casilla.setStyle("-fx-border-color: " + m.getColorBorde() + "; -fx-background-color: " + m.getColorFondo() + ";");
+                    casilla.setMinSize(tamaño,tamaño);
+                    casilla.setOnMouseClicked(onClicked(j,i));
+                    Mapa.add(casilla, i, j);
+                }
+            }
+            this.tablero = m.getTablero();
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
     }
     @FXML
     public void accionMover(int fila, int columna) {
@@ -284,8 +313,6 @@ public class PartidaController {
                 ImageView imagen = (ImageView) casilla.getChildren().getFirst();
                 imagen.setVisible(false);
             } else if (filaNodo == fila && columnaNodo == columna) {
-                //falta caso de que si hay inventario en dicha casilla
-                //hacer
                 AnchorPane casilla = (AnchorPane) nodo;
                 ImageView imagen = (ImageView) casilla.getChildren().getFirst();
                 ponerImagen(seleccionado,imagen);
@@ -355,7 +382,6 @@ public class PartidaController {
             Enemigos.add(generarUnidadCiencias(Enemigos,true));
         }
         //Poner Enemigos en Mapa y tablero
-        //hacer(similar a poner mis unidades
         ponerUnidad(0,Mapa.getColumnCount()-1,Enemigos.getPrimero().getDato());
         ponerUnidad(Mapa.getRowCount()-1,Mapa.getColumnCount()-1,Enemigos.getPrimero().getSiguiente().getDato());
     }
@@ -410,7 +436,6 @@ public class PartidaController {
         if(unidad.getBase().getId().equals("l5")){
             imagen.setImage(new Image(getClass().getResourceAsStream("/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Imagen/maestro_rojo.png")));
         }
-        //hacer(con el id, cambiando el imagen
     }
     private UnidadProperty generarUnidadLetras(Lista<UnidadProperty> unidades,boolean profe) {
         int rand = new Random().nextInt(4);
@@ -430,7 +455,6 @@ public class PartidaController {
         if (rand == 4){
             unidad = new UnidadProperty(new Maestro("Maestro" + getN_unidades(unidades,"l5"),profe));
         }
-        //hacer(falta resto de casos
         return unidad;
     }
     private UnidadProperty generarUnidadCiencias(Lista<UnidadProperty> unidades,boolean profe) {
@@ -451,7 +475,6 @@ public class PartidaController {
         if (rand == 4){
             unidad = new UnidadProperty(new Medico("Médico" + getN_unidades(unidades,"c5"),profe));
         }
-        //hacer(similar a letras
         return unidad;
     }
     private int getN_unidades(Lista<UnidadProperty> unidades,String id){
@@ -760,7 +783,14 @@ public class PartidaController {
         String colorBorde = "Black";
 
         if(mapa == 4){
-
+            ObjectMapper mapper = new ObjectMapper();
+            try{
+                Mapa m = mapper.readValue("Mapa personalizada",Mapa.class);
+                colorFondo = m.getColorFondo();
+                colorBorde = m.getColorBorde();
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         PartidaASerializar datosPartida = new PartidaASerializar(new Mapa(tablero, Mapa.getRowCount() - 1, Mapa.getColumnCount() - 1, colorFondo  , colorBorde), faccion, Mis_unidades, Enemigos, inventarios, punto, ronda, seleccionado, mapa, atacar, mover);
