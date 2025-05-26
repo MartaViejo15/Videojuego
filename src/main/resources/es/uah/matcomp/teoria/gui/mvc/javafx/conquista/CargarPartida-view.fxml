@@ -9,7 +9,7 @@
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="1050.0" spacing="10.0" style="-fx-background-color: rgba(188,94,94);">
          <children>
-            <HBox alignment="CENTER" prefHeight="120.0" prefWidth="1050.0">
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="1050.0">
                <children>
                   <Label text="CARGAR PARTIDA" textFill="WHITE">
                      <font>
@@ -164,7 +164,7 @@
                            </children>
                         </VBox>
                      </children></HBox>
-                  <VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="75.0">
+                  <VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="121.0" prefWidth="75.0">
                      <children>
                         <Button mnemonicParsing="false" onAction="#Aceptar" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #243673;" text="OK" textFill="WHITE" />
                      </children>
