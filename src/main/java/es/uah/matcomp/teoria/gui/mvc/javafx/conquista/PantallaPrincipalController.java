@@ -59,8 +59,10 @@ public class PantallaPrincipalController {
             } catch (IOException e){
                 e.printStackTrace();
             }
+        }else{
+            abrirVentanaYCerrarPP("CargarPartida-view.fxml", "CargarPartida", event);
         }
-        abrirVentanaYCerrarPP("CargarPartida-view.fxml", "CargarPartida", event);
+
     }
 
     @FXML

@@ -43,7 +43,7 @@
                      </image></ImageView>
                   <VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="70.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #243673;" text="OK" textFill="WHITE" />
+                        <Button mnemonicParsing="false" onAction="#aceptar" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #243673;" text="OK" textFill="WHITE" />
                      </children>
                   </VBox>
                </children></HBox>

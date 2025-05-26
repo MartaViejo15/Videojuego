@@ -5,7 +5,7 @@ import javafx.beans.property.StringProperty;
 
 public abstract class Unidad {
     private String id;
-    private StringProperty nombre;
+    private String nombre;
     private Integer HP;
     private int Ataque;
     private int Defensa;
@@ -17,7 +17,7 @@ public abstract class Unidad {
 
     public Unidad() {
         id="";
-        nombre=new SimpleStringProperty("");
+        nombre="";
         HP=0;
         Ataque=0;
         Defensa=0;
@@ -29,7 +29,7 @@ public abstract class Unidad {
     }
     public Unidad(String id, String nombre, int HP, int ataque, int Defensa, int Rango_Movimiento, int Rango_Ataque, boolean profe) {
         this.id = id;
-        this.nombre.set(nombre);
+        this.nombre = nombre;
         this.HP = HP;
         this.Ataque = ataque;
         this.Defensa = Defensa;
@@ -98,11 +98,11 @@ public abstract class Unidad {
     public void setId(String id) {
         this.id = id;
     }
-    public StringProperty getNombre() {
+    public String getNombre() {
         return nombre;
     }
     public void setNombre(String nombre) {
-        this.nombre.set(nombre);
+        this.nombre = nombre;
     }
     public int getHP() {
         return HP;

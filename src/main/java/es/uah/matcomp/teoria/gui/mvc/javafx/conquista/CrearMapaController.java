@@ -58,7 +58,7 @@ public class CrearMapaController {
         ObjectMapper mapper = new ObjectMapper();
         Mapa datos = new Mapa(this.tablero,(int) this.altura.getValue(),(int) this.longitud.getValue(),this.traducirColor(this.colorFondo.getValue()),this.traducirColor(this.colorBorde.getValue()));
         try {
-            mapper.writeValue(new File("Mapa personalizada.json"),datos);
+            mapper.writeValue(new File("src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Mapa personalizada.json"),datos);
         }catch (IOException e){
             e.printStackTrace();
         }

@@ -50,7 +50,7 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="20.0" prefWidth="44.0" text="Label" textFill="WHITE" />
+                  <Label prefHeight="20.0" prefWidth="44.0" textFill="WHITE" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0" />

@@ -69,6 +69,7 @@ public class PartidaController {
         turnos.setText("RONDA " + ronda + " : TU TURNO");
         String info = "Ronda: " + ronda;
         log.info(info);
+        Logs = new Label();
         Logs.setText(info + "\n");
         configurarMapa();
         configurarUnidades();
@@ -269,7 +270,7 @@ public class PartidaController {
         ObjectMapper mapper = new ObjectMapper();
         Mapa.getChildren().clear();
         try{
-            Mapa m = mapper.readValue("Mapa personalizada",Mapa.class);
+            Mapa m = mapper.readValue("src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Mapa personalizada.json",Mapa.class);
             generarMapa(m);
             this.tablero = m.getTablero();
         } catch (JsonProcessingException e) {

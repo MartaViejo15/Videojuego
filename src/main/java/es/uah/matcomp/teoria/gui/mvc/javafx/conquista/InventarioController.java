@@ -160,7 +160,7 @@ public class InventarioController {
     public void initData() {
         esp1.setText(unidad.getBase().getElementoEspecifico1().getNombre());
         esp2.setText(unidad.getBase().getElementoEspecifico2().getNombre());
-        Nombre.setText(unidad.getBase().getNombre().get());
+        Nombre.setText(unidad.getBase().getNombre());
         esp1.setSelected(unidad.getBase().getElementoEspecifico1().uso());
         esp2.setSelected(unidad.getBase().getElementoEspecifico2().uso());
         comprobarLaCelestina();

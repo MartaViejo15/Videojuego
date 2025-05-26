@@ -23,7 +23,7 @@ public class EstadosController {
     private UnidadProperty unidad;
 
     public void setEstados() {
-        this.nombreUnidadLabel.textProperty().bindBidirectional(unidad.getBase().getNombre());
+        this.nombreUnidadLabel.setText(unidad.getBase().getNombre());
         if (unidad.getBase().isProfe()) {
             rangoUnidadLabel.setText("Profe");
         } else {
