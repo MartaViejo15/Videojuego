@@ -621,6 +621,9 @@ public class PartidaController {
                 Scene scene = new Scene(fxmlLoader.load(), 350, 400);
                 s.setTitle("Estados");
                 s.setScene(scene);
+                EstadosController controller = fxmlLoader.getController();
+                controller.setUnidad(seleccionado);
+                controller.setEstados();
                 s.show();
             }catch(Exception e){
                 e.printStackTrace();
@@ -741,6 +744,21 @@ public class PartidaController {
             añadirUnidad(nueva);
         }else{
             informacion.setText("Respuesta incorrecta. No conseguiste la unidad nueva.");
+        }
+        Random rand  = new Random();
+        int probabilidad = rand.nextInt(2); // sale 0 o 1 aleatoriamente
+        if (probabilidad == 1){
+            UnidadProperty nuevoIA = null;
+            if (faccion.equals("c")){
+                nuevoIA = generarUnidadCiencias(Mis_unidades,false);
+            } else {
+                nuevoIA = generarUnidadLetras(Mis_unidades,false);
+            }
+            Enemigos.add(nuevoIA);
+            añadirUnidad(nuevoIA);
+            informacion.setText("La IA ha añadido una unidad nueva.");
+        } else {
+            informacion.setText("La IA no añadió unidad nueva esta ronda.");
         }
         //para ai
         //hacer(diferente que el jugador

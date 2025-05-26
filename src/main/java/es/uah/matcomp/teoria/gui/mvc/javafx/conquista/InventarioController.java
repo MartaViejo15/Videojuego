@@ -94,7 +94,7 @@ public class InventarioController {
         Teorema();
         Babi();
         Juicio();
-        TAC();
+        Radiografía();
         Dinosaurio();
         RocaSedimentaria();
         stage.close();
@@ -134,9 +134,9 @@ public class InventarioController {
             unidad.UsarInventario(new Juicio());
         }
     }
-    private void TAC() {
+    private void Radiografía() {
         if(g8.isSelected()) {
-            unidad.UsarInventario(new TAC());
+            unidad.UsarInventario(new Radiografía());
         }
     }
     private void Dinosaurio() {
@@ -160,7 +160,7 @@ public class InventarioController {
     public void initData() {
         esp1.setText(unidad.getBase().getElementoEspecifico1().getNombre());
         esp2.setText(unidad.getBase().getElementoEspecifico2().getNombre());
-        Nombre.setText(unidad.getBase().getNombre());
+        Nombre.setText(unidad.getBase().getNombre().get());
         esp1.setSelected(unidad.getBase().getElementoEspecifico1().uso());
         esp2.setSelected(unidad.getBase().getElementoEspecifico2().uso());
         comprobarLaCelestina();
@@ -170,7 +170,7 @@ public class InventarioController {
         comprobarTeorema();
         comprobarBabi();
         comprobarJuicio();
-        comprobarTAC();
+        comprobarRadiografía();
         comprobarDinosaurio();
         comprobarRocaSedimentaria();
         NoHay.setVisible(!g1.isVisible() && !g2.isVisible() && !g3.isVisible() && !g4.isVisible() && !g5.isVisible() && !g6.isVisible() && !g7.isVisible() && !g8.isVisible() && !g9.isVisible() && !g10.isVisible());
@@ -252,13 +252,13 @@ public class InventarioController {
             g7.setVisible(true);
         }
     }
-    private void comprobarTAC() {
-        Elemento<Inventario> item8 = unidad.buscar(new TAC());
+    private void comprobarRadiografía() {
+        Elemento<Inventario> item8 = unidad.buscar(new Radiografía());
         if(item8 == null) {
             gn8.setVisible(false);
             g8.setVisible(false);
         }else {
-            gn8.setText("x " + unidad.buscar(new TAC()).getDato().getN_elementos());
+            gn8.setText("x " + unidad.buscar(new Radiografía()).getDato().getN_elementos());
             gn8.setVisible(true);
             g8.setVisible(true);
         }

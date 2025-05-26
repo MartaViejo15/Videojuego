@@ -1,5 +1,6 @@
 package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 
+import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades.UnidadProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -19,13 +20,23 @@ public class EstadosController {
     @FXML
     private Label rAtaqueLabel;
 
-    public void setEstados(String nombreUnidad, String rangoUnidad, int hp, int ataque, int defensa, int rMovimiento, int rAtaque) {
-        this.nombreUnidadLabel.setText(nombreUnidad);
-        this.rangoUnidadLabel.setText(rangoUnidad);
-        this.hpLabel.setText("• Puntos de vida (HP):  " + hp);
-        this.ataqueLabel.setText("• Ataque:  " + ataque);
-        this.defensaLabel.setText("• Defensa:  " + defensa);
-        this.rMovimientoLabel.setText("• Rango de movimiento:  " + rMovimiento);
-        this.rAtaqueLabel.setText("• Rango de ataque:  " + rAtaque);
+    private UnidadProperty unidad;
+
+    public void setEstados() {
+        this.nombreUnidadLabel.textProperty().bindBidirectional(unidad.getBase().getNombre());
+        if (unidad.getBase().isProfe()) {
+            rangoUnidadLabel.setText("Profe");
+        } else {
+            rangoUnidadLabel.setText("Alumno");
+        }
+        this.hpLabel.textProperty().bind(unidad.getHP().asString());
+        this.ataqueLabel.textProperty().bind(unidad.getAtaque().asString());
+        this.defensaLabel.textProperty().bind(unidad.getDefensa().asString());
+        this.rMovimientoLabel.textProperty().bind(unidad.getRango_Movimiento().asString());
+        this.rAtaqueLabel.textProperty().bind(unidad.getRango_Ataque().asString());
+    }
+
+    public void setUnidad(UnidadProperty unidad) {
+        this.unidad = unidad;
     }
 }
