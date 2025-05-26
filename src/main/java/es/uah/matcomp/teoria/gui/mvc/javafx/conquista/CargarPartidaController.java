@@ -1,5 +1,6 @@
 package es.uah.matcomp.teoria.gui.mvc.javafx.conquista;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.ClasesAuxiliaresParaSerializacion.PartidaASerializar;
 import javafx.event.ActionEvent;
