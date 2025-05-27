@@ -34,10 +34,7 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Label prefHeight="20.0" prefWidth="58.0" text="Info" textFill="WHITE">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font></Label>
+                              <Label prefHeight="37.0" prefWidth="232.0" text="Tamaño 10x10, de color blanco y negro; con dificultad de movimiento 2,3,4" textFill="WHITE" wrapText="true" />
                            </children>
                         </VBox>
                         <CheckBox fx:id="t1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#selecMap1" prefHeight="50.0" prefWidth="36.0" textAlignment="CENTER" textFill="WHITE">

@@ -541,6 +541,7 @@ public class PartidaController {
                 informacion.setText("Seleccione casilla para mover");
                 //Lista<Casilla> casillasAlcanzables = tablero.getCasillasAlcanzable(tablero.getCasilla(seleccionado.getPosicionX(),seleccionado.getPosicionY()),seleccionado.getRango_Movimiento().get());
                 //peda por dijkstra?
+                //otra solucion posible: algoritmo de Prim, donde la existencia de camino se comprueba con algoritmo de busqueda de anchura.
                 //verRangoMov(casillasAlcanzables);
             }
         }
@@ -578,7 +579,7 @@ public class PartidaController {
         }
     }
     @FXML
-    protected void cargarMapa(PartidaASerializar datosPartida){
+    public void cargarMapa(PartidaASerializar datosPartida){
         this.tablero = datosPartida.getMapa().getTablero();
         this.faccion = datosPartida.getFaccion();
         this.Mis_unidades = datosPartida.getMis_unidades();
@@ -590,6 +591,7 @@ public class PartidaController {
         this.mapa = datosPartida.getIdentificadorMapa();
         this.atacar = datosPartida.isAtacar();
         this.mover = datosPartida.isMover();
+        this.Logs = new Label();
         this.Logs.setText(datosPartida.getLog());
         puntos.setText("TE QUEDAN " + punto + " PUNTOS");
         turnos.setText("RONDA " + ronda + " : TU TURNO");
@@ -711,7 +713,7 @@ public class PartidaController {
     }
 
     @FXML
-    public void actualizar(){
+    private void actualizar(){
         if(Enemigos.getNumElementos() == 0){
             //gana la partida
             fin.setText("Enhorabuena, has ganado!!!");
@@ -774,7 +776,7 @@ public class PartidaController {
             punto = 3;
         }
     }
-    protected void Contrario(){
+    private void Contrario(){
         Cola<UnidadProperty> colaUnidad = new Cola<>(Enemigos);
         while(punto != 0){
             UnidadProperty seleccionadoIA = colaUnidad.dequeue();
@@ -813,7 +815,7 @@ public class PartidaController {
         return null;
     }
 
-    protected void entraUnidad(){
+    private void entraUnidad(){
         //para jugador
         UnidadProperty nueva = null;
         if(faccion.equals("c")){
@@ -833,7 +835,7 @@ public class PartidaController {
             informacion.setText("Respuesta incorrecta. No conseguiste la unidad nueva.");
         }
     }
-    protected void entraUnidadIA(Casilla posicionAponer){
+    private void entraUnidadIA(Casilla posicionAponer){
         Random rand  = new Random();
         int probabilidad = rand.nextInt(2); // sale 0 o 1 aleatoriamente
         if (probabilidad == 1){
@@ -853,7 +855,7 @@ public class PartidaController {
             informacion.setText("La IA no añadió unidad nueva esta ronda.");
         }
     }
-    protected void añadirUnidad(UnidadProperty nueva){
+    private void añadirUnidad(UnidadProperty nueva){
         añadir = true;
         this.seleccionado = nueva;
     }
@@ -881,7 +883,7 @@ public class PartidaController {
         return null;
     }
     @FXML
-    protected boolean Pregunta(String id){
+    private boolean Pregunta(String id){
         Stage s = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Pregunta-view.fxml"));
         try{
@@ -901,12 +903,12 @@ public class PartidaController {
         //Si el usuario no contesta y hace alguna otra accion?
         return controller.aceptar();
     }
-    protected void refrescarInventario(){
+    private void refrescarInventario(){
         if(mapa == 1){
             refrescarInventario1();
         }
     }
-    protected void refrescarInventario1(){
+    private void refrescarInventario1(){
         if(ronda % 2 == 0){
             //genero inventario
             //falta por hacer
