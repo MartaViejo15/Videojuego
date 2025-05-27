@@ -14,11 +14,12 @@ class UnidadTest {
 
     @Test
     void usarElementoEspecifico() {
-        Abogado abogado = new Abogado("abogado0", false);
-        ElementoEspecifico elemento1 = new ElementoEspecifico("Espada", 10, 5, 2, 1, 1);
-        ElementoEspecifico elemento2 = new ElementoEspecifico("Escudo", 15, 2, 8, 2, 0);
-        abogado.setElementoEspecifico1(elemento1);
-        abogado.setElementoEspecifico2(elemento2);
+        Abogado abogado = new Abogado("abogado0", true);
+        abogado.usarElementoEspecifico(abogado.getElementoEspecifico1());
+        abogado.usarElementoEspecifico(abogado.getElementoEspecifico1());
+        abogado.usarElementoEspecifico(abogado.getElementoEspecifico2());
+        abogado.usarElementoEspecifico(abogado.getElementoEspecifico2());
+        abogado.usarElementoEspecifico(null);
     }
 
     @Test
