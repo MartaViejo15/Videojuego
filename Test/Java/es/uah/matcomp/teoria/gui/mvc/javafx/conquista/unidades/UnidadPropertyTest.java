@@ -1,5 +1,6 @@
 package es.uah.matcomp.teoria.gui.mvc.javafx.conquista.unidades;
 
+import es.uah.matcomp.teoria.gui.mvc.javafx.conquista.inventario.Multiplicación;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,52 +18,79 @@ class UnidadPropertyTest {
 
     @Test
     void buscar() {
-
+        UnidadProperty quimico = new UnidadProperty(new Quimico("quimico", true));
+        quimico.buscar(new Multiplicación());
+        quimico.cogerInventario(new Multiplicación());
+        quimico.buscar(new Multiplicación());
     }
 
     @Test
     void usarInventario() {
-
+        UnidadProperty quimico = new UnidadProperty(new Quimico("quimico", true));
+        quimico.UsarInventario(new Multiplicación());
+        quimico.cogerInventario(new Multiplicación());
+        quimico.UsarInventario(new Multiplicación());
     }
 
     @Test
     void cogerInventario() {
+        UnidadProperty quimico = new UnidadProperty(new Quimico("quimico", true));
+        quimico.cogerInventario(new Multiplicación());
+        quimico.cogerInventario(new Multiplicación());
     }
 
     @Test
     void rollback() {
+        UnidadProperty quimico = new UnidadProperty(new Quimico("quimico", true));
+        quimico.rollback();
     }
 
     @Test
     void mover() {
+        UnidadProperty quimico = new UnidadProperty(new Quimico("quimico", true));
+        quimico.mover(3,3);
     }
 
     @Test
     void getPosicionX() {
+        UnidadProperty unidad = new UnidadProperty(new Quimico("quimico", true));
+        unidad.getPosicionX();
     }
 
     @Test
     void getPosicionY() {
+        UnidadProperty unidad = new UnidadProperty(new Quimico("quimico", true));
+        unidad.getPosicionY();
     }
 
     @Test
     void getBase() {
+        UnidadProperty unidad = new UnidadProperty(new Quimico("quimico", true));
+        unidad.getBase();
     }
 
     @Test
     void getHP() {
+        UnidadProperty unidad = new UnidadProperty(new Quimico("quimico", true));
+        unidad.getHP();
     }
 
     @Test
     void getAtaque() {
+        UnidadProperty quimico = new UnidadProperty(new Quimico("quimico", true));
+        quimico.getAtaque();
     }
 
     @Test
     void getDefensa() {
+        UnidadProperty unidad = new UnidadProperty(new Quimico("quimico", true));
+        unidad.getDefensa();
     }
 
     @Test
     void getRango_Movimiento() {
+        UnidadProperty unidad = new UnidadProperty(new Quimico("quimico", true));
+        unidad.getRango_Movimiento();
     }
 
     @Test

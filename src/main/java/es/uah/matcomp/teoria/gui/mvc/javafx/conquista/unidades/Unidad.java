@@ -15,6 +15,7 @@ public abstract class Unidad {
     private ElementoEspecifico elementoEspecifico1;
     private ElementoEspecifico elementoEspecifico2;
 
+    //clase abstracta, no se puede acceder. Pero necesito este constructor para Jackson
     public Unidad() {
         id="";
         nombre="";
