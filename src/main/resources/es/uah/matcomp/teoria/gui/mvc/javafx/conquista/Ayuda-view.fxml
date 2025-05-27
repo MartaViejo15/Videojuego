@@ -12,14 +12,27 @@
               <ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="1050.0">
                   <content>
                       <VBox prefHeight="572.0" prefWidth="1069.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15; -fx-padding: 20;">
-                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="995.0" text="¿Cómo se juega?" textAlignment="CENTER" textFill="WHITE">
-                        <font>
-                           <Font name="System Bold" size="30.0" />
-                        </font></Label>
-                              <Label alignment="CENTER" prefHeight="21.0" prefWidth="167.0" text="Paso 2: Crea tu personaje" textAlignment="CENTER" textFill="WHITE" />
-                              <Label text="Paso 3: Comienza la aventura" textFill="WHITE" />
-                              <Label text="Paso 4" textFill="WHITE" />
-                              <Label text="Paso 5" textFill="WHITE" />
+
+                          <Label alignment="CENTER" prefHeight="42.0" prefWidth="995.0" text="¿Cómo se juega?" textAlignment="CENTER" textFill="WHITE">
+                              <font>
+                                  <Font name="System Bold" size="30.0" />
+                              </font>
+                          </Label>
+
+                          <TextFlow prefWidth="1000" style="-fx-fill: white;">
+                              <Text style="-fx-fill: white" text="En esta lucha de Ciencias contra Letras, tu estrategia es tan importante como tu sabiduría sobre la facción con la que compitas. Para iniciar el juego, si seleccionas &quot;Nueva partida” deberás seleccionar el mapa al que quieras jugar de entre los 4 disponibles. Los 3 primeros son mapas ya creados que puedes ver en el apartado de “Mapas”, en esta misma ventana de “Ayuda”, mientras que el cuarto es un mapa de creación propia, donde tú mismo elegirás el tamaño del tablero, la dificultad de movimiento, el color de las casillas y el color del borde de estas.&#10;&#10;" />
+                              <Text style="-fx-fill: white" text="Tras haber elegido el mapa, deberás seleccionar la facción con la que quieres competir. En caso de seleccionar las Ciencias se abrirá una ventana para que selecciones tus dos primeros jugadores de entre: un químico, un biólogo, un ingeniero, un matemático y un médico. En caso de haber elegido las Letras, tendrás que elegir entre: un poeta, un filólogo, un historiador, un abogado y un maestro.&#10;&#10;" />
+                              <Text style="-fx-fill: white" text="Otra opción que tienes es haber elegido “Cargar partida&quot; desde la pantalla principal, desde donde podrás acceder a las partidas que hayas iniciado en otro momento y guardado para terminar más adelante, siendo este tu momento de seguir jugándolas.&#10;&#10;" />
+                              <Text style="-fx-font-weight: bold; -fx-underline: true; -fx-font: 16; -fx-fill: white" text="El juego&#10;" />
+                              <Text style="-fx-fill: white" text="El objetivo del juego es sencillo, eliminar todas las unidades de tu oponente, darlo todo para ser quien consiga quedarse con los territorios ancestrales que durante tantos años se han disputado.&#10;&#10;" />
+                              <Text style="-fx-fill: white" text="Al comenzar una partida obtienes dos personajes de tu facción, que aparecen en las esquinas izquierdas, uno en la superior y otro en la inferior, mientras que a la derecha aparecerán las de la IA, tu contrincante, una en la esquina superior y otra en la inferior. Dependiendo de tu rango de movimiento y de la dificultad de cada casilla podrás moverte por unos sitios u otros del mapa, que se colorearán de otro color para que puedas identificar fácilmente cuáles son. ¡Pero cuidado! En una casilla ocupada ya por otra unidad no podrás situarte.&#10;&#10;" />
+                              <Text style="-fx-fill: white" text="Cada personaje dispone de unos puntos de vida, un ataque, una defensa y un rango de movimiento con los que deberá defenderse y atacar las unidades de su oponente. Durante la partida podrás ir viendo los estados de cada uno de tus personajes para valorar qué unidades mover o a cuáles atacar y así crear tu estrategia ganadora.&#10;&#10;" />
+                              <Text style="-fx-fill: white" text="En las 3 primeras rondas, dispones de 2 puntos, cada punto sirve para hacer una acción, como sería atacar o mover. A partir de la cuarta ronda, tendrás 3 puntos, con la misma funcionalidad que antes. Cuando gastes esos puntos tu turno terminará y será el turno de la IA, y cuando esta acabe comenzará una ronda nueva. En caso de que lo prefieras, también podrás saltar tu turno.&#10;&#10;" />
+                              <Text style="-fx-fill: white" text="Durante el transcurso de la partida tendrás también un botón llamado “Historial” donde podrás ver la actividad más reciente de la partida o bajar con el scroll hasta encontrar la información que desees.&#10;&#10;" />
+                              <Text style="-fx-fill: white" text="En caso de usar objetos del inventario, estos durarán una sola ronda y, si han sido del inventario específico se podrán volver a usar mientras que si eran del general se gastará uno de los que se tenga almacenados.&#10;&#10;" />
+                              <Text style="-fx-fill: white" text="Visto esto y sabiendo ahora cómo se juega, ¡ve a darlo todo por conseguir esas tierras ancestrales! ¡Nuestros antepasados estarán orgullosos de ti!" />
+                          </TextFlow>
+
                       </VBox>
                   </content>
               </ScrollPane>
@@ -36,7 +49,7 @@
                         </font></Label>
                         <TextFlow prefWidth="800.0">
                             <Text style="-fx-font-weight: bold;-fx-font-size: 16;-fx-fill: white" text="Ciencias vs Letras&#10;" />
-                            <Text style="-fx-fill: white" text="La lucha de dos facciones completamente distintas nos lleva a la división de los personajes en estas dos facciones, ciencias y letras. Cada personaje dispone de unos puntos de vida (HP), ataque, defensa, rango de movimiento y rango de ataque.&#10;" />
+                            <Text style="-fx-fill: white" text="La lucha de dos facciones completamente distintas nos lleva a la división de los personajes en estas dos facciones, ciencias y letras. Cada personaje dispone de unos puntos de vida (HP), ataque, defensa, rango de movimiento y rango de ataque. En las características encontramos dos valores, los que tiene como alumno y los que tiene al evolucionar a profesor.&#10;" />
                         </TextFlow>
                         <HBox alignment="TOP_LEFT" spacing="10">
                         <TextFlow prefWidth="800.0">
@@ -198,111 +211,197 @@
     </Tab>
       <Tab style="-fx-text-fill: white;" text="Inventario">
           <content>
-            <ScrollPane fitToWidth="true" fitToHeight="true" prefHeight="600.0" prefWidth="1050.0" style="-fx-background-color: rgba(188,94,94);">
+            <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="600.0" prefWidth="1050.0" style="-fx-background-color: rgba(188,94,94);">
                 <content>
-                    <HBox alignment="TOP_LEFT" spacing="20" style="-fx-padding: 20 0 0 0; -fx-background-color: rgba(188,94,94);">
-                    <VBox fx:id="rootVBox" fillWidth="true" prefHeight="572.0" prefWidth="1069.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15; -fx-padding: 20;">
-                        <Label alignment="CENTER" prefHeight="42.0" prefWidth="995.0" text="Inventario" textAlignment="CENTER" textFill="WHITE">
-                        <font>
-                            <Font name="System Bold" size="30.0" />
-                        </font>
-                        </Label>
-                    <TextFlow prefWidth="800.0">
+                    <VBox alignment="TOP_LEFT" spacing="20" style="-fx-padding: 20 0 0 0; -fx-background-color: rgba(188,94,94);">
+                     <Label alignment="CENTER" prefHeight="45.0" prefWidth="1038.0" text="Inventario" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                         <Font name="System Bold" size="30.0" />
+                     </font>
+                     </Label>
+                    <VBox fx:id="rootVBox" fillWidth="true" prefHeight="1261.0" prefWidth="1062.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15; -fx-padding: 20;">
+                    <TextFlow prefHeight="174.0" prefWidth="995.0">
                         <Text style="-fx-font-weight: bold;-fx-font-size: 16;-fx-fill: white" text="¡Llena tu mochila de aventuras con los objetos más poderosos que potencien tu poder al máximo!&#10;" />
                         <Text style="-fx-fill: white" text="Dispones de dos inventarios distintos: el inventario específico (distinto para cada personaje) y el inventario general (disponible para cualquiera). El inventario específico consta de dos objetos por personaje a los que podrás acceder en cualquier momento presionando el botón de “Inventario”, su uso durará una ronda y se podrán usar tantas veces como se quiera. ¡Pero cuidado! El inventario específico es muy poderoso, aumentará alguno de tus valores pero otros disminuirán.&#10;" />
                         <Text style="-fx-fill: white" text="El inventario general irá apareciendo en algunas de las casillas del mapa y para poder usarlo tendrás que pasar por esa casilla para recogerlo. Podrá usarse tantas veces como lo hayas recogido y este sólo aumentará alguno de tus valores, sin contraefectos. En el apartado de “Inventario” podrás ver la cantidad de objetos que tengas en tu mochila de aventuras.&#10;&#10;" />
                     </TextFlow>
+                        <TextFlow prefHeight="919.0" prefWidth="995.0" style="-fx-text-fill: white;">
+                            <Text fill="WHITE" style="-fx-font-weight: bold; -fx-font-size: 16;" text="Inventario específico:&#10;" />
+                            <Text fill="WHITE" style="-fx-font-weight: bold; -fx-font-size: 16; -fx-underline: true" text="Ciencias&#10;" />
+                            <Text style="-fx-fill: white;" text=" - Químico:&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Pipeta:" />
+                            <Text style="-fx-fill: white;" text=" Para darle precisión al químico, la pipeta aumenta en 2 su rango de ataque y disminuye el ataque en 7.&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Erlenmeyer:" />
+                            <Text style="-fx-fill: white;" text=" Para preparar una reacción dañina, el Erlenmeyer aumenta en 10 el ataque y disminuye en 2 el rango de movimiento.&#10;&#10;" />
 
-                    <TextFlow prefWidth="800.0" style="-fx-text-fill: white;">
-                        <Text style="-fx-font-weight: bold; -fx-font-size: 16;" text="Inventario específico:&#10;" />
-                        <Text style="-fx-font-weight: bold; -fx-font-size: 16;" text="Ciencias&#10;" />
-                        <Text style="-fx-fill: white;" text=" - Químico:&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Pipeta: Para darle precisión al químico, la pipeta aumenta en 2 su rango de ataque y disminuye el ataque en 7.&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Erlenmeyer: Para preparar una reacción dañina, el Erlenmeyer aumenta en 10 el ataque y disminuye en 2 el rango de movimiento.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" - Biólogo:&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Cultivo microbiano:" />
+                            <Text style="-fx-fill: white;" text=" Cultivar bacterias tiene cosas tan buenas como aumentar en 7 tu ataque a la vez de otras malas como ponerte enfermo y bajar en 25 tus puntos de vida.&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Bata:" />
+                            <Text style="-fx-fill: white;" text=" Con la bata evitas mancharte aumentando tu defensa en 6 y disminuyendo tu ataque en 8.&#10;&#10;" />
 
-                        <Text style="-fx-fill: white;" text=" - Biólogo:&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Cultivo microbiano: Cultivar bacterias tiene cosas tan buenas como aumentar en 7 tu ataque a la vez de otras malas como ponerte enfermo y bajar en 25 tus puntos de vida.&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Bata: Con la bata evitas mancharte aumentando tu defensa en 6 y disminuyendo tu ataque en 8.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" - Ingeniero:&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Circuito combinacional:" />
+                            <Text style="-fx-fill: white;" text=" Uniendo cables consigues aumentar el rango de movimiento en 2, pero la defensa te baja 5 puntos.&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Java:" />
+                            <Text style="-fx-fill: white;" text=" Programando te aumenta en 2 el rango de ataque pero disminuyen los puntos de vida en 20.&#10;&#10;" />
 
-                        <Text style="-fx-fill: white;" text=" - Ingeniero:&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Circuito combinacional: Uniendo cables consigues aumentar el rango de movimiento en 2, pero la defensa te baja 5 puntos.&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Java: Programando te aumenta en 2 el rango de ataque pero disminuyen los puntos de vida en 20.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" - Matemático:&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Calculadora:" />
+                            <Text style="-fx-fill: white;" text=" Las operaciones consiguen aumentar tu ataque 12 puntos pero te baja el rango de movimiento en 2.&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Transportador:" />
+                            <Text style="-fx-fill: white;" text=" Cálculo de ángulos implica mayor rango de ataque, aumentando en 2 pero disminuyendo el ataque en 10.&#10;&#10;" />
 
-                        <Text style="-fx-fill: white;" text=" - Matemático:&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Calculadora: Las operaciones consiguen aumentar tu ataque 12 puntos pero te baja el rango de movimiento en 2.&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Transportador: Cálculo de ángulos implica mayor rango de ataque, aumentando en 2 pero disminuyendo el ataque en 10.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" - Médico:&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Bisturí:" />
+                            <Text style="-fx-fill: white;" text="  Para poder hacer una cirugía, el ataque te aumenta en 8 pero al igual que cortas, te puedes cortar a ti mismo y te disminuyen los puntos de vida en 20.&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Estetoscopio:" />
+                            <Text style="-fx-fill: white;" text=" Escuchando los latidos del corazón consigues aumentar tus puntos de vida en 30 pero disminuye tu rango de ataque en 2.&#10;&#10;" />
 
-                        <Text style="-fx-fill: white;" text=" - Médico:&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Bisturí: Para poder hacer una cirugía, el ataque te aumenta en 8 pero al igual que cortas, te puedes cortar a ti mismo y te disminuyen los puntos de vida en 20.&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Estetoscopio: Escuchando los latidos del corazón consigues aumentar tus puntos de vida en 30 pero disminuye tu rango de ataque en 2.&#10;&#10;" />
+                            <Text fill="WHITE" style="-fx-font-weight: bold; -fx-font-size: 16; -fx-underline: true" text="Letras&#10;" />
+                            <Text style="-fx-fill: white;" text=" - Poeta:&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Libro de sinónimos:" />
+                            <Text style="-fx-fill: white;" text=" La amplitud de vocabulario te permite aumentar tu rango de movimiento en 4 pero disminuye tu ataque en 10.&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Pluma:" />
+                            <Text style="-fx-fill: white;" text=" Permitiéndote escribir tus poemas, la pluma aumenta tu rango de ataque en 1 pero disminuye tu defensa en 4.&#10;&#10;" />
 
-                        <Text style="-fx-font-weight: bold; -fx-font-size: 16;" text="Letras&#10;" />
-                        <Text style="-fx-fill: white;" text=" - Poeta:&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Libro de sinónimos: La amplitud de vocabulario te permite aumentar tu rango de movimiento en 4 pero disminuye tu ataque en 10.&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Pluma: Permitiéndote escribir tus poemas, la pluma aumenta tu rango de ataque en 1 pero disminuye tu defensa en 4.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" - Filólogo:&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Diccionario:" />
+                            <Text style="-fx-fill: white;" text=" Conocedor de todas las palabras, tu ataque se incrementa en 17 mientras que el rango de ataque disminuye en 2.&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Fonética:" />
+                            <Text style="-fx-fill: white;" text=" Con tu buena pronunciación consigues aumentar tu rango de movimiento en 3 pero tu ataque disminuye en 12.&#10;&#10;" />
 
-                        <Text style="-fx-fill: white;" text=" - Filólogo:&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Diccionario: Conocedor de todas las palabras, tu ataque se incrementa en 17 mientras que el rango de ataque disminuye en 2.&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Fonética: Con tu buena pronunciación consigues aumentar tu rango de movimiento en 3 pero tu ataque disminuye en 12.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" - Historiador:&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Línea temporal:" />
+                            <Text style="-fx-fill: white;" text=" Viendo los acontecimientos históricos, consigues mejorar tus puntos de vida en 14 pero tu ataque disminuye en 7.&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Jeroglífico:" />
+                            <Text style="-fx-fill: white;" text=" Con la comunicación del Antiguo Egipto consigues aumentar la defensa en 20 y te disminuye el rango de movimiento en 2.&#10;&#10;" />
 
-                        <Text style="-fx-fill: white;" text=" - Historiador:&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Línea temporal: Viendo los acontecimientos históricos, consigues mejorar tus puntos de vida en 14 pero tu ataque disminuye en 7.&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Jeroglífico: Con la comunicación del Antiguo Egipto consigues aumentar la defensa en 20 y te disminuye el rango de movimiento en 2.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" - Abogado:&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Leyes:" />
+                            <Text style="-fx-fill: white;" text=" El poder legislativo trabaja 24/7 para permitirte mejorar en 2 tu rango de movimiento a pesar de perder 1 en el rango de ataque.&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Constitución:" />
+                            <Text style="-fx-fill: white;" text=" Gracias a las fuerzas otorgadas en 1978 tu rango de ataque aumentará en 2 pero tu ataque disminuirá en 10.&#10;&#10;" />
 
-                        <Text style="-fx-fill: white;" text=" - Abogado:&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Leyes: El poder legislativo trabaja 24/7 para permitirte mejorar en 2 tu rango de movimiento a pesar de perder 1 en el rango de ataque.&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Constitución: Gracias a las fuerzas otorgadas en 1978 tu rango de ataque aumentará en 2 pero tu ataque disminuirá en 10.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" - Maestro:&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Tiza:" />
+                            <Text style="-fx-fill: white;" text=" El poder de lanzamiento de tizas del maestro para callar alumnos aumenta el ataque en 15, disminuyendo tu rango de ataque en 2.&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Notas:" />
+                            <Text style="-fx-fill: white;" text=" El duro impacto de ver tus notas aumenta tu ataque en 10 y disminuye tu defensa en 5.&#10;" />
+                        </TextFlow>
 
-                        <Text style="-fx-fill: white;" text=" - Maestro:&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Tiza: El poder de lanzamiento de tizas del maestro para callar alumnos aumenta el ataque en 15, disminuyendo tu rango de ataque en 2.&#10;" />
-                        <Text style="-fx-fill: white;" text=" • Notas: El duro impacto de ver tus notas aumenta tu ataque en 10 y disminuye tu defensa en 5.&#10;" />
-                    </TextFlow>
                     </VBox>
 
-
-                    <VBox prefWidth="700.0" spacing="10">
-                        <Label style="-fx-font-weight: bold; -fx-font-size: 18; -fx-text-fill: white;" text="Inventario general" />
-                        <TextFlow>
-                            <Text style="-fx-fill: white;" text=" • La Celestina: Lleno de dramas y amoríos, con su poder para conquistar y conseguir lo que quiera, La Celestina consigue aumentar tu ataque en 10 y tu defensa en 2.&#10;&#10;" />
-                            <Text style="-fx-fill: white;" text=" • Commit: Bajo la necesidad de “commitear” todo lo que programas nuevo para no perderlo, un buen commit consigue aumentar tu rango de ataque en 2 y tu rango de movimiento en otros 2.&#10;&#10;" />
-                            <Text style="-fx-fill: white;" text=" • Reacción química: Juntando yodato de potasio, metabisulfito de sodio, almidón y ácido sulfúrico para controlar el pH, conseguimos esta increíble reacción química que te aumenta el ataque en 15 y el rango de ataque en 2.&#10;&#10;" />
-                            <Text style="-fx-fill: white;" text=" • Multiplicación: Números y más números, todos juntos multiplicando, una × entre ellos le da ese poder que consigue incrementar tu defensa en 10 y tu rango de movimiento en 1.&#10;&#10;" />
-                            <Text style="-fx-fill: white;" text=" • Teorema: Un teorema bien aplicado puede cambiar el curso de una batalla, y así hace este que, grabado en la piedra de la sabiduría, consigue aumentar tu rango de ataque en 3 y tu ataque en 7.&#10;&#10;" />
-                            <Text style="-fx-fill: white;" text=" • Babi: Una mini batita de cuadros cubierta de témpera, trocitos de plastilina y con la esencia de las tardes de siesta, el babi consigue aumentar tu defensa en 13 y el ataque en 8.&#10;&#10;" />
-                            <Text style="-fx-fill: white;" text=" • Juicio: Jurando decir la verdad y nada más que la verdad, esperando el poderoso veredicto que dictaminará el juez, el juicio te aporta 12 puntos más de ataque y 8 de defensa.&#10;&#10;" />
-                            <Text style="-fx-fill: white;" text=" • Radiografía: Los ojos que atraviesan la carne y la armadura, la revisión para ver qué le ocurre a tu estructura, la radiografía consigue incrementar tu defensa en 12 y tu rango de movimiento en 2.&#10;&#10;" />
-                            <Text style="-fx-fill: white;" text=" • Dinosaurio: El rey del cretácico con su máximo poder y fuerza aumenta tu ataque en 20.&#10;&#10;" />
-                            <Text style="-fx-fill: white;" text=" • Roca sedimentaria: Formada gota a gota, moldeada por el agua y viajando infinitos kilómetros, esta roca sedimentaria con forma de canto rodado hace que consigas 3 más de rango de ataque y otros 3 de defensa.&#10;&#10;" />
+                    <HBox alignment="TOP_LEFT" prefWidth="1200.0" spacing="100" style="-fx-padding: 30 40 30 30;">
+                    <VBox alignment="TOP_LEFT" prefWidth="650" spacing="15" style="-fx-font-size: 15;">
+                        <TextFlow prefHeight="832.0" prefWidth="583.0" style="-fx-text-fill: white;">
+                            <Text fill="WHITE" style="-fx-font-weight: bold; -fx-font-size: 16;" text="Inventario general:&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="La Celestina:" />
+                            <Text style="-fx-fill: white;" text=" Lleno de dramas y amoríos, con su poder para conquistar y conseguir lo que quiera, La Celestina consigue aumentar tu ataque en 10 y tu defensa en 2.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Commit:" />
+                            <Text style="-fx-fill: white;" text=" Bajo la necesidad de “commitear” todo lo que programas nuevo para no perderlo, un buen commit consigue aumentar tu rango de ataque en 2 y tu rango de movimiento en otros 2.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Reacción química:" />
+                            <Text style="-fx-fill: white;" text=" Juntando yodato de potasio, metabisulfito de sodio, almidón y ácido sulfúrico para controlar el pH, conseguimos esta increíble reacción química que te aumenta el ataque en 15 y el rango de ataque en 2.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Multiplicación:" />
+                            <Text style="-fx-fill: white;" text=" Números y más números, todos juntos multiplicando, una × entre ellos le da ese poder que consigue incrementar tu defensa en 10 y tu rango de movimiento en 1.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Teorema:" />
+                            <Text style="-fx-fill: white;" text=" Un teorema bien aplicado puede cambiar el curso de una batalla, y así hace este que, grabado en la piedra de la sabiduría, consigue aumentar tu rango de ataque en 3 y tu ataque en 7.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Babi:" />
+                            <Text style="-fx-fill: white;" text=" Una mini batita de cuadros cubierta de témpera, trocitos de plastilina y con la esencia de las tardes de siesta, el babi consigue aumentar tu defensa en 13 y el ataque en 8.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Juicio:" />
+                            <Text style="-fx-fill: white;" text=" Jurando decir la verdad y nada más que la verdad, esperando el poderoso veredicto que dictaminará el juez, el juicio te aporta 12 puntos más de ataque y 8 de defensa.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Radiografía:" />
+                            <Text style="-fx-fill: white;" text=" Los ojos que atraviesan la carne y la armadura, la revisión para ver qué le ocurre a tu estructura, la radiografía consigue incrementar tu defensa en 12 y tu rango de movimiento en 2.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Dinosaurio:" />
+                            <Text style="-fx-fill: white;" text=" El rey del cretácico con su máximo poder y fuerza aumenta tu ataque en 20.&#10;&#10;" />
+                            <Text style="-fx-fill: white;" text=" • " />
+                            <Text style="-fx-fill: white; -fx-underline: true" text="Roca sedimentaria:" />
+                            <Text style="-fx-fill: white;" text=" Formada gota a gota, moldeada por el agua y viajando infinitos kilómetros, esta roca sedimentaria con forma de canto rodado hace que consigas 3 más de rango de ataque y otros 3 de defensa.&#10;&#10;" />
                         </TextFlow>
                     </VBox>
-                    <VBox spacing="80">
-                        <ImageView fitHeight="100" fitWidth="150" preserveRatio="true">
+                    <VBox alignment="TOP_CENTER" prefHeight="809.0" prefWidth="222.0" spacing="20">
+                        <ImageView fitHeight="60" fitWidth="110" preserveRatio="true">
                             <image>
-                                <Image url="@Imagen/poeta_rojo.png" />
+                                <Image url="@Imagen/inventario_general/La_Celestina_rojo.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="100" fitWidth="150" preserveRatio="true">
+                        <ImageView fitHeight="60" fitWidth="110" preserveRatio="true">
                             <image>
-                                <Image url="@Imagen/filólogo_rojo.png" />
+                                <Image url="@Imagen/inventario_general/Commit_rojo.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="100" fitWidth="150" preserveRatio="true">
+                        <ImageView fitHeight="60" fitWidth="110" preserveRatio="true">
                             <image>
-                                <Image url="@Imagen/historiador_rojo.png" />
+                                <Image url="@Imagen/inventario_general/Reacción_química_rojo.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="100" fitWidth="150" preserveRatio="true">
+                        <ImageView fitHeight="60" fitWidth="110" preserveRatio="true">
                             <image>
-                                <Image url="@Imagen/abogado_rojo.png" />
+                                <Image url="@Imagen/inventario_general/Multiplicación_rojo.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="100" fitWidth="150" preserveRatio="true">
+                        <ImageView fitHeight="60" fitWidth="110" preserveRatio="true">
                             <image>
-                                <Image url="@Imagen/maestro_rojo.png" />
+                                <Image url="@Imagen/inventario_general/Teorema_rojo.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="60" fitWidth="110" preserveRatio="true">
+                            <image>
+                                <Image url="@Imagen/inventario_general/Babi_rojo.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="60" fitWidth="110" preserveRatio="true">
+                            <image>
+                                <Image url="@Imagen/inventario_general/Juicio_rojo.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="60" fitWidth="110" preserveRatio="true">
+                            <image>
+                                <Image url="@Imagen/inventario_general/Radiografía_rojo.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="60" fitWidth="110" preserveRatio="true">
+                            <image>
+                                <Image url="@Imagen/inventario_general/Dinosaurio_rojo.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="60" fitWidth="110" preserveRatio="true">
+                            <image>
+                                <Image url="@Imagen/inventario_general/Roca_sedimentaria_rojo.png" />
                             </image>
                         </ImageView>
                     </VBox>
                         </HBox>
+                        </VBox>
                 </content>
             </ScrollPane>
           </content>
@@ -313,16 +412,32 @@
           <content>
               <ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="1050.0">
                   <content>
-                      <VBox prefHeight="572.0" prefWidth="1035.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15; -fx-padding: 20;">
+                      <VBox prefHeight="610.0" prefWidth="1035.0" spacing="20" style="-fx-background-color: rgba(188,94,94); -fx-text-fill: white; -fx-font-size: 15; -fx-padding: 20;">
                           <Label alignment="CENTER" prefHeight="42.0" prefWidth="995.0" text="Mapas" textFill="WHITE">
-                        <font>
-                           <Font name="System Bold" size="30.0" />
-                        </font></Label>
-                          <Label text="Paso 2: Crea tu personaje" textFill="WHITE" />
-                          <Label text="Paso 3: Comienza la aventura" textFill="WHITE" />
-                          <Label text="Paso 4" textFill="WHITE" />
-                          <Label text="Paso 5" textFill="WHITE" />
-                          <Label text="Paso 6" textFill="WHITE" />
+                              <font>
+                                  <Font name="System Bold" size="30.0" />
+                              </font>
+                          </Label>
+
+                          <Label text="Mapa 1" textFill="WHITE">
+                              <font><Font name="System Bold" size="18.0" /></font>
+                          </Label>
+                          <Label prefHeight="75.0" prefWidth="995.0" text="Este mapa cuadrado de 10x10, con dificultad de movimiento de 2 para las filas y de 3 para las columnas, tiene el fondo blanco con el borde de las casillas negro. Dispone de dos casillas especiales con mayor dificultad de movimiento, 4, en las que aparecerán los objetos del inventario general cada cierto número de rondas." textFill="WHITE" wrapText="true" />
+
+                          <Label text="Mapa 2" textFill="WHITE">
+                              <font><Font name="System Bold" size="18.0" /></font>
+                          </Label>
+                          <Label prefHeight="77.0" prefWidth="995.0" text="Este mapa cuadrado de 8x8, con dificultad de movimiento de 2 para las filas y de 1 para las columnas, tiene el fondo azul clarito con el borde de las casillas negro. Dispone de 4 casillas especiales con mayor dificultad de movimiento, 3, en las que aparecerán los objetos del inventario general cada cierto número de rondas." textFill="WHITE" wrapText="true" />
+
+                          <Label text="Mapa 3" textFill="WHITE">
+                              <font><Font name="System Bold" size="18.0" /></font>
+                          </Label>
+                          <Label prefHeight="75.0" prefWidth="995.0" text="Este mapa rectangular de 7x10, con dificultad de movimiento de 3 para las filas y de 1 para las columnas, tiene el fondo amarillo clarito con el borde de las casillas negro. Dispone de 6 casillas especiales con mayor dificultad de movimiento, 4, en las que aparecerán los objetos del inventario general cada cierto número de rondas." textFill="WHITE" wrapText="true" />
+
+                          <Label text="Mapa 4" textFill="WHITE">
+                              <font><Font name="System Bold" size="18.0" /></font>
+                          </Label>
+                          <Label prefHeight="56.0" prefWidth="995.0" text="El tamaño, color y dificultad de movimiento dependerán de los valores que seleccione el usuario al crear el mapa. Por lo que, este mapa depende al 100% del jugador." textFill="WHITE" wrapText="true" />
                       </VBox>
                   </content>
               </ScrollPane>
