@@ -145,7 +145,7 @@ public class PartidaController {
                 imagenView.setFitWidth(60);
                 imagenView.setVisible(false);
                 AnchorPane casilla = new AnchorPane(imagenView);
-                casilla.setStyle("-fx-border-color: black; -fx-background-color: white");
+                casilla.setStyle("-fx-border-color: black; -fx-background-color: #bfebf4");
                 casilla.setMinSize(60,60);
                 casilla.setOnMouseClicked(onClicked(j,i));
                 Mapa.add(casilla, i, j);
@@ -184,7 +184,7 @@ public class PartidaController {
                 imagenView.setFitWidth(60);
                 imagenView.setVisible(false);
                 AnchorPane casilla = new AnchorPane(imagenView);
-                casilla.setStyle("-fx-border-color: black;");
+                casilla.setStyle("-fx-border-color: black; -fx-background-color: #ffe24c");
                 casilla.setMinSize(60,60);
                 casilla.setOnMouseClicked(onClicked(i,j));
                 Mapa.add(casilla, j, i);
