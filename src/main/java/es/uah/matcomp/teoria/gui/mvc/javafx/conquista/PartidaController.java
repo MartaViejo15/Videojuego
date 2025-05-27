@@ -225,7 +225,7 @@ public class PartidaController {
                 int disx = Math.abs(seleccionado.getPosicionX() - fila);
                 int disy = Math.abs(seleccionado.getPosicionY() - columna);
                 int distancia = disx + disy;
-                if(comprobarEquipo(Mis_unidades,seleccionado)){
+                if(!comprobarEquipo(Mis_unidades,seleccionado)){
                     informacion.setText("Unidad seleccionada no es de tu equipo.");
                 }else if(flotante != null){
                     informacion.setText("Casilla ocupada");
@@ -240,13 +240,14 @@ public class PartidaController {
                     onClickMover();
                     seleccionado = null;
                     punto--;
+                    puntos.setText("TE QUEDAN " + punto + " PUNTOS");
                     actualizar();
                 }
             } else if (atacar) {
                 int disx = Math.abs(seleccionado.getPosicionX() - fila);
                 int disy = Math.abs(seleccionado.getPosicionY() - columna);
                 int distancia = disx + disy;
-                if(comprobarEquipo(Mis_unidades,seleccionado)){
+                if(!comprobarEquipo(Mis_unidades,seleccionado)){
                     informacion.setText("Unidad seleccionada no es de tu equipo.");
                 }else if(flotante == null){
                     informacion.setText("Elige unidad a que quiere atacar.");
@@ -260,6 +261,7 @@ public class PartidaController {
                     onClickAtacar();
                     seleccionado = null;
                     punto--;
+                    puntos.setText("TE QUEDAN " + punto + " PUNTOS");
                     actualizar();
                 }
             } else {
@@ -486,7 +488,7 @@ public class PartidaController {
         }else{
             if(atacar){
                 atacar = false;
-                verRangoAta(new Lista<>());
+                //verRangoAta(new Lista<>());
             }else{
                 atacar = true;
                 mover = false;
@@ -505,14 +507,14 @@ public class PartidaController {
         }else{
             if(mover){
                 mover = false;
-                verRangoMov(new Lista<>());
+                //verRangoMov(new Lista<>());
             }else{
                 mover = true;
                 atacar = false;
                 informacion.setText("Seleccione casilla para mover");
-                Lista<Casilla> casillasAlcanzables = tablero.getCasillasAlcanzable(tablero.getCasilla(seleccionado.getPosicionX(),seleccionado.getPosicionY()),seleccionado.getRango_Movimiento().get());
+                //Lista<Casilla> casillasAlcanzables = tablero.getCasillasAlcanzable(tablero.getCasilla(seleccionado.getPosicionX(),seleccionado.getPosicionY()),seleccionado.getRango_Movimiento().get());
                 //peda por dijkstra?
-                verRangoMov(casillasAlcanzables);
+                //verRangoMov(casillasAlcanzables);
             }
         }
     }

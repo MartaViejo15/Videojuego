@@ -27,36 +27,71 @@
       </VBox>
       <VBox alignment="TOP_LEFT" layoutX="55.0" layoutY="156.0" prefHeight="177.0" prefWidth="240.0" spacing="20">
          <children>
-            <Label fx:id="ataqueLabel" text="• Ataque:" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font></Label>
-            <Label fx:id="defensaLabel" text="• Defensa:" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font></Label>
-            <Label fx:id="rMovimientoLabel" text="• Rango de movimiento:" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font></Label>
-            <Label fx:id="rAtaqueLabel" text="• Rango de ataque:" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font></Label>
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+            <HBox spacing="20.0">
                <children>
-                  <Label fx:id="hpLabel" text="• Puntos de vida (HP):" textFill="WHITE">
+                  <Label text="• Puntos de vida (HP):" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="20.0" prefWidth="44.0" textFill="WHITE" />
+                  <Label fx:id="hpLabel" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                </children>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0" />
-            <HBox prefHeight="100.0" prefWidth="200.0" />
-            <HBox prefHeight="100.0" prefWidth="200.0" />
-            <HBox prefHeight="100.0" prefWidth="200.0" />
+            <HBox spacing="20.0">
+               <children>
+                  <Label text="• Ataque:" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ataqueLabel" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children></HBox>
+            <HBox spacing="20.0">
+               <children>
+                  <Label text="• Defensa:" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="defensaLabel" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children></HBox>
+            <HBox spacing="20.0">
+               <children>
+                  <Label text="• Rango de movimiento:" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="rMovimientoLabel" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children></HBox>
+            <HBox spacing="20.0">
+               <children>
+                  <Label text="• Rango de ataque:" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="rAtaqueLabel" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children></HBox>
          </children>
       </VBox>
    </children>
