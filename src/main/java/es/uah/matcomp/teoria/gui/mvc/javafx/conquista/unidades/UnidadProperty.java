@@ -37,7 +37,7 @@ public class UnidadProperty {
 
     public int atacar(UnidadProperty unidad){
         Random r = new Random();
-        int random = r.nextInt(2);
+        int random = r.nextInt(3);
         int daño = (random * Ataque.get()) - unidad.getDefensa().get();
         unidad.getBase().setHP(unidad.getBase().getHP() - daño);
         unidad.getHP().set(unidad.getBase().getHP());

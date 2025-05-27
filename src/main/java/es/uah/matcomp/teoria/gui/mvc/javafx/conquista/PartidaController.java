@@ -33,6 +33,8 @@ import java.util.Random;
 
 public class PartidaController {
     @FXML
+    private Label fin;
+    @FXML
     private Label turnos;
     @FXML
     private Label informacion;
@@ -348,7 +350,7 @@ public class PartidaController {
         }
     }
     private boolean comprobarEquipo(Lista<UnidadProperty> equipo, UnidadProperty unidad) {
-        return equipo.buscar(unidad).equals(unidad);
+        return equipo.buscar(unidad) != null;
     }
     private void configurarUnidades() {
         //Poner mis_unidades en Mapa y tablero
@@ -419,7 +421,7 @@ public class PartidaController {
         }
     }
     private UnidadProperty generarUnidadLetras(Lista<UnidadProperty> unidades,boolean profe) {
-        int rand = new Random().nextInt(4);
+        int rand = new Random().nextInt(5);
         UnidadProperty unidad = null;
         if(rand == 0){
             unidad = new UnidadProperty(new Poeta("Poeta" + getN_unidades(unidades,"l1"),profe));
@@ -439,7 +441,7 @@ public class PartidaController {
         return unidad;
     }
     private UnidadProperty generarUnidadCiencias(Lista<UnidadProperty> unidades,boolean profe) {
-        int rand = new Random().nextInt(4);
+        int rand = new Random().nextInt(5);
         UnidadProperty unidad = null;
         if(rand == 0){
             unidad = new UnidadProperty(new Quimico("Químico" + getN_unidades(unidades,"c1"),profe));
@@ -492,7 +494,6 @@ public class PartidaController {
                 //buscar rango ataque
                 //falta por hacer(no es getCasillaAlcanzable como el mover, ya que no hay dif_mov
             }
-
         }
     }
     @FXML
@@ -510,6 +511,7 @@ public class PartidaController {
                 atacar = false;
                 informacion.setText("Seleccione casilla para mover");
                 Lista<Casilla> casillasAlcanzables = tablero.getCasillasAlcanzable(tablero.getCasilla(seleccionado.getPosicionX(),seleccionado.getPosicionY()),seleccionado.getRango_Movimiento().get());
+                //peda por dijkstra?
                 verRangoMov(casillasAlcanzables);
             }
         }
@@ -637,6 +639,8 @@ public class PartidaController {
     public void onClickInventario(){
         if(seleccionado == null){
             informacion.setText("Seleccione unidad");
+        }else if (!comprobarEquipo(Mis_unidades,seleccionado)) {
+            informacion.setText("Unidad seleccionada no es de tu equipo");
         }else{
             Stage s = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Inventario-view.fxml"));
@@ -680,11 +684,21 @@ public class PartidaController {
     @FXML
     public void actualizar(){
         if(Enemigos.getNumElementos() == 0){
+            //gana la partida
+            fin.setText("Enhorabuena, has ganado!!!");
+            fin.setVisible(true);
             String info = "El jugador ha ganado la partida";
             log.info(info);
             Logs.setText(Logs.getText() + info +"\n");
-            //gana jugador
-            //falta por hacer
+            onClickHistorial();
+        }if(Mis_unidades.getNumElementos() == 0){
+            //pierde la partida
+            fin.setText("Lo siento, has perdido.");
+            fin.setVisible(true);
+            String info = "El contrincante ha ganado la partida";
+            log.info(info);
+            Logs.setText(Logs.getText() + info +"\n");
+            onClickHistorial();
         }
         //termina turno del jugador
         if(punto == 0){
@@ -792,8 +806,8 @@ public class PartidaController {
         controller.setStage(s);
         controller.setId(id);
         controller.initData();
-        s.show();
-        while(s.isShowing()){}
+        s.showAndWait();
+        //while(s.isShowing()){} Peda.
         //Otra forma de esperar a contestar la pregunta?
         //Si el usuario no contesta y hace alguna otra accion?
         return controller.aceptar();

@@ -48,7 +48,7 @@ public class Tablero {
     }
     protected void dijkstra_init(Casilla origen, Map<Casilla, Integer> distancias, Cola<Casilla> colaPendientes){
         Elemento<Casilla> aux = casillas.getPrimero();
-        while(aux.getDato() != null){
+        while(aux != null){
             distancias.put(aux.getDato(), Integer.MAX_VALUE);
             aux = aux.getSiguiente();
         }
@@ -59,7 +59,7 @@ public class Tablero {
         while (colaPendientes.getLista().getNumElementos() != 0) {
             Casilla casillaActual = colaPendientes.dequeue();
             Elemento<Arista> aux = casillaActual.getSalida().getPrimero();
-            while(aux.getDato() != null){
+            while(aux != null){
                 Casilla casillaVecino = aux.getDato().getDestino();
                 Integer nuevoDistancia = distancias.get(casillaActual) + aux.getDato().getDificultadDeMovimiento();
                 if(nuevoDistancia < distancias.get(casillaVecino)){

@@ -22,7 +22,7 @@ public class HistorialController {
     }
 
     @FXML
-    protected void Aceptar(ActionEvent event) {
+    protected void Aceptar() {
         stage.close();
     }
 

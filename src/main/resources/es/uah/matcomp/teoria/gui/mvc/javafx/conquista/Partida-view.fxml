@@ -24,12 +24,12 @@
                   </Label>
                   <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button fx:id="onClickAtacar" mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #243673;" text="ATACAR" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#onClickAtacar" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #243673;" text="ATACAR" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Button>
-                        <Button fx:id="onClickMover" mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #243673;" text="MOVER" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#onClickMover" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #243673;" text="MOVER" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -99,5 +99,10 @@
                </children>
             </VBox>
          </children></HBox>
+      <Label fx:id="fin" alignment="CENTER" onDragDetected="#onClickSalir" prefHeight="600.0" prefWidth="1050.0" style="-fx-background-color: rgba(188,94,94);" text="Enhorabuena, has ganado!!!" textAlignment="CENTER" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold" size="55.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

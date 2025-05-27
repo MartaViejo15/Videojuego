@@ -42,7 +42,7 @@ public class PreguntaController {
     public void initData() {
         Preguntas p = new Preguntas(id);
         p.cargarPreguntas();
-        int r = new Random().nextInt(9);
+        int r = new Random().nextInt(10);
         Elemento<Pregunta> pregunta = p.getPreguntas().getPrimero();
         for(int i = 0; i<r; i++){
             pregunta = pregunta.getSiguiente();

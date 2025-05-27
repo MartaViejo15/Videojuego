@@ -24,7 +24,7 @@
                     <content>
                       <AnchorPane minHeight="277.0" minWidth="0.0" prefWidth="350.0" style="-fx-background-color: rgba(188,94,94);">
                            <children>
-                              <Label prefWidth="332.0" textFill="WHITE" />
+                              <Label fx:id="labelLogs" prefWidth="332.0" textFill="WHITE" />
                            </children></AnchorPane>
                     </content>
                   </ScrollPane>
