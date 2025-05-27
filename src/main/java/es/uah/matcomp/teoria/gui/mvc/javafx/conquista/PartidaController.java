@@ -787,9 +787,30 @@ public class PartidaController {
     }
     private void movimientoIA(UnidadProperty seleccionadoIA){
         //busca en el rango de ataque si hay enemigo atacable
+        UnidadProperty atacado = verEnRangAta(seleccionadoIA);
         //si hay, ataca
-        //si no, busca el enemigo más cercano, calcula camino hacia él, y mueve
+        if(atacado != null){
+            informacion.setText(seleccionadoIA.getBase().getNombre() + " ataca a " + atacado.getBase().getNombre() + ", con daño: " + seleccionadoIA.atacar(atacado));
+            String info = seleccionadoIA.getBase().getNombre() + " ha atacado a " + atacado.getBase().getNombre();
+            log.info(info);
+            Logs.setText(Logs.getText() + info +"\n");
+            comprobarMuerte(atacado);
+        }
         punto --;
+        //si no, busca el enemigo más cercano, calcula camino hacia él, y mueve
+    }
+    private UnidadProperty verEnRangAta(UnidadProperty seleccionadoIA){
+        Elemento<UnidadProperty> aux = Mis_unidades.getPrimero();
+        while(aux != null){
+            int disx = Math.abs(seleccionadoIA.getPosicionX() - aux.getDato().getPosicionX());
+            int disy = Math.abs(seleccionadoIA.getPosicionY() - aux.getDato().getPosicionY());
+            int distancia = disx + disy;
+            if(distancia <= seleccionadoIA.getRango_Ataque().get()){
+                return aux.getDato();
+            }
+            aux = aux.getSiguiente();
+        }
+        return null;
     }
 
     protected void entraUnidad(){
@@ -898,15 +919,12 @@ public class PartidaController {
         String Partida2 = "src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida2.json";
         String Partida3 = "src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida3.json";
         String Partida4 = "src/main/resources/es/uah/matcomp/teoria/gui/mvc/javafx/conquista/Partida4.json";
-
         File Archivo1 = new File(Partida1);
         File Archivo2 = new File(Partida2);
         File Archivo3 = new File(Partida3);
         File Archivo4 = new File(Partida4);
-
         String colorFondo = "White";
         String colorBorde = "Black";
-
         if(mapa == 4){
             ObjectMapper mapper = new ObjectMapper();
             try{
@@ -917,9 +935,7 @@ public class PartidaController {
                 throw new RuntimeException(e);
             }
         }
-
         PartidaASerializar datosPartida = new PartidaASerializar(new Mapa(tablero, Mapa.getRowCount() - 1, Mapa.getColumnCount() - 1, colorFondo  , colorBorde), faccion, Mis_unidades, Enemigos, inventarios, punto, ronda, seleccionado, mapa, atacar, mover,Logs.getText());
-
         if(Archivo1.length() == 0){
             ObjectMapper mapper1 = new ObjectMapper();
             try (FileWriter writer1 = new FileWriter(Partida1)) {
