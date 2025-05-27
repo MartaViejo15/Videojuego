@@ -59,6 +59,7 @@ public class PartidaController {
 
     private boolean atacar;
     private boolean mover;
+    private boolean añadir  = false;
 
     private static final Logger log = LogManager.getLogger(PartidaController.class);
 
@@ -216,7 +217,14 @@ public class PartidaController {
     public EventHandler<MouseEvent> onClicked(int fila, int columna) {
         return mouseEvent -> {
             UnidadProperty flotante = tablero.getCasilla(fila,columna).getUnidad();
-            if(seleccionado == null && flotante == null){
+            if(añadir){
+                if(confirmar(fila,columna)){
+                    añadir = false;
+                    ponerUnidad(fila,columna,seleccionado);
+                }else{
+                    informacion.setText("Debes poner la unidad nueva al lado de unidades existentes tuyos");
+                }
+            }else if(seleccionado == null && flotante == null){
                 informacion.setText("Seleccione unidad");
             } else if (seleccionado == null) {
                 this.seleccionado = flotante;
@@ -269,6 +277,25 @@ public class PartidaController {
                 informacion.setText("Seleccionada unidad: " + seleccionado.getBase().getNombre());
             }
         };
+    }
+    private boolean confirmar(int fila, int columna) {
+        Casilla derecha = tablero.getCasilla(fila+1,columna);
+        if(derecha != null && derecha.getUnidad() != null){
+            return true;
+        }
+        Casilla izq = tablero.getCasilla(fila-1,columna);
+        if(izq != null && izq.getUnidad() != null){
+            return true;
+        }
+        Casilla arriba = tablero.getCasilla(fila,columna-1);
+        if(arriba != null && arriba.getUnidad() != null){
+            return true;
+        }
+        Casilla debajo = tablero.getCasilla(fila,columna +1);
+        if(debajo != null && debajo.getUnidad() != null){
+            return true;
+        }
+        return false;
     }
     @FXML
     private void mapa4() {
@@ -723,7 +750,17 @@ public class PartidaController {
             refrescarInventario();
             if(ronda % 3 == 0){
                 //entrada unidad nueva con pregunta
-                entraUnidad();
+                if(buscarPosicionAponer(Mis_unidades) != null){
+                    entraUnidad();
+                }else{
+                    informacion.setText("No es posible añadir una unidad nueva para el jugador.");
+                }
+                Casilla posicionAponer = buscarPosicionAponer(Enemigos);
+                if(posicionAponer != null){
+                    entraUnidadIA(posicionAponer);
+                }else{
+                    informacion.setText("No es posible añadir una unidad nueva para el contrincante.");
+                }
             }
             reestablecerPuntos();
             turnos.setText("RONDA " + ronda + " : TU TURNO");
@@ -774,24 +811,53 @@ public class PartidaController {
         }else{
             informacion.setText("Respuesta incorrecta. No conseguiste la unidad nueva.");
         }
+    }
+    protected void entraUnidadIA(Casilla posicionAponer){
         Random rand  = new Random();
         int probabilidad = rand.nextInt(2); // sale 0 o 1 aleatoriamente
         if (probabilidad == 1){
             UnidadProperty nuevoIA = null;
-            if (faccion.equals("c")){
+            if (faccion.equals("l")){
                 nuevoIA = generarUnidadCiencias(Mis_unidades,false);
             } else {
                 nuevoIA = generarUnidadLetras(Mis_unidades,false);
             }
+            ponerUnidad(posicionAponer.getX(),posicionAponer.getY(),nuevoIA);
             Enemigos.add(nuevoIA);
-            añadirUnidad(nuevoIA);
             informacion.setText("La IA ha añadido una unidad nueva.");
+            String info = "Ha entrado la unidad(para contrincante): " + nuevoIA.getBase().getNombre();
+            log.info(info);
+            Logs.setText(Logs.getText() + info +"\n");
         } else {
             informacion.setText("La IA no añadió unidad nueva esta ronda.");
         }
     }
     protected void añadirUnidad(UnidadProperty nueva){
-        //falta por hacer
+        añadir = true;
+        this.seleccionado = nueva;
+    }
+    private Casilla buscarPosicionAponer(Lista<UnidadProperty> unidades){
+        Elemento<UnidadProperty> aux = unidades.getPrimero();
+        while(aux != null){
+            Casilla canditoDer = tablero.getCasilla(aux.getDato().getPosicionX() + 1, aux.getDato().getPosicionY());
+            if(canditoDer != null && canditoDer.getUnidad() == null){
+                return canditoDer;
+            }
+            Casilla canditoIzq = tablero.getCasilla(aux.getDato().getPosicionX() - 1, aux.getDato().getPosicionY());
+            if(canditoIzq != null && canditoIzq.getUnidad() == null){
+                return canditoIzq;
+            }
+            Casilla canditoArriba = tablero.getCasilla(aux.getDato().getPosicionX(), aux.getDato().getPosicionY() - 1);
+            if(canditoArriba!= null && canditoArriba.getUnidad() == null){
+                return canditoArriba;
+            }
+            Casilla canditoAbajo = tablero.getCasilla(aux.getDato().getPosicionX(), aux.getDato().getPosicionY() + 1);
+            if(canditoAbajo != null && canditoAbajo.getUnidad() == null){
+                return canditoAbajo;
+            }
+            aux = aux.getSiguiente();
+        }
+        return null;
     }
     @FXML
     protected boolean Pregunta(String id){
